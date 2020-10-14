@@ -9,7 +9,7 @@ const yardım = new Discord.MessageEmbed()
 .setAuthor("Dwonzy Bot.")
 .setTitle("<a:yldz:765522787610787850> Dwonzy Bot Yardım Menüsüne Hoşgeldin! <a:yldz:765522787610787850>")
  .setTimestamp()
-.setDescription("<a:panda2:765633198440841246> **-eğlence** = __Eğlence komutlarını görüntülersiniz.__ \n <a:ayarlar:765523861806252064> **-moderasyon** = __Moderasyon komutlarını görüntülersiniz.__ \n <a:ur_hopladc:765536907315773450> **-kullanıcı** = __Kullanıcı komutlarını görüntülersiniz.__ \n <a:emoji_222:765539651628564490> **-logo** = __Logo komutlarını görüntülersiniz.__")
+.setDescription("<a:panda2:765633198440841246> **-eğlence** = __Eğlence komutlarını görüntülersiniz.__ \n <a:ayarlar:765523861806252064> **-moderasyon** = __Moderasyon komutlarını görüntülersiniz.__ \n <a:ur_hopladc:765536907315773450> **-kullanıcı** = __Kullanıcı komutlarını görüntülersiniz.__ \n <a:sarey:765533152248594484> **-logo** = __Logo komutlarını görüntülersiniz.__")
 .setImage("https://cdn.discordapp.com/attachments/765269752788025375/765912834592342016/Untitled_design_1.gif")
 message.channel.send(yardım)
 }

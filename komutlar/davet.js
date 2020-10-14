@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
   const davet = new Discord.MessageEmbed()
   .setColor("RANDOM")
   .setTitle("Beni Sunucuna Ekle ❤️")
-  .setDescription("[__**Davet Et**__](https://discord.com/api/oauth2/authorize?client_id=722377982773035020&permissions=8&scope=bot) \n [__**Destek Sunucusu**__](https://discord.gg/crBgspj)")
+  .setDescription("[__**Davet Et**__](https://discord.com/oauth2/authorize?client_id=765924078497300510&scope=bot&permissions=805314622) \n [__**Destek Sunucusu**__](https://discord.gg/dmrhyFz)")
   message.channel.send(davet)
 }
 
