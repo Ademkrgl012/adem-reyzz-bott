@@ -5,7 +5,7 @@ const db = require("quick.db");
 exports.run = async (client, message, args) => {
 
 const yardım = new Discord.MessageEmbed()
-.setColor("BLUE")
+.setColor("BLACK")
 .setAuthor("Dwonzy Bot.")
 .setTitle("<a:yldz:765522787610787850> Dwonzy Bot Yardım Menüsüne Hoşgeldin! <a:yldz:765522787610787850>")
  .setTimestamp()
@@ -25,5 +25,5 @@ exports.help = {
   name: 'yardım',
   category: 'kullanıcı',
   description: 'Yardım Menüsü.',
-   usage:'!yardım'
+   usage:'-yardım'
 }
