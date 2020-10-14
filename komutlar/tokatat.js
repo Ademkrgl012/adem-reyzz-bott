@@ -17,7 +17,7 @@ const EmbedFwhyCode = new Discord.MessageEmbed()
       message.author.username + ` ${user}` + "** adlı kişiyi, Tokatladı! 🖐️ **"
     )
     .setImage("https://media0.giphy.com/media/deKWTyMOYLkje/giphy.gif")
-    .setFooter("Pink Code Share #Pcs", client.user.avatarURL);
+    .setFooter("Dwonzy Bot", client.user.avatarURL);
 
 message.channel.send(EmbedFwhyCode);
 
