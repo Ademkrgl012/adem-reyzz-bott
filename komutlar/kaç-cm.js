@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 exports.run = (client, message) => {
 
-message.channel.send("Dwonzy Bot | Hemen Diyorum Abi 1 Saniye..").then(message => {
+message.channel.send("Starby | Hemen Diyorum Abi 1 Saniye..").then(message => {
 
     var FwhyCode = [
 

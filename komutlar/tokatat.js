@@ -17,7 +17,7 @@ const EmbedFwhyCode = new Discord.MessageEmbed()
       message.author.username + ` ${user}` + "** adlı kişiyi, Tokatladı! 🖐️ **"
     )
     .setImage("https://media0.giphy.com/media/deKWTyMOYLkje/giphy.gif")
-    .setFooter("Dwonzy Bot", client.user.avatarURL);
+    .setFooter("Starby", client.user.avatarURL);
 
 message.channel.send(EmbedFwhyCode);
 
