@@ -9,7 +9,7 @@ exports.run = async (bot, message, args) => {
   if (args[0] === 'aç') {
     
     db.set(`ssaass_${message.guild.id}`, 'acik')
-    message.channel.send(`Artık bot Sa diyince As diyecek. Kapatmak için "\`!sa-as kapat\`" yazmalısın.`)
+    message.channel.send(`Artık bot Sa diyince As diyecek. Kapatmak için "\`-sa-as kapat\`" yazmalısın.`)
  
   }
   
