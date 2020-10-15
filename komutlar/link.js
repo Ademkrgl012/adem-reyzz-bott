@@ -4,8 +4,8 @@ const db = require('quick.db');
 exports.run = async(client, message, args) => {
 
   if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(` Bu komudu kullanabilmek için "Sunucuyu Yönet" yetkisine sahip olman gerek.`)
-  if (!args[0]) return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`!link aç\` | Kapatmak İstiyorsanız \`!link kapat\` Yazabilirsiniz`)
-  if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`!link aç\` | Kapatmak İstiyorsanız \`!link kapat\` Yazabilirsiniz`)
+  if (!args[0]) return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`-link aç\` | Kapatmak İstiyorsanız \`-link kapat\` Yazabilirsiniz`)
+  if (args[0] !== 'aç' && args[0] !== 'kapat') return message.channel.send(`:no_entry: Reklam Filtresini Ayarlamak İçin \`-link aç\` | Kapatmak İstiyorsanız \`-link kapat\` Yazabilirsiniz`)
 
     if (args[0] == 'aç') {
     db.set(`reklamFiltre_${message.guild.id}`, 'acik')
