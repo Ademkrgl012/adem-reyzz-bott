@@ -189,7 +189,7 @@ client.on("message", async msg => {
           try {
  
                   return msg.reply(
-                    'Aleyküm Selam, Hoşgeldin')
+                    '@everyone Kutay❤SelinKutay❤SelinKutay❤SelinKutay❤SelinKutay❤SelinKutay❤SelinKutay❤SelinKutay❤SelinKutay❤SelinKutay❤Selin')
           } catch(err) {
             console.log(err);
           }
