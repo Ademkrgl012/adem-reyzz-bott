@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
 exports.run = async(client, message, args, ops) => {
     message.delete()//lütfen çalmayın zaman harcadım lord creative  
-    if (!message.member.roles.find("name", "Yetkili Rol İsim")) {
-        return message.channel.send(' **Bu Komutu Kullanmak için** Kayıt Ekibi **Rolüne Sahip Olman Lazım** ')
+    if (!message.member.roles.find("name", "・PERSEUS OF STARBY")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** ・PERSEUS OF STARBY **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     }
     let toverify = message.guild.member(message.mentions.users.first());
-    let verifyrole = message.guild.roles.find(`name`, "Verilecek Rol İsim");//lütfen çalmayın zaman harcadım lord creative  
+    let verifyrole = message.guild.roles.find(`name`, "🔔・  SUBSCRIBER OF STARBY");//lütfen çalmayın zaman harcadım lord creative  
     if (!verifyrole) return message.reply("Rol Bulunamadı Lütfen 'Doğulandı' Adıyla Rol Oluşturunuz.");
     if (!toverify) return message.reply("Bir Kişiyi Et");
     await (toverify.addRole(verifyrole.id));
