@@ -1,32 +1,36 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 
-exports.run = async (client, message, args,) => {
-  const useruser = "Komut "  + message.author.username + " tarafından çalıştırıldı";
-  const userurl = message.author.avatarURL;
-  const bayrak = ":flag_tr:";
-  const ping = `${Math.round(client.ping)}ms`;
+exports.run = async (app, message, client) => {
+  const asf = new Discord.MessageEmbed()
 
-let embed = new Discord.RichEmbed()
-.setTitle(':shield: Anlık Gecikme Süresi :shield:')
-.setColor("#00FF00")
-.addField("Ping :", ping)
-.addField("Lokasyon :", bayrak)
-.setFooter(useruser, userurl)
-.setTimestamp();
+    .setColor("RED")
+    .setDescription("<a:loading:776390566665650176> Ping Hesaplanıyor...");
 
-message.channel.send(embed);
+  let start = Date.now();
+  let mesaj = await message.channel.send(asf);
+  let diff = Date.now() - start;
+  let API = app.ws.ping.toFixed(2);
 
-}
+  setInterval(() => {
+    const only = new Discord.MessageEmbed()
+      .setDescription(
+        `  Mesaj Gecikme Süresi ; **${diff}Ms** \n\n <a:hypesquad2:775698163842416650> Bot Gecikme Süresi ; **${API}Ms**`
+      )
+      .setColor("GREEN");
+
+    mesaj.edit(only);
+  }, 5000);
+};
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["ping"],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'ping',
-  description: 'Gecikme süresini gösterir.',
-  usage: 'ping'
+  name: "ping",
+  description: "asf",
+  usage: "ping"
 };
