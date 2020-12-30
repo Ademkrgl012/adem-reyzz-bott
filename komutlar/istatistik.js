@@ -16,18 +16,12 @@ exports.run = (client, message) => {
     )
     .addField(
       "Bot Sahibi & Geliştirici",
-      `> <a:ok2:783683621885968424> Bot Sahibi & Geliştiricisi => **☫ Kaan^-^4670#4670**`
+      `> <a:ok2:783683621885968424> Bot Sahibi & Geliştiricisi => <@768080464984014918>`
     )
     .addField(
       "Sürümler",
       `> <a:ok2:783683621885968424> Discord.js sürümü: **v${Discord.version}** 
 \n> <a:ok2:783683621885968424> Node.js sürümü: **${process.version}**`
-    )
-    .addField(
-      "Gecikmeler",
-      `> <a:ok2:783683621885968424> Bot pingi: **${client.ws.ping}**
- \n> <a:ok2:783683621885968424> Mesaj gecikmesi: **${new Date().getTime() -
-   message.createdTimestamp}**`
     )
     .setTimestamp();
   message.channel.send(sa);
