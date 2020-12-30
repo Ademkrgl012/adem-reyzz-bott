@@ -12,7 +12,7 @@ const mod = new Discord.MessageEmbed()
 .setImage("https://cdn.discordapp.com/attachments/765269752788025375/765912834592342016/Untitled_design_1.gif")
 message.channel.send(mod)
 }
-
+  
 exports.conf = {
   enabled: true, 
   guildOnly: false, 
