@@ -6,22 +6,22 @@ exports.run = (client, message) => {
     .setAuthor(client.user.username, client.user.avatarURL)
     .addField(
       "Sunucu & Kullanıcı Toplam",
-      `> <a:emoji_1:793944518327533588> Toplam sunucu: **${
+      `> <a:vumpushype:789105762714255361> Toplam sunucu: **${
         client.guilds.cache.size
       }** 
-\n> <a:ok2:783683621885968424> Toplam kullanıcı: **${client.guilds.cache
+\n> <a:vumpushype:789105762714255361> Toplam kullanıcı: **${client.guilds.cache
         .reduce((a, b) => a + b.memberCount, 0)
         .toLocaleString()}** 
 `
     )
     .addField(
       "Bot Sahibi & Geliştirici",
-      `> <a:ok2:783683621885968424> Bot Sahibi & Geliştiricisi => <@768080464984014918>`
+      `> <a:vumpushype:789105762714255361> Bot Sahibi & Geliştiricisi => <@768080464984014918>`
     )
     .addField(
       "Sürümler",
-      `> <a:ok2:783683621885968424> Discord.js sürümü: **v${Discord.version}** 
-\n> <a:ok2:783683621885968424> Node.js sürümü: **${process.version}**`
+      `> <a:vumpushype:789105762714255361> Discord.js sürümü: **v${Discord.version}** 
+\n> <a:vumpushype:789105762714255361> Node.js sürümü: **${process.version}**`
     )
     .setTimestamp();
   message.channel.send(sa);
