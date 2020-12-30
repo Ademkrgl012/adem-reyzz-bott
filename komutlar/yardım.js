@@ -9,7 +9,7 @@ const yardım = new Discord.MessageEmbed()
 .setTitle("<a:kitab:775385879618519062> Yrnex Yardım Menüsüne Hoşgeldin!")
  .setTimestamp()
 .setDescription("🎮 **y!eğlence** = __Eğlence komutlarını görüntülersiniz.__\n 🔰 **y!moderasyon** = __Moderasyon komutlarını görüntülersiniz.__\n 👥 **y!kullanıcı** = __Kullanıcı komutlarını görüntülersiniz.__\n <:YouTube:791401370560495668> **y!abone-sistemi** = __Abone Rol komutlarını görüntülersiniz.__")
-.setImage("https://cdn.discordapp.com/attachments/765269752788025375/765912834592342016/Untitled_design_1.gif")
+ .setImage('https://cdn.discordapp.com/attachments/781872196654071819/793873257395912704/standard_19.gif')
 message.channel.send(yardım)
 }
 exports.conf = {
