@@ -8,7 +8,7 @@ const mod = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setTitle("<:YouTube:791401370560495668> Yrnex Abone Sistemi Komutları! ")
 .setTimestamp()
-.setDescription("<a:yan:765915647557107743> **y!abone-yetkili-rol** = Abone Rolünü vericek yetkili rolünü seçer  \n <a:yan:765915647557107743> **y!abone-rol** = Etiketlediğiniz kişiyi banlarsınız.  \n <a:yan:765915647557107743> **y!abone-log** = Etiketlediğiniz kişiyi atarsınız.  \n <a:yan:765915647557107743> **y!abone veya a** = Bota duyuru yaptırırsınız.")
+.setDescription("<:sagok:793884316564324362> **y!abone-yetkili-rol** = Abone Rolünü vericek yetkili rolünü seçer.  \n <a:yan:765915647557107743> **y!abone-rol** = Vericeğiniz Rolü ayarlarsınız.  \n <a:yan:765915647557107743> **y!abone-log** = Log mesajınn gitceği yer seçilir.  \n <a:yan:765915647557107743> **y!abone veya a** = Abone Rolü verme komutudur.")
 .setImage("https://cdn.discordapp.com/attachments/765269752788025375/765912834592342016/Untitled_design_1.gif")
 message.channel.send(mod)
 }
