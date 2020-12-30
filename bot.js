@@ -36,8 +36,9 @@ client.on("message", message => {
 client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
   client.user.setStatus("dnd");
-  client.user.setActivity('-yardım | -davet');
-})
+  client.user.setStatus("online");
+  client.user.setActivity('y!yardım y!davet);
+  })                              
 
 
 const log = message => {
