@@ -6,15 +6,15 @@ exports.run = async (client ,message, args) =>{
     if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(` Bu komudu kullanabilmek için "Sunucuyu Yönet" yetkisine sahip olman gerek.`)
 if(args[0] === 'aktif') {
     db.set(`${message.guild.id}.kufur`, true)
-    message.channel.send('Başarılı Şekilde `Aktif` Edildi. Bot ban yetkisi Olanların Mesajını Silmeyecektir.')
+    message.channel.send('<:yr_evet:793837194175447090> **Başarılı Şekilde `Aktif` Edildi. Bot ban yetkisi Olanların Mesajını Silmeyecektir.**')
   return
 }
 if (args[0] === 'deaktif') {
   db.delete(`${message.guild.id}.kufur`)
-message.channel.send('Başarılı Şekilde `Deaktif` Edildi')
+message.channel.send('<:yr_hayr:793837203478020127> Başarılı Şekilde `Deaktif` Edildi')
 return
 }
-  message.channel.send('Lüten `-küfür aktif` yada `-küfür deaktif` Yazın!')
+  message.channel.send('**Lüten y!küfür aktif` yada `y!küfür deaktif` Yazın!**')
 };
 exports.conf = {
  enabled: true,

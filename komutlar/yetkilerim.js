@@ -17,48 +17,48 @@ let x;
     let x11;
     
     //yönetici
-    if (msg.member.hasPermission("ADMINISTRATOR")) x = ":white_check_mark:"
-    if (!msg.member.hasPermission("ADMINISTRATOR")) x = ":x: "
+    if (msg.member.hasPermission("ADMINISTRATOR")) x = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("ADMINISTRATOR")) x = "<:hayr:791986536375386124>"
     
     //Denetim kaydı
-    if (msg.member.hasPermission("VIEW_AUDIT_LOG")) x2 = ":white_check_mark:"
-    if (!msg.member.hasPermission("VIEW_AUDIT_LOG")) x2 = ":x: "
+    if (msg.member.hasPermission("VIEW_AUDIT_LOG")) x2 = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("VIEW_AUDIT_LOG")) x2 = "<:hayr:791986536375386124>"
     
     //Sunucuyu yönet
-    if (msg.member.hasPermission("MANAGE_GUILD")) x3 = ":white_check_mark:"
-    if (!msg.member.hasPermission("MANAGE_GUILD")) x3 = ":x: "
+    if (msg.member.hasPermission("MANAGE_GUILD")) x3 = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("MANAGE_GUILD")) x3 = "<:hayr:791986536375386124>"
     
     //Rolleri yönet
-    if (msg.member.hasPermission("MANAGE_ROLES")) x4 = ":white_check_mark:"
-    if (!msg.member.hasPermission("MANAGE_ROLES")) x4 = ":x: "
+    if (msg.member.hasPermission("MANAGE_ROLES")) x4 = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("MANAGE_ROLES")) x4 = "<:hayr:791986536375386124>"
     
     //Kanalları yönet
-    if (msg.member.hasPermission("MANAGE_CHANNELS")) x5 = ":white_check_mark:"
-    if (!msg.member.hasPermission("MANAGE_CHANNELS")) x5 = ":x: "
+    if (msg.member.hasPermission("MANAGE_CHANNELS")) x5 = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("MANAGE_CHANNELS")) x5 = "<:hayr:791986536375386124>"
     
     //üyeleri at
-    if (msg.member.hasPermission("KICK_MEMBERS")) x6 = ":white_check_mark:"
-    if (!msg.member.hasPermission("KICK_MEMBERS")) x6 = ":x: "
+    if (msg.member.hasPermission("KICK_MEMBERS")) x6 = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("KICK_MEMBERS")) x6 = "<:hayr:791986536375386124>"
     
     //üyeleri yasakla
-    if (msg.member.hasPermission("BAN_MEMBERS")) x7 = ":white_check_mark:"
-    if (!msg.member.hasPermission("BAN_MEMBERS")) x7 = ":x: "
+    if (msg.member.hasPermission("BAN_MEMBERS")) x7 = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("BAN_MEMBERS")) x7 = "<:hayr:791986536375386124>"
     
     //mesajları yönet
-    if (msg.member.hasPermission("MANAGE_MESSAGES")) x8 = ":white_check_mark:"
-    if (!msg.member.hasPermission("MANAGE_MESSAGES")) x8 = ":x: "
+    if (msg.member.hasPermission("MANAGE_MESSAGES")) x8 = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("MANAGE_MESSAGES")) x8 = "<:hayr:791986536375386124>"
     
     //kullanıcı adlarını yönet
-    if (msg.member.hasPermission("MANAGE_NICKNAMES")) x9 = ":white_check_mark:"
-    if (!msg.member.hasPermission("MANAGE_NICKNAMES")) x9 = ":x: "
+    if (msg.member.hasPermission("MANAGE_NICKNAMES")) x9 = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("MANAGE_NICKNAMES")) x9 = "<:hayr:791986536375386124>"
     
     //emojileri yönet
-    if (msg.member.hasPermission("MANAGE_EMOJIS")) x10 = ":white_check_mark:"
-    if (!msg.member.hasPermission("MANAGE_EMOJIS")) x10 = ":x: "
+    if (msg.member.hasPermission("MANAGE_EMOJIS")) x10 = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("MANAGE_EMOJIS")) x10 = "<:hayr:791986536375386124>"
     
     //webhookları yönet
-    if (msg.member.hasPermission("MANAGE_WEBHOOKS")) x11 = ":white_check_mark:"
-    if (!msg.member.hasPermission("MANAGE_WEBHOOKS")) x11 = ":x: "
+    if (msg.member.hasPermission("MANAGE_WEBHOOKS")) x11 = "<:evet:791986525742563329>"
+    if (!msg.member.hasPermission("MANAGE_WEBHOOKS")) x11 = "<:hayr:791986536375386124>"
      const embed = new Discord.MessageEmbed()
   .setColor('GREEN')
     .setDescription(` ${x} Yönetici \n${x2} Denetim Kaydını Görüntüle\n ${x3} Sunucuyu Yönet \n${x4} Rolleri Yönet \n${x5} Kanalları Yönet \n${x6} Üyeleri At \n${x7} Üyeleri Yasakla \n${x8} Mesajları Yönet \n${x9} Kullanıcı Adlarını Yönet \n${x10} Emojileri Yönet \n${x11} Webhook'ları Yönet`);
