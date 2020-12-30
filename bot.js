@@ -37,7 +37,7 @@ client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
   client.user.setStatus("dnd");
   client.user.setStatus("online");
-  client.user.setActivity('y!yardım y!davet);
+  client.user.setActivity("Yrnex Bot Sizlerle | y!yardım y!davet");
   })                              
 
 
