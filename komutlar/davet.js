@@ -4,8 +4,8 @@ exports.run = (client, message, args) => {
 
   const davet = new Discord.MessageEmbed()
   .setColor("RANDOM")
-  .setTitle("Beni Sunucuna Ekle ❤️")
-  .setDescription("[__**Davet Et**__](https://discord.com/oauth2/authorize?client_id=765924078497300510&scope=bot&permissions=805314622) \n [__**Destek Sunucusu**__](https://discord.gg/dmrhyFz)")
+  .setTitle("İşte Davet Linklerim <a:seksiemojiymishih:788680445230972950>")
+  .setDescription("[__**Davet Et**__](https://discord.com/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot) \n [__**Destek Sunucusu**__](https://elastic-purring-blue.glitch.me)")
   message.channel.send(davet)
 }
 
