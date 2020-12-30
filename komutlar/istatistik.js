@@ -1,28 +1,47 @@
 const Discord = require("discord.js");
-const moment = require("moment");
-require("moment-duration-format");
 
 exports.run = (client, message) => {
-  const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
-  message.channel.sendCode("asciidoc", `= ${client.user.username} İstatistikler =
-• Bellek kullanımı :: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
-• Çalışma süresi   :: ${duration}
-• Kullanıcılar     :: ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}
-• Sunucular        :: ${client.guilds.size.toLocaleString()}
-• Kanallar         :: ${client.channels.size.toLocaleString()}
-• Discord.JS sürüm :: v${Discord.version}
-• Ping             :: ${client.ping}`);
+  let sa = new Discord.MessageEmbed()
+    .setThumbnail(message.author.displayAvatarURL())
+    .setAuthor(client.user.username, client.user.avatarURL)
+    .addField(
+      "Sunucu & Kullanıcı Toplam",
+      `> <a:ok2:783683621885968424> Toplam sunucu: **${
+        client.guilds.cache.size
+      }** 
+\n> <a:ok2:783683621885968424> Toplam kullanıcı: **${client.guilds.cache
+        .reduce((a, b) => a + b.memberCount, 0)
+        .toLocaleString()}** 
+`
+    )
+    .addField(
+      "Bot Sahibi & Geliştirici",
+      `> <a:ok2:783683621885968424> Bot Sahibi & Geliştiricisi => **☫ Kaan^-^4670#4670**`
+    )
+    .addField(
+      "Sürümler",
+      `> <a:ok2:783683621885968424> Discord.js sürümü: **v${Discord.version}** 
+\n> <a:ok2:783683621885968424> Node.js sürümü: **${process.version}**`
+    )
+    .addField(
+      "Gecikmeler",
+      `> <a:ok2:783683621885968424> Bot pingi: **${client.ws.ping}**
+ \n> <a:ok2:783683621885968424> Mesaj gecikmesi: **${new Date().getTime() -
+   message.createdTimestamp}**`
+    )
+    .setTimestamp();
+  message.channel.send(sa);
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['bot durum', 'i', 'bi', 'istatistikler', 'kullanımlar', 'botdurum', 'bd', 'istatisik', 'stats', 'stat'],
-  permLevel: 0
+  permLevel: 0,
+  aliases: ["istatistik", "i"]
 };
 
 exports.help = {
-  name: 'i',
-  description: 'Botun istatistik gösterir.',
-  usage: 'boti'
+  name: "istatistik",
+  description: "Türkiyenin Saatini Gösterir ",
+  usage: "gç"
 };
