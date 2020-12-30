@@ -7,11 +7,11 @@ exports.run = async(client, message) => {
   if(!message.member.hasPermission(`ADMINISTRATOR`)) return message.channel.send(`Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin.`)
   
   let rol = message.mentions.roles.first()
-  if(!rol) return message.channel.send(`Bir rol etiketlemen gerekmekte örnek: ${ayarlar.prefix}abone-y-rol @rol`)
+  if(!rol) return message.channel.send(`**Bir rol etiketlemen gerekmekte örnek: __${ayarlar.prefix}abone-yetkili-rol @rol__**`)
   
   
   database.set(`aboneyetkilisi.${message.guild.id}`, rol.id)
-  message.channel.send(`Abone yetkilisi başarıyla ${rol} olarak ayarlandı.`)
+  message.channel.send(`<:yr_evet:793837194175447090> **Abone yetkilisi başarıyla "${rol}"olarak ayarlandı.**`)
 }
 
 exports.conf = {
