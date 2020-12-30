@@ -6,7 +6,7 @@ exports.run = (client, message) => {
     .setAuthor(client.user.username, client.user.avatarURL)
     .addField(
       "Sunucu & Kullanıcı Toplam",
-      `> <a:ok2:783683621885968424> Toplam sunucu: **${
+      `> <a:emoji_1:793944518327533588> Toplam sunucu: **${
         client.guilds.cache.size
       }** 
 \n> <a:ok2:783683621885968424> Toplam kullanıcı: **${client.guilds.cache
