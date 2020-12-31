@@ -1,159 +1,29 @@
 const Discord = require("discord.js");
-const path = require('path');
+const db = require("quick.db");
 
-module.exports.run = async(client, message, args) => {
+exports.run = async (client, message, args) => {
+  const yardım = new Discord.MessageEmbed()
+    .setColor("BLACK")
+    .setTitle("<a:kitab:775385879618519062> Yrnex Yardım Menüsüne Hoşgeldin!")
+    .setTimestamp()
+    .setDescription(
+      "🔰 **y!moderasyon** = __Moderasyon komutlarını görüntülersiniz.__\n 👥 **y!kullanıcı** = __Kullanıcı komutlarını görüntülersiniz.__\n <:YouTube:791401370560495668> **y!abone-sistemi** = __Abone Rol komutlarını görüntülersiniz.__"
+    )
+    .setImage(
+      "https://cdn.discordapp.com/attachments/781872196654071819/793873257395912704/standard_19.gif"
+    );
+  message.channel.send(yardım);
+};
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ["help", "y"],
+  permLevel: `Yetki gerekmiyor.`
+};
 
-    let langues = require(path.resolve(path.join('.', 'database/lang.json')));
-    let langue = langues[message.guild.id].langues;
-
-    if(langue === 'tr'){
-        const embed = await message.channel.send(
-            new Discord.MessageEmbed()
-                .setTitle('Yardım sistemi')
-                .setColor('ORANGE')
-                .setDescription('Lütfen reaksiyonları aşağıdaki koda göre kontrol edin :\n\n> 📪: ``Özel mesajla yardım alın``,\n> 📝: ``Buradan yardım alın.``')
-        )
-        await embed.react('📪');
-        await embed.react('📝');
-
-        const filter = (reaction, user) => {
-            return ['📪', '📝'].includes(reaction.emoji.name) && user.id === message.author.id;
-        };
-    
-        let bool = false;
-        let prefixes = require(path.resolve(path.join('.', 'database/prefixes.json')));
-        let prefix = prefixes[message.guild.id].prefixes;
-        
-        client.on('messageReactionAdd', (reaction, user) => {
-            if (reaction.emoji.name === '📪' || reaction.emoji.name === '📝' && user.id === message.author.id && user.id != client.user.id) {
-    
-                if(bool == true){
-                    return;
-                }
-                switch(reaction.emoji.name){
-                    case '📪':
-                        if(bool === true) return;
-                        bool = true;
-                        let sended = true;
-                        embed.delete();
-                        if(langue === 'tr'){
-                            message.author.send(
-                                new Discord.MessageEmbed()
-                                    .setTitle('Yardım menüsü')
-                                    .setColor('RED')
-                                    .setDescription(`endlesscodeaciklama`)
-                            ).catch(() => {
-                                sended = false;
-                                message.channel.send(
-                                    new Discord.MessageEmbed()
-                                        .setTitle('__HATA__')
-                                        .setColor('RED')
-                                        .setDescription('Lütfen özel mesajlarınızı herkese açın.')
-                                )
-                                
-                                if(sended === true) {
-                                    message.channel.send(
-                                        new Discord.MessageEmbed()
-                                            .setTitle("Yardım menüsü")
-                                            .setColor('DARK_GREEN')
-                                            .setDescription("Size yardım menüsünü özel mesajla gönderdim.")
-                                    )
-                                }
-                            })
-                            
-                        }
-                    case '📝':
-                        if(bool === true) return;
-                        bool = true;
-                        embed.delete();
-                        if(langue === 'tr'){
-                            message.channel.send(
-                                new Discord.MessageEmbed()
-                                        .setTitle('Yardım menüsü')
-                                        .setColor('RED')
-                                        .setDescription(`**İşte mevcut komutların listesi :**\n\n\`\`${prefix}gstart\`\`: İstenilen süre için bir çekiliş başlatın.\n\`\`${prefix}reroll\`\`: İstenen çekilişte yeni bir kazanan bulun.\n\`\`${prefix}help\`\`: Yardım menüsünü gönder.\n\`\`🚨\`\`・\`\`${prefix}prefix\`\`: Sunucunuz için bot prefix değiştirin.\n\`\`🚨\`\`・\`\`${prefix}lang\`\`: Sunucunuzdaki bot dilini değiştirin.\n\n\`\`🚨\`\` = **KOMUTLAR SADECE YÖNETİCİ YETKİSİNDE OLANLAR TARAFINDAN KULLANILIR.**`)
-                            )
-                        }
-                }
-    
-            }
-        })
-
-    } else if(langue === 'en'){
-        const embed = await message.channel.send(
-            new Discord.MessageEmbed()
-                .setTitle('Help System')
-                .setColor('ORANGE')
-                .setDescription('Please check the reactions based on the code below :\n\n> 📪: ``Get help in dm\'s``,\n> 📝: ``Get help here``')
-        )
-        await embed.react('📪');
-        await embed.react('📝');
-
-        const filter = (reaction, user) => {
-            return ['📪', '📝'].includes(reaction.emoji.name) && user.id === message.author.id;
-        };
-    
-        let bool = false;
-        let prefixes = require(path.resolve(path.join('.', 'database/prefixes.json')));
-        let prefix = prefixes[message.guild.id].prefixes;
-        
-        client.on('messageReactionAdd', (reaction, user) => {
-            if (reaction.emoji.name === '📪' || reaction.emoji.name === '📝' && user.id === message.author.id && user.id != client.user.id) {
-    
-                if(bool == true){
-                    return;
-                }
-                switch(reaction.emoji.name){
-                    case '📪':
-                        if(bool === true) return;
-                        bool = true;
-                        let sended = true;
-                        embed.delete();
-                        if(langue === 'en'){
-                            message.author.send(
-                                new Discord.MessageEmbed()
-                                    .setTitle('Help System')
-                                    .setColor('RED')
-                                    .setDescription(`**Here is the list of my commands :**\n\n\`\`${prefix}gstart\`\`: Start a giveaway in the channel with a specific duration.\n\`\`${prefix}reroll\`\`: Find a new winner to a specific giveaway.\n\`\`${prefix}help\`\`: Send the help menu.\n\`\`🚨\`\`・\`\`${prefix}prefix\`\`: Change the bot prefix on you server.\n\`\`🚨\`\`・\`\`${prefix}lang\`\`: Change the bot language on your server.\n\n\`\`🚨\`\` = **NEED ADMINISTARTOR PERMISSION TO USE THE COMMAND.**`)
-                            ).catch(() => {
-                                sended = false;
-                                message.channel.send(
-                                    new Discord.MessageEmbed()
-                                        .setTitle('__ERROR__')
-                                        .setColor('RED')
-                                        .setDescription('Please, open your DMs and retry.')
-                                )
-
-                                if(sended === true) {
-                                    message.channel.send(
-                                        new Discord.MessageEmbed()
-                                            .setTitle("Help System")
-                                            .setColor('DARK_GREEN')
-                                            .setDescription("I sent you the help mesasge in your DMs.")
-                                    );
-                                }
-                            })
-                        }
-                    case '📝':
-                        if(bool === true) return;
-                        bool = true;
-                        embed.delete();
-                        if(langue === 'en'){
-                            message.channel.send(
-                                new Discord.MessageEmbed()
-                                .setTitle('Help System')
-                                .setColor('RED')
-                                .setDescription(`**Here is the list of my commands :**\n\n\`\`${prefix}gstart\`\`: Start a giveaway in the channel with a specific duration.\n\`\`${prefix}reroll\`\`: Find a new winner to a specific giveaway.\n\`\`${prefix}help\`\`: Send the help menu.\n\`\`🚨\`\`・\`\`${prefix}prefix\`\`: Change the bot prefix on you server.\n\`\`🚨\`\`・\`\`${prefix}lang\`\`: Change the bot language on your server.\n\n\`\`🚨\`\` = **NEED ADMINISTARTOR PERMISSION TO USE THE COMMAND.**`)
-                            )
-                        }
-                }
-    
-            }
-        })
-
-    }
-
-}
-module.exports.help = {
-    name: "help"
-}
+exports.help = {
+  name: "yardım",
+  category: "kullanıcı",
+  description: "Yardım Menüsü.",
+  usage: "y!yardım"
+};

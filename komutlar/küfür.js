@@ -6,7 +6,7 @@ exports.run = async (client ,message, args) =>{
     if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(` Bu komudu kullanabilmek için "Sunucuyu Yönet" yetkisine sahip olman gerek.`)
 if(args[0] === 'aktif') {
     db.set(`${message.guild.id}.kufur`, true)
-    message.channel.send('<:yr_evet:793837194175447090> **Başarılı Şekilde `Aktif` Edildi. Bot ban yetkisi Olanların Mesajını Silmeyecektir.**')
+    message.channel.send('<:yr_evet:793837194175447090> **Küfür Engel Başarıyla Açıldı.**')
   return
 }
 if (args[0] === 'deaktif') {
@@ -24,8 +24,8 @@ exports.conf = {
 };
  
 exports.help = {
- name: 'küfür-ayarla',
+ name: 'küfür',
  description: 'Davet Log Kanalını Belirler',
- usage: 'davet-kanal-ayarla #kanal'
+ usage: 'küfür-engel'
 };
  
