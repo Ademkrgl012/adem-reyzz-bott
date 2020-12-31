@@ -3,8 +3,10 @@ const Discord = require("discord.js");
 exports.run = async (app, message, client) => {
   const asf = new Discord.MessageEmbed()
 
-    .setColor("RED")
-    .setDescription("<a:loading:776390566665650176> Ping Hesaplanıyor...");
+    .setColor("RANDOM")
+    .setDescription(
+      "<a:yrnex_loading:794118093814104064> Ping Hesaplanıyor..."
+    );
 
   let start = Date.now();
   let mesaj = await message.channel.send(asf);
@@ -14,7 +16,7 @@ exports.run = async (app, message, client) => {
   setInterval(() => {
     const only = new Discord.MessageEmbed()
       .setDescription(
-        `  Mesaj Gecikme Süresi ; **${diff}Ms** \n\n <a:hypesquad2:775698163842416650> Bot Gecikme Süresi ; **${API}Ms**`
+        `<a:yrnex_discord:794118212693917718> Mesaj Gecikme Süresi ; **${diff}Ms** \n\n<a:yrnex_bulut:794118277705629696> Bot Gecikme Süresi ; **${API}Ms**`
       )
       .setColor("GREEN");
 
