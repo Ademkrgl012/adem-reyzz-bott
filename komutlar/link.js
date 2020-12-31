@@ -22,7 +22,7 @@ exports.run = async(client, message, args) => {
     
     db.delete(`reklamFiltre_${message.guild.id}`)
     
-    message.channel.send(`<:yr_hayr:793837203478020127> **Reklam Engel başarıyla açıldı.**`)
+    message.channel.send(`<:yr_hayr:793837203478020127> **Reklam Engel başarıyla .**`)
   }
  
 };

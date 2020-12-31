@@ -11,10 +11,10 @@ if(args[0] === 'aktif') {
 }
 if (args[0] === 'deaktif') {
   db.delete(`${message.guild.id}.kufur`)
-message.channel.send('<:yr_hayr:793837203478020127> Başarılı Şekilde `Deaktif` Edildi')
+message.channel.send('<:yr_hayr:793837203478020127> **Küfür Engel Başarıyla Kapatıldı.**')
 return
 }
-  message.channel.send('**Lüten y!küfür aktif` yada `y!küfür deaktif` Yazın!**')
+  message.channel.send('**Lüten y!küfür aktif` yada `y!küfür` Yazın!**')
 };
 exports.conf = {
  enabled: true,
