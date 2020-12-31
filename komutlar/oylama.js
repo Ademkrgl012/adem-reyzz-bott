@@ -15,16 +15,16 @@ exports.run = (client, message, args) => {
   if (!köseoylama) return message.channel.send(new Discord.MessageEmbed().setTitle(`Yazı Yazmayı Unuttun Kanka`)).then(m => m.delete(({ timeout: 5000})));
 
   message.channel.send(new Discord.MessageEmbed()
-        .setColor("PURPLE")
+        .setColor("BLACK")
         .addField(`Oylama Yapınız`, `**${köseoylama}**`)
-        .addField(`Komutu Kullanan Kişi ${message.author.tag}`,`Evet için <:yr_evet:793837194175447090> Hayır için <:yr_hayr:793837203478020127> Oylayınız.`)
+        .addField(`Komutu Kullanan Kişi ${message.author.tag}`,`Evet için 👍 Hayır için 👎 Oylayınız.`)
         .setDescription(` Not : Lütfen 2 Emojiyide Basmayınız`)
         .setThumbnail(client.user.avatarURL())
         .setFooter("Yrnex Oylama Sistemi", client.user.avatarURL())
     )
     .then(function(message) {
-    message.react(`<:yr_evet:793837194175447090>`);
-    message.react(`:yr_hayr:`);
+    message.react(`👍`);
+    message.react(`👎`);
     });
 };
 
