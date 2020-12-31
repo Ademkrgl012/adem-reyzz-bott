@@ -23,11 +23,11 @@ exports.run = async (client, message, args) => {
   message.channel.bulkDelete(args[0]);
   return message.channel
     .send(
-      new Discord.MessageEmbed().setTitle(
-        "<:yr_evet:793837194175447090>  " +
-          `${args[0]}` +
-          " Adet mesaj silindi."
-      )
+      new Discord.MessageEmbed().addField(
+      `<:yr_evet:793837194175447090> ${args[0]} Adet Mesaj Silindi`,
+      `<a:yrnex_yetkili:794224205662257153> **Silen Yetkili:** <@${message.author.id}>`,
+      true
+    )
     )
     .then(m => m.delete({ timeout: 5000 }));
 };
@@ -41,3 +41,4 @@ exports.conf = {
 exports.help = {
   name: "sil"
 };
+
