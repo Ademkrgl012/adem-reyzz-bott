@@ -10,14 +10,14 @@ exports.run = async (bot, msg, args) => {
         const çekiliş = new Discord.MessageEmbed()
                 .setColor('GOLD')
         .setFooter(`${msg.author.username} Başarıyla Çekiliş Komutunu Kullandı!`, msg.author.avatarURL)
-        .setAuthor('Daemon Giveaway Yardım Menüsü')
+        .setAuthor('Yrnex Yardım Menüsü')
         .setThumbnail('https://cdn.discordapp.com/attachments/attachments/779352182033350696/779436272862756894/b0dc9c624be542e492eaf456a74edec6PnDsNClw3DsOzEtr-9.jpg')
-        .setDescription('<a:yr_trnctac:775380721682087936> Botu Davet Etmek İçin `dg!davet` yazabilirisiniz.',false)
+        .setDescription('<a:yr_trnctac:775380721682087936> Botu Davet Etmek İçin `y!davet` yazabilirisiniz.',false)
         .addField('**__MODERASYON__**','<a:yr_cekls:775360594252791858> `y!moderasyon` \nModerasyon Komutlarını Görüntülersiniz.',false )
         .addField('**__KULLANICI__**','<a:squad:775385865492234260>  `y!kullanıcı` \nKullanıcı Komutlarını Görüntülersiniz.',true)
         .addField('**__ABONE SİSTEMİ__**', '<:yrnex_youtube:794170019034038314> `y!abone-sistemi` \nAbone Rol Komutlarını Görüntülersiniz.',false)
         .addField('**__Bilgilendirme__**', '<a:rainbowzincir:779439237061672981>  `y!davet` | Botu Sununuya Davet Edersiniz \n<a:rainbowzincir:779439237061672981> `y!ping` | Botun İslatistiklerini Görürsünüz',true)
-  
+        .setImage('https://cdn.discordapp.com/attachments/attachments/784405293139623967/794182029271891988/standard_19.gif',true)
 msg.channel.send(çekiliş)
     
 }
