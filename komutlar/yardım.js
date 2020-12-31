@@ -15,7 +15,7 @@ exports.run = async (bot, msg, args) => {
         .setDescription('<a:yr_trnctac:775380721682087936> Botu Davet Etmek İçin `dg!davet` yazabilirisiniz.',false)
         .addField('**__MODERASYON__**','<a:yr_cekls:775360594252791858> `y!moderasyon` \nModerasyon Komutlarını Görüntülersiniz.',false )
         .addField('**__KULLANICI__**','<a:squad:775385865492234260>  `y!kullanıcı` \nKullanıcı Komutlarını Görüntülersiniz.',true)
-        .addField('**__ABONE SİSTEMİ__**', '<a:prlkelmas:779386058194288643> `y!abone-sistemi` \nAbone Rol Komutlarını Görüntülersiniz.',false)
+        .addField('**__ABONE SİSTEMİ__**', '<:yrnex_youtube:794170019034038314> `y!abone-sistemi` \nAbone Rol Komutlarını Görüntülersiniz.',false)
         .addField('**__Bilgilendirme__**', '<a:rainbowzincir:779439237061672981>  `y!davet` | Botu Sununuya Davet Edersiniz \n<a:rainbowzincir:779439237061672981> `y!ping` | Botun İslatistiklerini Görürsünüz',true)
   
 msg.channel.send(çekiliş)
