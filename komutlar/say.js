@@ -27,28 +27,16 @@ exports.run = async (client, message, args) => {
     )
 
     .addField(
-      `<a:mag_right:771416107000922173> **__Sunucudaki Toplam Üye Sayısı__**`,
+      `👥  **__Sunucudaki Toplam Üye Sayısı__**`,
       `**\`\`\`${message.guild.memberCount}\`\`\`**`
     )
 
-    .addField(
-      `<a:mag_right:771416107000922173> **__Seslideki Üye Sayısı__**`,
-      `**\`\`\`${count}\`\`\`**`
-    )
+    .addField(`🎧  **__Seslideki Üye Sayısı__**`, `**\`\`\`${count}\`\`\`**`)
 
-    .addField(
-      `<a:gear:771415920186753034> **__Güvenlik Seviyesi__**`,
-      `**\`\`\`${güvenlik}\`\`\`**`
-    )
-    .addField(
-      `<a:open_file_folder:771416467051905066>  **__Yazı Kanalları__**`,
-      `» **${textChannels}**`
-    )
+    .addField(`🔰  **__Güvenlik Seviyesi__**`, `**\`\`\`${güvenlik}\`\`\`**`)
+    .addField(`💬  **__Yazı Kanalları__**`, `» **${textChannels}**`)
 
-    .addField(
-      `<a:open_file_folder:771416467051905066>  **__Ses Kanalları__**`,
-      `» **${voiceChannels.size}**`
-    )
+    .addField(`🎶  **__Ses Kanalları__**`, `» **${voiceChannels.size}**`)
 
     .addField(
       `<a:scroll:771416646547406918>  **__Roller__**`,
@@ -61,12 +49,12 @@ exports.run = async (client, message, args) => {
     )
 
     .addField(
-      `<a:warning:771417064946663445>  **__Boost Seviyesi__**`,
+      `📊  **__Boost Seviyesi__**`,
       `»  **${message.guild.premiumTier}/3**`
     )
 
     .addField(
-      `<a:warning:771417064946663445>  **__Boost Sayısı__**`,
+      `🚀  **__Boost Sayısı__**`,
       `»  **${message.guild.premiumSubscriptionCount}**`
     )
 
