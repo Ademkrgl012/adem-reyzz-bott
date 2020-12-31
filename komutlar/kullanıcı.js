@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
     .setTitle("👥 Yrnex Kullanıcı Komutları!")
     .setTimestamp()
     .setDescription(
-      "<:emoji_3:793928384932610099>  **y!avatar** = Avatarınıza bakarsınız.  \n <:emoji_3:793928384932610099> **y!yetkilerim** = Yetkilerini görürsün.  \n <:emoji_3:793928384932610099> **y!profil** = Profilini görürsün.  \n <:emoji_3:793928384932610099> **y!sunucuresmi** = Sunucu resmini gösterir.  \n <:emoji_3:793928384932610099> **y!ping** = Botun Pingine Bakarsın.  \n <:emoji_3:793928384932610099> **y!id** = Birisinin id'sine Bakarsın.  \n <:emoji_3:793928384932610099> **y!davet** = Beni Sunucuna Ekle.  \n <:emoji_3:793928384932610099> **y!istatistik** = Bot istatistiklerini görürsünüz.  \n <:emoji_3:793928384932610099> **y!bug-bildir** = Yazdığınız bug'u yapımcılarıma bildirir. "
+      "<:emoji_3:793928384932610099> **y!avatar** = Avatarınızı görürsün.  \n <:emoji_3:793928384932610099> **y!yetkilerim** = Yetkilerini görürsün.  \n <:emoji_3:793928384932610099> **y!profil** = Profilini görürsün.  \n <:emoji_3:793928384932610099> **y!sunucuresmi** = Sunucu resmini gösterir.  \n <:emoji_3:793928384932610099> **y!ping** = Botun Pingine Bakarsın.  \n <:emoji_3:793928384932610099> **y!id** = Birisinin id'sine Bakarsın.  \n <:emoji_3:793928384932610099> **y!davet** = Beni Sunucuna Ekle.  \n <:emoji_3:793928384932610099> **y!istatistik** = Bot istatistiklerini görürsünüz.  \n <:emoji_3:793928384932610099> **y!bug-bildir** = Yazdığınız bug'u yapımcılarıma bildirir. "
     )
     .setImage(
       "https://cdn.discordapp.com/attachments/765269752788025375/765912834592342016/Untitled_design_1.gif"
