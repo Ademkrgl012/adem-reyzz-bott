@@ -1,59 +1,34 @@
 const Discord = require("discord.js");
-const moment = require("moment");
 const db = require("quick.db");
-const ayarlar = require("../ayarlar.json");
-const client = new Discord.Client();
-require("moment-duration-format");
-const prefix = ayarlar.prefix;
-exports.run = async (bot, msg, args) => {
-  const çekiliş = new Discord.MessageEmbed()
-    .setColor("GOLD")
-    .setFooter(
-      `${msg.author.username} Başarıyla Çekiliş Komutunu Kullandı!`,
-      msg.author.avatarURL
-    )
-    .setAuthor("Yrnex Yardım Menüsü")
-    .setThumbnail(
-      "https://cdn.discordapp.com/attachments/attachments/779352182033350696/779436272862756894/b0dc9c624be542e492eaf456a74edec6PnDsNClw3DsOzEtr-9.jpg"
-    )
+
+exports.run = async (client, message, args) => {
+  const yardım = new Discord.MessageEmbed()
+    .setColor("BLACK")
+    .setTitle("<a:kitab:775385879618519062> Yrnex Yardım Menüsüne Hoşgeldin!")
+    .setTimestamp()
     .setDescription(
-      "<a:yr_trnctac:775380721682087936> Botu Davet Etmek İçin `y!davet` yazabilirisiniz.",
-      false
+      "🔰 **y!moderasyon** = __Moderasyon komutlarını görüntülersiniz.__\n 👥 **y!kullanıcı** = __Kullanıcı komutlarını görüntülersiniz.__\n <:YouTube:791401370560495668> **y!abone-sistemi** = __Abone Rol komutlarını görüntülersiniz.__"
     )
     .addField(
       "**__MODERASYON__**",
       "<a:yr_cekls:775360594252791858> `y!moderasyon` \nModerasyon Komutlarını Görüntülersiniz.",
       false
     )
-    .addField(
-      "**__KULLANICI__**",
-      "<a:squad:775385865492234260>  `y!kullanıcı` \nKullanıcı Komutlarını Görüntülersiniz.",
-      true
-    )
-    .addField(
-      "**__ABONE SİSTEMİ__**",
-      "<:yrnex_youtube:794170019034038314> `y!abone-sistemi` \nAbone Rol Komutlarını Görüntülersiniz.",
-      false
-    )
-    .addField(
-      "**__Bilgilendirme__**",
-      "<a:rainbowzincir:779439237061672981>  `y!davet` | Botu Sununuya Davet Edersiniz \n<a:rainbowzincir:779439237061672981> `y!ping` | Botun İslatistiklerini Görürsünüz",
-      true
-    )
     .setImage(
-      "https://cdn.discordapp.com/attachments/attachments/784405293139623967/794182029271891988/standard_19.gif"
+      "https://cdn.discordapp.com/attachments/781872196654071819/793873257395912704/standard_19.gif"
     );
-  msg.channel.send(çekiliş);
+  message.channel.send(yardım);
 };
 exports.conf = {
   enabled: true,
-  guildOnly: true,
-  aliases: ["yardım", "help"],
-  kategori: "yardım",
-  permLevel: 0
+  guildOnly: false,
+  aliases: ["help", "y"],
+  permLevel: `Yetki gerekmiyor.`
 };
+
 exports.help = {
   name: "yardım",
-  description: "İstediğiniz kullanıcını bilgilerini gösterir.",
-  usage: "yardım"
+  category: "kullanıcı",
+  description: "Yardım Menüsü.",
+  usage: "y!yardım"
 };
