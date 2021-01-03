@@ -32,7 +32,11 @@ client.on("message", message => {
   }
 });
 
-
+client.on("ready", () => {
+  console.log(`Bütün komutlar başarıyla yüklendi!`);
+  client.user.setStatus("online");
+  client.user.setActivity("Yrnex Bot Bakımda | y!yardım y!davet");
+});
 
 const log = message => {
   console.log(`[${moment().format("YYYY-MM-DD HH:mm:ss")}] ${message}`);
