@@ -13,45 +13,33 @@ app.listen(process.env.PORT, () =>
 );
 //////////////////
 
-client.on("guildMemberAdd", async member => {
-  let sayi = await db.fetch(`sayac_${member.guild.id}`);
-  let kanal = await db.fetch(`sayacK_${member.guild.id}`);
-
-  if (!sayi) return;
-  if (!kanal) return;
-  const embed = new Discord.MessageEmbed()
-    .setDescription(
-      `**❃ Sayaç Sistemi ❃** \n**⤷** \`${
-        member.user.tag
-      }\` **adlı kullanıcı katıldı.** \n**⤷** \`${sayi}\` **kişi olmamıza** \`${sayi -
-        member.guild.members.cache
-          .size}\` **kişi kaldı!**  \n**⤷** **Seninle beraber** \`${
-        member.guild.members.cache.size
-      }\` **kişiyiz!** \n**●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●**`
-    )
-    .setColor("RANDOM")
-    .setTimestamp();
-  client.channels.cache.get(kanal).send(embed);
-});
 client.on("guildMemberRemove", async member => {
-  let sayi = await db.fetch(`sayac_${member.guild.id}`);
-  let kanal = await db.fetch(`sayacK_${member.guild.id}`);
+  const channel = db.fetch(`sKanal_${member.guild.id}`);
+  if (db.has(`sayac_${member.guild.id}`) == false) return;
+  if (db.has(`sKanal_${member.guild.id}`) == false) return;
 
-  if (!sayi) return;
-  if (!kanal) return;
-  const embed = new Discord.MessageEmbed()
-    .setDescription(
-      `**❃ Sayaç Sistemi ❃** \n**⤷** \`${
-        member.user.tag
-      }\` **adlı kullanıcı ayrıldı.** \n**⤷** \`${sayi}\` **kişi olmamıza** \`${sayi -
-        member.guild.members.cache
-          .size}\` **kişi kaldı!**  \n**⤷** **Sensiz** \`${
-        member.guild.members.cache.size
-      }\` **kişiyiz!** \n**●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●**`
-    )
-    .setColor("RANDOM")
-    .setTimestamp();
-  client.channels.cache.get(kanal).send(embed);
+  member.guild.channels.cache
+    .get(channel)
+    .send(
+      `**${member.user.tag}** Sunucudan ayrıldı! \`${db.fetch(
+        `sayac_${member.guild.id}`
+      )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
+        member.guild.memberCount}\` üye kaldı!`
+    );
+});
+client.on("guildMemberAdd", async member => {
+  const channel = db.fetch(`sKanal_${member.guild.id}`);
+  if (db.has(`sayac_${member.guild.id}`) == false) return;
+  if (db.has(`sKanal_${member.guild.id}`) == false) return;
+
+  member.guild.channels.cache
+    .get(channel)
+    .send(
+      `**${member.user.tag}** Sunucuya Katıldı :tada:! \`${db.fetch(
+        `sayac_${member.guild.id}`
+      )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
+        member.guild.memberCount}\` üye kaldı!`
+    );
 });
 
 //////////////////
