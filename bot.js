@@ -13,6 +13,49 @@ app.listen(process.env.PORT, () =>
 );
 //////////////////
 
+client.on("guildMemberAdd", async member => {
+  let sayi = await db.fetch(`sayac_${member.guild.id}`);
+  let kanal = await db.fetch(`sayacK_${member.guild.id}`);
+
+  if (!sayi) return;
+  if (!kanal) return;
+  const embed = new Discord.MessageEmbed()
+    .setDescription(
+      `**❃ Sayaç Sistemi ❃** \n**⤷** \`${
+        member.user.tag
+      }\` **adlı kullanıcı katıldı.** \n**⤷** \`${sayi}\` **kişi olmamıza** \`${sayi -
+        member.guild.members.cache
+          .size}\` **kişi kaldı!**  \n**⤷** **Seninle beraber** \`${
+        member.guild.members.cache.size
+      }\` **kişiyiz!** \n**●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●**`
+    )
+    .setColor("RANDOM")
+    .setTimestamp();
+  client.channels.cache.get(kanal).send(embed);
+});
+client.on("guildMemberRemove", async member => {
+  let sayi = await db.fetch(`sayac_${member.guild.id}`);
+  let kanal = await db.fetch(`sayacK_${member.guild.id}`);
+
+  if (!sayi) return;
+  if (!kanal) return;
+  const embed = new Discord.MessageEmbed()
+    .setDescription(
+      `**❃ Sayaç Sistemi ❃** \n**⤷** \`${
+        member.user.tag
+      }\` **adlı kullanıcı ayrıldı.** \n**⤷** \`${sayi}\` **kişi olmamıza** \`${sayi -
+        member.guild.members.cache
+          .size}\` **kişi kaldı!**  \n**⤷** **Sensiz** \`${
+        member.guild.members.cache.size
+      }\` **kişiyiz!** \n**●▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬●**`
+    )
+    .setColor("RANDOM")
+    .setTimestamp();
+  client.channels.cache.get(kanal).send(embed);
+});
+
+//////////////////
+
 client.on("message", message => {
   let client = message.client;
   if (message.author.bot) return;
@@ -210,48 +253,3 @@ client.on("message", async msg => {
 });
 
 client.login(ayarlar.token);
-
-client.on("guildMemberAdd", async member => {
-  let sayac = await db.fetch(`sayac_${member.guild.id}`);
-  let skanal = await db.fetch(`sayacK_${member.guild.id}`);
-  if (!sayac) return;
-  if (member.guild.memberCount >= sayac) {
-    member.guild.channels.cache
-      .get(skanal)
-      .send(
-        `:GiriGif: **${member.user.tag}** sunucuya **katıldı**! \`${db.fetch(
-          `sayac_${member.guild.id}`
-        )}\` kişi olduk! :RainbowiekGif: Sayaç sıfırlandı.`
-      );
-    db.delete(`sayac_${member.guild.id}`);
-    db.delete(`sayacK_${member.guild.id}`);
-    return;
-  } else {
-    member.guild.channels.cache
-      .get(skanal)
-      .send(
-        `:GiriGif: **${member.user.tag}** sunucuya **katıldı**! \`${db.fetch(
-          `sayac_${member.guild.id}`
-        )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
-          member.guild.memberCount}\` üye kaldı! Sunucumuz şuanda \`${
-          member.guild.memberCount
-        }\` kişi!`
-      );
-  }
-});
-
-client.on("guildMemberRemove", async member => {
-  let sayac = await db.fetch(`sayac_${member.guild.id}`);
-  let skanal = await db.fetch(`sayacK_${member.guild.id}`);
-  if (!sayac) return;
-  member.guild.channels.cache
-    .get(skanal)
-    .send(
-      `:kGif: **${member.user.tag}** sunucudan **ayrıldı**! \`${db.fetch(
-        `sayac_${member.guild.id}`
-      )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
-        member.guild.memberCount}\` üye kaldı! Sunucumuz şuanda \`${
-        member.guild.memberCount
-      }\` kişi!`
-    );
-});
