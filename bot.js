@@ -210,3 +210,48 @@ client.on("message", async msg => {
 });
 
 client.login(ayarlar.token);
+
+client.on("guildMemberAdd", async member => {
+  let sayac = await db.fetch(`sayac_${member.guild.id}`);
+  let skanal = await db.fetch(`sayacK_${member.guild.id}`);
+  if (!sayac) return;
+  if (member.guild.memberCount >= sayac) {
+    member.guild.channels.cache
+      .get(skanal)
+      .send(
+        `:GiriGif: **${member.user.tag}** sunucuya **katıldı**! \`${db.fetch(
+          `sayac_${member.guild.id}`
+        )}\` kişi olduk! :RainbowiekGif: Sayaç sıfırlandı.`
+      );
+    db.delete(`sayac_${member.guild.id}`);
+    db.delete(`sayacK_${member.guild.id}`);
+    return;
+  } else {
+    member.guild.channels.cache
+      .get(skanal)
+      .send(
+        `:GiriGif: **${member.user.tag}** sunucuya **katıldı**! \`${db.fetch(
+          `sayac_${member.guild.id}`
+        )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
+          member.guild.memberCount}\` üye kaldı! Sunucumuz şuanda \`${
+          member.guild.memberCount
+        }\` kişi!`
+      );
+  }
+});
+
+client.on("guildMemberRemove", async member => {
+  let sayac = await db.fetch(`sayac_${member.guild.id}`);
+  let skanal = await db.fetch(`sayacK_${member.guild.id}`);
+  if (!sayac) return;
+  member.guild.channels.cache
+    .get(skanal)
+    .send(
+      `:kGif: **${member.user.tag}** sunucudan **ayrıldı**! \`${db.fetch(
+        `sayac_${member.guild.id}`
+      )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
+        member.guild.memberCount}\` üye kaldı! Sunucumuz şuanda \`${
+        member.guild.memberCount
+      }\` kişi!`
+    );
+});
