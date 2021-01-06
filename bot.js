@@ -35,12 +35,8 @@ client.on("message", message => {
 client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
   client.user.setStatus("online");
-  client.user.setActivity("⏰ Yrnex Artık 7/24");
-  var oyun = [
-    "y!yardım | y!davet ",
-    "Prefix: y!"
-
-  ];
+  client.user.setActivity("Yrnex Artık 7/24");
+  var oyun = ["y!yardım | y!davet ", "Prefix: y!"];
 
   setInterval(function() {
     var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
