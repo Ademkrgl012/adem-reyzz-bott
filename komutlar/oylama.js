@@ -1,27 +1,51 @@
 const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
-  let mesaj = args.slice(0).join(" ");
-  if (mesaj.length < 1) return message.reply("Yapıcağın Oylamanın İsmin Yaz");
+  if (message.channel.type == "dm") return;
+  if (message.channel.type !== "text") return;
+
+  if (!message.member.hasPermission("MANAGE_MESSAGES"))
+    return message
+      .reply(
+        `Bu Komutu Kullanabilmek İçin **Mesajları Yönet** İznine Sahip Olmalısın Ama Senin Yok Kullanamazsın`
+      )
+      .then(m => m.delete({ timeout: 10000 }));
+
   message.delete();
-  const embed = new Discord.RichEmbed()
-    .setAuthor("OYLAMA")
-    .setColor(3447003)
-    .setDescription(
-      `${mesaj} \n\n\ Evet İçin: :thumbsup: Hayır İçin: :thumbsdown: `
-    );
-  return message.channel.sendEmbed(embed);
+
+  let question = args.join(" ");
+
+  let user = message.author.username;
+
+  if (!question)
+    return message.channel
+      .send(new Discord.MessageEmbed().setTitle(`Yazı Yazmayı Unuttun Yaw`))
+      .then(m => m.delete({ timeout: 5000 }));
+
+  message.channel
+    .send(
+      new Discord.MessageEmbed()
+        .setColor("007bff")
+        .setThumbnail(client.user.avatarURL())
+        .setTimestamp()
+        .setFooter("YRNEX", client.user.avatarURL())
+        .addField(`**__OYLAMA__**`, `**${question}**`)
+    )
+    .then(function(message) {
+      message.react("✅");
+      message.react("❌");
+    });
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
-  permLevel: 2
+  aliases: ["oylama", "voting"],
+  permLevel: 0
 };
 
 exports.help = {
   name: "oylama",
-  description: "Oylama Yapar.",
-  usage: "oylama"
+  description: "Oylama yapmanızı sağlamaktadır.",
+  usage: "!oylama <oylamaismi>"
 };
