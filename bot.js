@@ -37,9 +37,9 @@ client.on("ready", () => {
   client.user.setStatus("online");
   client.user.setActivity("Yrnex Bot Bakımda");
   var oyun = [
-    "YouTube:Yrnex Creative",
-    "y!yardım | y!davet ",
-    "Prefix: y!"
+    "⏰YouTube:Yrnex Creative",
+    "🔰 y!yardım | y!davet ",
+    "🍁 Prefix: y!"
 
   ];
 
