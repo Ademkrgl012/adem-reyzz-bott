@@ -14,10 +14,10 @@ exports.run = async (client, message, args) => {
         "<:yr_hayr:793837203478020127> Silinecek miktar giriniz."
       )
     );
-  if (args[0] > 100)
+  if (args[0] > 200)
     return message.channel.send(
       new Discord.MessageEmbed().setTitle(
-        "<:yr_hayr:793837203478020127> Mesaj silme limiti `100` üzeri mesajı aynı anda silemem."
+        "<:yr_hayr:793837203478020127> Mesaj silme limiti `200` üzeri mesajı aynı anda silemem."
       )
     );
   message.channel.bulkDelete(args[0]);

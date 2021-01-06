@@ -13,37 +13,6 @@ app.listen(process.env.PORT, () =>
 );
 //////////////////
 
-client.on("guildMemberRemove", async member => {
-  const channel = db.fetch(`sKanal_${member.guild.id}`);
-  if (db.has(`sayac_${member.guild.id}`) == false) return;
-  if (db.has(`sKanal_${member.guild.id}`) == false) return;
-
-  member.guild.channels.cache
-    .get(channel)
-    .send(
-      `**${member.user.tag}** Sunucudan ayrıldı! \`${db.fetch(
-        `sayac_${member.guild.id}`
-      )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
-        member.guild.memberCount}\` üye kaldı!`
-    );
-});
-client.on("guildMemberAdd", async member => {
-  const channel = db.fetch(`sKanal_${member.guild.id}`);
-  if (db.has(`sayac_${member.guild.id}`) == false) return;
-  if (db.has(`sKanal_${member.guild.id}`) == false) return;
-
-  member.guild.channels.cache
-    .get(channel)
-    .send(
-      `**${member.user.tag}** Sunucuya Katıldı :tada:! \`${db.fetch(
-        `sayac_${member.guild.id}`
-      )}\` üye olmamıza son \`${db.fetch(`sayac_${member.guild.id}`) -
-        member.guild.memberCount}\` üye kaldı!`
-    );
-});
-
-//////////////////
-
 client.on("message", message => {
   let client = message.client;
   if (message.author.bot) return;
@@ -63,11 +32,7 @@ client.on("message", message => {
   }
 });
 
-client.on("ready", () => {
-  console.log(`Bütün komutlar başarıyla yüklendi!`);
-  client.user.setStatus("online");
-  client.user.setActivity("Yrnex Bot Bakımda | y!yardım y!davet");
-});
+
 
 const log = message => {
   console.log(`[${moment().format("YYYY-MM-DD HH:mm:ss")}] ${message}`);
