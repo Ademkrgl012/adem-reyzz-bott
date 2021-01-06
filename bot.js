@@ -37,9 +37,8 @@ client.on("ready", () => {
   client.user.setStatus("online");
   client.user.setActivity("⏰ Yrnex Artık 7/24");
   var oyun = [
-    " YouTube : Yrnex Creative",
-    "🔰 y!yardım | y!davet ",
-    "🍁 Prefix: y!"
+    "y!yardım | y!davet ",
+    "Prefix: y!"
 
   ];
 
