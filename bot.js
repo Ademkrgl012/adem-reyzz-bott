@@ -32,7 +32,23 @@ client.on("message", message => {
   }
 });
 
+client.on("ready", () => {
+  console.log(`Bütün komutlar başarıyla yüklendi!`);
+  client.user.setStatus("online");
+  client.user.setActivity("Yrnex Bot Bakımda");
+  var oyun = [
+    "YouTube:Yrnex Creative",
+    "y!yardım | y!davet ",
+    "Prefix: y!"
 
+  ];
+
+  setInterval(function() {
+    var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
+
+    client.user.setActivity(oyun[random], "");
+  }, 2 * 2500);
+});
 
 const log = message => {
   console.log(`[${moment().format("YYYY-MM-DD HH:mm:ss")}] ${message}`);
