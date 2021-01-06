@@ -35,9 +35,9 @@ client.on("message", message => {
 client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
   client.user.setStatus("online");
-  client.user.setActivity("Yrnex Bot Bakımda");
+  client.user.setActivity("⏰ Yrnex Artık 7/24");
   var oyun = [
-    "⏰YouTube:Yrnex Creative",
+    " YouTube : Yrnex Creative",
     "🔰 y!yardım | y!davet ",
     "🍁 Prefix: y!"
 
