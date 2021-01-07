@@ -199,7 +199,7 @@ client.on("message", async msg => {
     ) {
       try {
         return msg.reply(
-          "**Aleyküm Selam , Hoşgeldin** <a:mutlu:792028555008540684>"
+          "**Aleyküm Selam Hoşgeldin** <a:mutlu:792028555008540684>"
         );
       } catch (err) {
         console.log(err);
