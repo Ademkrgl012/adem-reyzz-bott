@@ -1,35 +1,64 @@
 const Discord = require('discord.js')
+const db = require('quick.db')
+const ayarlar = require('../bot.js')
+ 
+exports.run = async (client, message, args) => {
+  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("<a:dnengif:727894860513804494> Bu komutu kullanabilmek için **yönetici** yetkisine sahip olmalısın.")
+  
+  const sayacsayi = await db.fetch(`sayac_${message.guild.id}`);
+  const sayackanal = message.mentions.channels.first()
 
-exports.run = async (client, message, args, level) => {
-  message.delete(3000)
-  try {
+      
+  if(args[0] !== "ayarla" && args[0] !== "sıfırla") return message.channel.send("<a:dnengif:727894860513804494> Yanlış Kullanım Lütfen **ayarla** veya **sıfırla** yaz.")
+    if(args[0] === "sıfırla") {
+    if(!sayacsayi) {
+      message.channel.send(`<a:YanpSnennleGif:727895115112251392> | **Ayarlanmayan şeyi sıfırlayamazsın.**`)
+return
+    }
     
-    const embed = new Discord.RichEmbed()
-    .setTitle(`Hollywood bot Sayaç komut desteği -  <a:hollyayarlar:755532338716344475>`)
-    .setFooter(message.author.username)
-    .setColor('RANDOM')
-    .setImage('https://i.gyazo.com/82a43b6fe23592395d5c3aad4f7790b1.gif')
-    .setTimestamp()
-    .setFooter(message.author.username , message.author.avatarURL)
-    .setFooter("Sayaç komutunu kullanabilmek için. İlk önce rolü üstlere alınız. Ardından h!sayaç-ayarla 50 #sayaç yazarak aktif edebilirsiniz.")
-
-    return message.channel.send({embed});
-    
-    message.channel.send();
-  } catch (err) {
-    message.channel.send('Daha Sonra Tekrar Deneyin!\n' + err).catch();
+    db.delete(`sayac_${message.guild.id}`)
+    db.delete(`sayacK_${message.guild.id}`)
+    message.channel.send(`<a:TikkGF:1727895189259157565> | **Sayaç başarıyla sıfırlandı.**`)
+    return
   }
-};
+  
+  if(args[0] === "ayarla") {
+  if(isNaN(args[1])) {
+    message.channel.send(`<a:AyarGf:727894683061321759> | **Bir sayı yazmalısın.**`)
+    return
+  }
+  
+  if(!sayackanal) {
+   await message.channel.send(`<a:AyarGf:727894683061321759> | **Sayaç kanalını etiketlemelisin.**`)
+  return
+  }
+  
+  
 
+  
+
+ 
+        if(args[1] <= message.guild.memberCount) {
+                message.channel.send(`<a:AyarGf:727894683061321759> | **Sunucudaki kullanıcı sayısından** (${message.guild.memberCount}) **daha yüksek bir değer girmelisin.**`)
+                return
+        }
+  
+  db.set(`sayac_${message.guild.id}`, args[1])
+  db.set(`sayacK_${message.guild.id}`, sayackanal.id)
+  
+  message.channel.send(`<a:TikkGF:727895189259157565> | **Sayaç** \`${args[1]}\`, **sayaç kanalı** ${sayackanal} **olarak ayarlandı.**`)
+}
+}
+ 
 exports.conf = {
-  enabled: true,
-  aliases: [],
-  guildOnly: false,
-  permLevel: 0
-};
-
+        enabled: true,
+        guildOnly: true,
+        aliases: ['sayac'],
+        permLevel: 0
+}
+ 
 exports.help = {
-  name: 'sayaç',
-  description: 'Bottaki Komut Sayısını Gösterir.',
-  usage: 'sayaç'
-};
+        name: 'sayaç',
+        description: 'Sayacı ayarlar.',
+        usage: 'sayaç <sayı> <#kanal> / sıfırla'
+}

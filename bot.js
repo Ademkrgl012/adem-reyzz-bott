@@ -11,7 +11,12 @@ app.get("/", (req, res) => res.send("Bot Aktif"));
 app.listen(process.env.PORT, () =>
   console.log("Port ayarlandı: " + process.env.PORT)
 );
-//////////////////
+
+//////////////// SAYAÇ ////////////////////////
+
+
+
+//////////// SAYAÇ SON ///////////
 
 client.on("message", message => {
   let client = message.client;
