@@ -7,9 +7,7 @@ exports.run = async (client, message, args) => {
   if (güvenlik === "MEDIUM") güvenlik = "Orta";
   if (güvenlik === "HIGH") güvenlik = "Yüksek";
   if (güvenlik === "VERY_HIGH") güvenlik = " En Yüksek";
-  const voiceChannels = message.guild.channels.cache.filter(
-    c => c.type === "voice"
-  );
+  const voiceChannels = message.guild.channels.cache.filter(c => c.type === "voice");
   let count = 0;
   let guild = message.guild;
   let botlar = message.guild.members.cache.filter(m => m.user.bot).size;
