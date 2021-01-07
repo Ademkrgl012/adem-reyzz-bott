@@ -8,7 +8,6 @@ exports.run = async (client, message, args) => {
       `<@768080464984014918>`,
       true
     )
-    .setThumbnail(client.user.avatarURL());
   message.channel.send(wizard); //narcoscode
 };
 exports.conf = {
