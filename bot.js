@@ -14,84 +14,56 @@ app.listen(process.env.PORT, () =>
 
 //////////////// SAYAÇ ////////////////////////
 
-client.on("message", async message => {
-  let sayac = JSON.parse(fs.readFileSync("./ayarlar/sayac.json", "utf8"));
-  if (sayac[message.guild.id]) {
-    if (sayac[message.guild.id].sayi <= message.guild.members.size) {
-      const embed = new Discord.RichEmbed()
-        .setDescription(
-          `<a:tadaaa:749237946527383592> Tebrikler, başarılı bir şekilde ${sayac[message.guild.id].sayi} kullanıcıya ulaştık!`
-        )
-        .setColor("0x808080")
-        .setTimestamp();
-      message.channel.send({ embed });
-      delete sayac[message.guild.id].sayi;
-      delete sayac[message.guild.id];
-      fs.writeFile("./ayarlar/sayac.json", JSON.stringify(sayac), err => {
-        console.log(err);
-      });
+client.on('guildMemberAdd', member => {
+     let kanal = db.fetch(`güvenlik.${member.guild.id}`)
+     if(!kanal) return;
+
+       let aylar = {
+               "01": "Ocak",
+               "02": "Şubat",
+               "03": "Mart",
+               "04": "Nisan",
+               "05": "Mayıs",
+               "06": "Haziran",
+               "07": "Temmuz",
+               "08": "Ağustos",
+               "09": "Eylül",
+               "10": "Ekim",
+               "11": "Kasım",
+               "12": "Aralık"
     }
-  }
-});
 
-client.on("guildMemberRemove", async member => {
-  let sayac = JSON.parse(fs.readFileSync("./ayarlar/sayac.json", "utf8"));
-  let giriscikis = JSON.parse(fs.readFileSync("./ayarlar/sayac.json", "utf8"));
-  let embed = new Discord.RichEmbed()
-    .setTitle("")
-    .setDescription(``)
-    .setColor("RED")
-    .setFooter("", client.user.avatarURL);
+  let bitiş = member.user.createdAt
+      let günü = moment(new Date(bitiş).toISOString()).format('DD')
+      let ayı = moment(new Date(bitiş).toISOString()).format('MM').replace("01", "Ocak").replace("02","Şubat").replace("03","Mart").replace("04", "Nisan").replace("05", "Mayıs").replace("06", "Haziran").replace("07", "Temmuz").replace("08", "Ağustos").replace("09", "Eylül").replace("10","Ekim").replace("11","Kasım").replace("12","Aralık").replace("13","CodAre")//codare
+     let yılı =  moment(new Date(bitiş).toISOString()).format('YYYY')
+     let saati = moment(new Date(bitiş).toISOString()).format('HH:mm')
 
-  if (!giriscikis[member.guild.id].kanal) {
-    return;
-  }
+let günay = `${günü} ${ayı} ${yılı} ${saati}`  
 
-  try {
-    let giriscikiskanalID = giriscikis[member.guild.id].kanal;
-    let giriscikiskanali = client.guilds
-      .get(member.guild.id)
-      .channels.get(giriscikiskanalID);
-    giriscikiskanali.send(
-      `Sunucudan *${member.user.tag}*,ayrıldı, \**${
-        sayac[member.guild.id].sayi
-      }\** kişi olmamıza \**${sayac[member.guild.id].sayi -
-        member.guild.memberCount}\** kişi kaldı!`
-    );
-  } catch (e) {
-    // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
-    return console.log(e);
-  }
-});
-client.on("guildMemberAdd", async member => {
-  let sayac = JSON.parse(fs.readFileSync("./ayarlar/sayac.json", "utf8"));
-  let giriscikis = JSON.parse(fs.readFileSync("./ayarlar/sayac.json", "utf8"));
-  let embed = new Discord.RichEmbed()
-    .setTitle("")
-    .setDescription(``)
-    .setColor("GREEN")
-    .setFooter("", client.user.avatarURL);
+      let süre = member.user.createdAt
+      let gün = moment(new Date(süre).toISOString()).format('DD')
+      let hafta = moment(new Date(süre).toISOString()).format('WW')
+      let ay = moment(new Date(süre).toISOString()).format('MM')
+      let ayy = moment(new Date(süre).toISOString()).format('MM')
+      let yıl =  moment(new Date(süre).toISOString()).format('YYYY')
+     let yıl2 = moment(new Date().toISOString()).format('YYYY')
 
-  if (!giriscikis[member.guild.id].kanal) {
-    return;
-  }
+     let netyıl = yıl2 - yıl
 
-  try {
-    let giriscikiskanalID = giriscikis[member.guild.id].kanal;
-    let giriscikiskanali = client.guilds
-      .get(member.guild.id)
-      .channels.get(giriscikiskanalID);
-    giriscikiskanali.send(
-      ` Sunucuya *${member.user.tag}*,  katıldı **${
-        sayac[member.guild.id].sayi
-      }** kişi olmamıza **${sayac[member.guild.id].sayi -
-        member.guild.memberCount}** kişi kaldı!`
-    );
-  } catch (e) {
-    // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
-    return console.log(e);
-  }
-});
+     let created = ` ${netyıl} yıl  ${ay} ay ${hafta} hafta ${gün} gün önce`
+
+     let kontrol;
+     if(süre < 1296000000) kontrol = 'Bu hesap şüpheli!'
+     if(süre > 1296000000) kontrol = 'Bu hesap güvenli!'
+
+     let codare = new Discord.MessageEmbed()
+     .setColor('GREEN')
+     .setTitle(`${member.user.username} Katıldı`)
+     .setDescription('<@'+member.id+'> Bilgileri : \n\n  Hesap oluşturulma tarihi **[' + created + ']** (`' + günay + '`) \n\n Hesap durumu : **' + kontrol + '**')//codare
+     .setTimestamp()
+     client.channels.cache.get(kanal).send(codare)
+})
 
 //////////// SAYAÇ SON ///////////
 
