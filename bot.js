@@ -209,4 +209,10 @@ client.on("message", async msg => {
   if (!i) return;
 });
 
+client.on("ready", async () => {
+  let botVoiceChannel = client.channels.cache.get("792045224385183753");
+  console.log("Bot Ses Kanalına bağlandı!")
+  if (botVoiceChannel) botVoiceChannel.join().catch(err => console.error("Bot ses kanalına bağlanamadı!"));
+});
+
 client.login(ayarlar.token);
