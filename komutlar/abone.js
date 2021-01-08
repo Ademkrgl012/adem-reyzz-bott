@@ -34,7 +34,7 @@ exports.run = async (client, message, args) => {
 
   await abonekisi.roles.add(abonerol);
   const embed = new Discord.MessageEmbed()
-    .setTitle(`Abone Rolü Verildi!`)
+    .setTitle(`<a:sarionay:779734488896503868> Abone Rolü Verildi!`)
     .addField(
       `<a:vumpushype:789105762714255361> Abone Rolünü Veren Kişi:`,
       `<@${message.author.id}>`,
@@ -46,8 +46,8 @@ exports.run = async (client, message, args) => {
       true
     )
     .addField(
-      `<a:rainbowzincir:779439237061672981> Mesaj linki`,
-      `[Tıkla](https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id})`,
+      `<:ktl_kanal:797111575029743677> Altyapı Kanalı`,
+      `<#780550448029368350>`,
       true
     )
     .setColor(`RANDOM`)
