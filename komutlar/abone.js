@@ -13,15 +13,15 @@ exports.run = async (client, message, args) => {
   );
   if (!abonerol)
     return message.channel.send(
-      `<a:yr_uyar:775360587650564127> **__Abone rolü ayarlanmamış!__**`
+      `<a:vumpushype:789105762714255361> **__Abone rolü ayarlanmamış!__**`
     );
   if (!abonelog)
     return message.channel.send(
-      `<a:yr_uyar:775360587650564127> **__Abone log kanalı ayarlanmamış!__**`
+      `<a:vumpushype:789105762714255361> **__Abone log kanalı ayarlanmamış!__**`
     );
   if (!aboneyetkilisi)
     return message.channel.send(
-      `<a:yr_uyar:775360587650564127> **__Abone yetkili rolü ayarlanmamış!__**`
+      `<a:vumpushype:789105762714255361> **__Abone yetkili rolü ayarlanmamış!__**`
     );
   let user = message.mentions.users.first();
   if (!message.member.roles.cache.has(aboneyetkilisi))
@@ -36,12 +36,12 @@ exports.run = async (client, message, args) => {
   const embed = new Discord.MessageEmbed()
     .setTitle(`Abone Rolü Verildi!`)
     .addField(
-      `<a:squad:775385865492234260> Abone Rolünü Veren Kişi:`,
+      `<a:vumpushype:789105762714255361> Abone Rolünü Veren Kişi:`,
       `<@${message.author.id}>`,
       true
     )
     .addField(
-      `<a:squad:775385865492234260> Abone Rolü Verilen Kişi:`,
+      `<a:vumpushype:789105762714255361> Abone Rolü Verilen Kişi:`,
       `${user}`,
       true
     )
