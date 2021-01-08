@@ -35,8 +35,9 @@ client.on("message", message => {
 
 client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
-  client.user.setStatus("online");
-  client.user.setActivity("Yrnex Asistan | y!abone");
+client.user.setActivity(`Yrnex Asistan | y!abone`, {
+  type: "STREAMING",
+  url: "https://www.youtube.com/channel/UCiWIYa0CO5_BX279LLUsIuA?view_as=subscriber"})
 });
 
 const log = message => {
