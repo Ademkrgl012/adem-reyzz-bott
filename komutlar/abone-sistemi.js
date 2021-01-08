@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
     .setTitle("<:YouTube:791401370560495668> Yrnex Abone Sistemi Komutları! ")
     .setTimestamp()
     .setDescription(
-      "<:emoji_1:793928364133056513> **y!abone-yetkili-rol** = Abone Rolünü vericek yetkili rolünü seçer.  \n <:emoji_1:793928364133056513> **y!abone-rol** = Vericeğiniz Rolü ayarlarsınız.  \n <:emoji_1:793928364133056513> **y!abone-log** = Log mesajınn gitceği yer seçilir.  \n <:emoji_1:793928364133056513> **y!abone veya a** = Abone Rolü verme komutudur."
+      "<:emoji_1:793928364133056513> **+gstart** = Abone Rolünü vericek yetkili rolünü seçer.  \n <:emoji_1:793928364133056513> **+greroll** = Çekilişi kazanan kişiyi değiştirsiniz.  \n <:emoji_1:793928364133056513> **+gend** = Seçilen çekilişi bitir.  \n <:emoji_1:793928364133056513> **+gedit** = Bi çekilişe edit atarsınız.  \n <:emoji_1:793928364133056513> **+ping** = Botun ping'ini gösterir."
     )
     .setImage(
       "https://cdn.discordapp.com/attachments/765269752788025375/765912834592342016/Untitled_design_1.gif"
