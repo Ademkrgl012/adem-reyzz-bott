@@ -36,7 +36,7 @@ client.on("message", message => {
 client.on("ready", () => {
   console.log(`Bütün komutlar başarıyla yüklendi!`);
   client.user.setStatus("online");
-  client.user.setActivity("Yrnex | y!yardım");
+  client.user.setActivity("Yrnex Asistan | y!abone");
 });
 
 const log = message => {
