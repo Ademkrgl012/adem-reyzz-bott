@@ -14,14 +14,11 @@ app.listen(process.env.PORT, () =>
 
 ////////////////////////////////////////
 
-client.on("message", async message => {
-  if (message.content === "BURAYA BİRŞEYLER YAZ") {
-    try {
-      await message.react("emoji id");
-    } catch (error) {
-      console.error("Faild.");
-    }
-  }
+client.on("message", message => {
+if(message.channel.id !== "797822239126192148") return;
+
+message.react("<:yr_evet:793837194175447090>")
+message.react("<:yr_hayr:793837203478020127>")
 });
 
 ///////////////////////////////////////
