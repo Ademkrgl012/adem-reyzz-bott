@@ -14,6 +14,18 @@ app.listen(process.env.PORT, () =>
 
 ////////////////////////////////////////
 
+client.on("message", async message => {
+  if (message.content === "BURAYA BİRŞEYLER YAZ") {
+    try {
+      await message.react("emoji id");
+    } catch (error) {
+      console.error("Faild.");
+    }
+  }
+});
+
+///////////////////////////////////////
+
 client.on("message", message => {
   let client = message.client;
   if (message.author.bot) return;
