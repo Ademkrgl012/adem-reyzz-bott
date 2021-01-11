@@ -1,38 +1,32 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
+const db = require('quick.db');
 
 exports.run = async (app, message, client) => {
-  const asf = new Discord.MessageEmbed()
-
-    .setColor("RANDOM")
-    .setDescription(
-      "<a:yrnex_loading:794118093814104064> Ping Hesaplanıyor..."
-    );
-
-  let start = Date.now();
-  let mesaj = await message.channel.send(asf);
-  let diff = Date.now() - start;
-  let API = app.ws.ping.toFixed(2);
-
-  setInterval(() => {
-    const only = new Discord.MessageEmbed()
-      .setDescription(
-        `<a:yrnex_discord:794118212693917718> Mesaj Gecikme Süresi ; **${diff}Ms** \n\n<a:yrnex_bulut:794118277705629696> Bot Gecikme Süresi ; **${API}Ms**`
-      )
-      .setColor("GREEN");
-
-    mesaj.edit(only);
-  }, 5000);
+  
+  const plasmic = new Discord.MessageEmbed()
+  .setColor("RANDOM")
+  .setDescription('<a:yrnex_loading:794118093814104064> **Ping Hesaplanıyor...**')
+  
+   let plasmicc = Date.now(); 
+   let plasmiccode = await message.channel.send(plasmic)
+   let plasmiccodee = (Date.now() - plasmicc); 
+   let plasmicAPI = (app.ws.ping).toFixed(2)
+    setInterval(() => {
+   const plasmiccc = new Discord.MessageEmbed()
+   .setDescription(`\n<a:yrnex_discord:794118212693917718> Mesaj Gecikme Süresi ; **${plasmiccodee}Ms** \n\n<a:yrnex_bulut:794118277705629696> Bot Gecikme Süresi ; **${plasmicAPI}Ms**`)
+   .setColor('RANDOM')
+    plasmiccode.edit(plasmiccc);
+    }, 5000)
 };
-
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["ping"],
+  aliases: ['ping'],
   permLevel: 0
 };
 
 exports.help = {
-  name: "ping",
-  description: "asf",
-  usage: "ping"
-};
+  name: 'ping',
+  description: 'Ping komutu işte yaw',
+  usage: 'ping'
+};  

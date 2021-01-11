@@ -51,6 +51,7 @@ exports.run = async (client, message, args) => {
       true
     )
     .setColor(`RANDOM`)
+    .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
     .setFooter(`${client.user.username} Abone Sistemi`);
   message.guild.channels.cache.get(abonelog).send(embed);
 };
