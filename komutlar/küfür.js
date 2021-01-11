@@ -14,7 +14,7 @@ if (args[0] === 'deaktif') {
 message.channel.send('<:yr_hayr:793837203478020127> **Küfür Engel Başarıyla Kapatıldı.**')
 return
 }
-  message.channel.send('**Lüten y!küfür aktif` yada `y!küfür` Yazın!**')
+  message.channel.send('**Lüten y!küfür aç` yada `y!küfür` Yazın!**')
 };
 exports.conf = {
  enabled: true,
