@@ -5,32 +5,24 @@ exports.run = (client, message) => {
 let motion = new Discord.MessageEmbed()
   
     .setThumbnail(message.author.displayAvatarURL())
-    .setAuthor(client.user.username, client.user.avatarURL)
     .addField(
       "Veriler", 
-      `> Toplam sunucu: **${
+      `> <a:yrnex_krmzvumpus:798604064912965632> Toplam sunucu: **${
         client.guilds.cache.size
-      }** \n> Toplam kullanıcı: **${client.guilds.cache
+      }** \n> <a:yrnex_krmzvumpus:798604064912965632> Toplam kullanıcı: **${client.guilds.cache
         .reduce((a, b) => a + b.memberCount, 0)
-        .toLocaleString()}** \n> Toplam kanal: **${
+        .toLocaleString()}** \n> <a:yrnex_krmzvumpus:798604064912965632> Toplam kanal: **${
         client.channels.cache.size
       }**`
     ) 
     .addField(
       "Bot Geliştiricisi",
-      `> Bot geliştiricisi <a:yan:784456151844519997> <@768080464984014918> | **Yrnex Creative' S#0612**`
+      `> <a:yrnex_krmzvumpus:798604064912965632> Bot geliştiricisi <a:yan:784456151844519997> <@768080464984014918> | **Yrnex Creative' S#0612**`
     ) 
     .addField(
       "Sürümler",
-      `> Discord.js sürümü: **v${Discord.version}** \n> Node.js sürümü: **${process.version}**`
+      `> <a:yrnex_krmzvumpus:798604064912965632> Discord.js sürümü: **v${Discord.version}** \n> <a:yrnex_krmzvumpus:798604064912965632> Node.js sürümü: **${process.version}**`
     ) 
-    .addField(
-      "Gecikmeler",
-      `> Bot pingi: **${
-        client.ws.ping
-      }** \n> Mesaj gecikmesi: **${new Date().getTime() -
-        message.createdTimestamp}**`
-    )
     
     .setTimestamp()
     .setColor("RANDOM");
@@ -41,7 +33,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   permLevel: 0,
-  aliases: ["istatistik", "i"]
+  aliases: ["bot-bilgi", "i"]
 };
 
 exports.help = {
