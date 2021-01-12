@@ -4,7 +4,7 @@ exports.run = (client, message) => {
 
 let motion = new Discord.MessageEmbed()
   
-    .setThumbnail(message.author.displayAvatarURL())
+
     .addField(
       "Veriler", 
       `> <a:yrnex_krmzvumpus:798604064912965632> Toplam sunucu: **${
