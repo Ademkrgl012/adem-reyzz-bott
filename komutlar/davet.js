@@ -5,11 +5,11 @@ const ayarlar = require('../ayarlar.json');
 exports.run = (client, message) => {
   const chrome = new Discord.MessageEmbed()
   .setTitle("Davet Linkleri Altta Belirtilmiştir")
-  .setColor("RANDOM")
+  .setColor("GOLD")
     .addField("» **Botun Sahibi**", "<@!768080464984014918>| Yrnex Creative' S#0612 ")
     .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/RZheu3F2bM)", )
     .addField("**» Davet Linki**", " [Botu Davet Et](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)", )
-    .setImage("https://cdn.discordapp.com/attachments/794180900992712704/798258847281577994/standard_21.gif")
+    .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
   .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL())
   message.channel.send(chrome);   //DevTR
 };

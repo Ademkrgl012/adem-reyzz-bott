@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
     );
   if (!args[0])
     return message.channel.send(
-      "Doğru kullanım ``!otorol ayarla @rol #kanal`` veya `!otorol sıfırla`"
+      "Doğru kullanım ``y!otorol ayarla @rol #kanal`` veya `y!otorol sıfırla`"
     );
   if (args[0] === "ayarla") {
     var rol = message.mentions.roles.first();

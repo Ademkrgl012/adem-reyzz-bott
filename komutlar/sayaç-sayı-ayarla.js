@@ -45,7 +45,7 @@ exports.run = async (client, message, args) => {
     .setDescription(`
 Sayaç başarıyla ayarlandı : **${args[0]}**
 Sayaç kapatmak isterseniz **${prefix}sayaç kapat** yazmanız yeterlidir.
-Sayaç kanalı için -sayaç-kanal-ayarla #kanal
+Sayaç kanalı için y!sayaç-kanal-ayarla #kanal
 `);
   message.channel.send(embed);
 };

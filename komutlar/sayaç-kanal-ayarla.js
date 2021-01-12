@@ -34,7 +34,7 @@ exports.run = async (client, message, args) => {
   db.set(`sayaçKanal_${message.guild.id}`, channel.id);
  
   const embed = new Discord.MessageEmbed()
-    .setDescription(`Sayaç kanalı başarıyla ayarlandı : \`${channel.name}\`\nSayaç kanalını kapatmak isterseniz \`${prefix}sayaçkanal kapat\` yazmanız yeterlidir.**`
+    .setDescription(`Sayaç kanalı başarıyla ayarlandı : \`${channel.name}\`\nSayaç kanalını kapatmak isterseniz \`y!sayaçkanal kapat\` yazmanız yeterlidir.**`
     )
     .setColor("RANDOM")
     .setTimestamp()
