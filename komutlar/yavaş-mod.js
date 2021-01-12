@@ -73,7 +73,7 @@ request({
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['yavaşmod'],
+  aliases: ['yavaş-mod'],
   permLevel: 0
 };
 
