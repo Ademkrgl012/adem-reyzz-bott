@@ -50,7 +50,6 @@ exports.run = async (client, message, args) => {
       `<#780550448029368350>`,
       true
     )
-    .addField(`${message.author} **:** Abone Rolü Verme Sayısı: **${kayıtsayı ? `${kayıtsayı}` : "0"}**`)
     .setColor(`RANDOM`)
     .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
     .setFooter(`${client.user.username} Abone Sistemi`);
