@@ -166,7 +166,7 @@ client.on("message", async msg => {
     ) {
       try {
         return msg.reply(
-          "**Aleyküm Selam Hoşgeldin** <a:mutlu:792028555008540684>"
+          "**Aleyküm Selam Hoşgeldin** <:tatli:794115253436809236>"
         );
       } catch (err) {
         console.log(err);
@@ -216,6 +216,38 @@ client.on("message", async message => {
     message.channel.send(afk);
   }
 });
+
+/////////////////////////////////
+
+client.on('guildDelete', guild => {
+
+    let Crewembed = new Discord.MessageEmbed()
+    
+    .setColor("RED")
+    .setTitle(" ATILDIM !")
+    .addField("Sunucu Adı:", guild.name)
+    .addField("Sunucu sahibi", guild.owner)
+    .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+    
+       client.channels.cache.get('798573177348423720').send(Crewembed);
+      
+    });
+    
+    
+    client.on('guildCreate', guild => {
+    
+    let Crewembed = new Discord.MessageEmbed()
+    
+    .setColor("GREEN")
+    .setTitle("EKLENDİM !")
+    .addField("Sunucu Adı:", guild.name)
+    .addField("Sunucu sahibi", guild.owner)
+    .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+    
+       client.channels.cache.get('798573177348423720').send(Crewembed);
+      
+    });
+
 ///////////////////////////////////REKLAMENLGEL
 
 client.on("message", msg => {
