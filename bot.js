@@ -778,43 +778,5 @@ client.on('message', msg => {
   }
 })
 
-////////////////////////
-
-client.on('guildMemberAdd', async member => {
-let member2 = member.user 
-let zaman = new Date().getTime() - member2.createdAt.getTime()
-var user = member2 
-var takizaman = [];
-if(zaman < 604800000) {
-takizaman = '• Tehlikeli'
-} else {
-takizaman = `• Güvenli`}require("moment-duration-format");
- let zaman1 = new Date().getTime() - user.createdAt.getTime()
- const gecen = moment.duration(zaman1).format(` YY [Yıl,] DD [Gün,] HH [Saat,] mm [Dakika,] ss [Saniye]`) 
- let dbayarfalanfilan = await db.fetch(`takidbayar${member.guild.id}`)
- let message = member.guild.channels.find(x => x.id === `780535489877901322`)
-  const taki = new Discord.RichEmbed()
- .setTitle(
-     "YRNEX COMMUNİTY・0.3K'ya Hoşgeldin"
-   )
-   .setDescription(`**・** **Sunucumuza Hoş geldin** ${member} 
-   
-**・Seninle Beraber** ${message.guild.memberCount} **Kişiyiz**
-
-**・** **Kaydının Yapılması İçin İsmini ve Yaşını Yaz**
-
-**・**<@&797121108356497428> **Rolündeki Yetkililer Seninle İlgilenecektir**
-
-**・** **Sunucumuzun Sınırsız Davet Bağlantısı** https://discord.gg/RZheu3F2bM
-
-
-**・** **Hesap Açılalı** ${gecen} **Olmuş**
-**・** **Bu Kullanıcı** **|** **${takizaman}**
-`)
-.setColor('BLACK')
-message.send(taki)
- 
-         }); //matador //3
-
 
 client.login(ayarlar.token);
