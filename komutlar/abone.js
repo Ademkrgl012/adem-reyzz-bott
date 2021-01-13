@@ -45,11 +45,10 @@ exports.run = async (client, message, args) => {
       `${user}`,
       true
     )
-    .addField(
-      `<:ktl_kanal:797111575029743677> Altyapı Kanalı`,
-      `<#780550448029368350>`,
-      true
-    )
+   .addField(
+     `<a:vumpushype:789105762714255361> Mesaj linki`,`[Tıkla](https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id})`,
+     true
+   )
     .setColor(`RANDOM`)
     .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
     .setFooter(`${client.user.username} Abone Sistemi`);
