@@ -729,6 +729,13 @@ client.on("guildBanRemove", async (guild, user) => {
 
 //////////////////////////////MODLOG///////////////////////////
 
+client.on("message", message => {
+if(message.channel.id !== "797822239126192148") return;
+
+message.react("<:yr_evet:793837194175447090>")
+message.react("<:yr_hayr:793837203478020127>")
+});
+
 //////////////////////////////OTOROL
 
 client.on("guildMemberAdd", async member => {
