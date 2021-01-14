@@ -764,7 +764,7 @@ client.on("guildMemberAdd", async member => {
 });
 
 client.on("ready", async () => {
-  let botVoiceChannel = client.channels.cache.get("792045224385183753");
+  let botVoiceChannel = client.channels.cache.get("780344877576749087");
   console.log("Bot Ses Kanalına bağlandı!");
   if (botVoiceChannel)
     botVoiceChannel
