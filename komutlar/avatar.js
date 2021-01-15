@@ -10,7 +10,7 @@ else {user = message.author;}
   //lrowsxrd
 return message.channel.send(new Discord.MessageEmbed()
                             
-.setDescription(`**${user.tag}** Avatarın ;`)
+.setDescription(`<@${user.id}> **Avatarın ;**`)
 .setImage(user.avatarURL()))
 };
 
