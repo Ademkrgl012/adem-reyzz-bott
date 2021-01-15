@@ -7,11 +7,11 @@ const db = require("quick.db");
 exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_ROLES"))
     return message.channel.send(
-      "Hop hemşerim nereye yetkin yok kullanamazsın."
+      "**Hop dayı nereye yetkin yok kullanamazsın.**"
     );
   if (!args[0])
     return message.channel.send(
-      "Doğru kullanım ``y!otorol ayarla @rol #kanal`` veya `y!otorol sıfırla`"
+      "Doğru kullanım ``y!otorol ayarla @rol #kanal`` veya `y!otorol kapat`"
     );
   if (args[0] === "ayarla") {
     var rol = message.mentions.roles.first();
@@ -21,10 +21,12 @@ exports.run = async (client, message, args) => {
     db.set(`otorol_${message.guild.id}`, rol.id);
     db.set(`logkanal_${message.guild.id}`, kanal.id);
     message.channel.send("Başarıyla ayarlandı");
-    if (args[0] === "sıfırla") {
+    
+
+    if (args[0] === "kapat") {
       db.delete(`otorol_${message.guild.id}`);
       db.delete(`logkanal_${message.guild.id}`);
-      message.channel.send("Başarıyla sıfırlandı");
+      message.channel.send("Başarıyla kapatıldı.");
     }
   }
 };
