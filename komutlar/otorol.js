@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
     );
   if (!args[0])
     return message.channel.send(
-      "Doğru kullanım ``y!otorol ayarla @rol #kanal`` veya `y!otorol kapat`"
+      "Doğru kullanım ``y!otorol ayarla @rol #kanal`` veya `y!otorol sıfırla`"
     );
   if (args[0] === "ayarla") {
     var rol = message.mentions.roles.first();
@@ -23,10 +23,10 @@ exports.run = async (client, message, args) => {
     message.channel.send("Başarıyla ayarlandı");
     
 
-    if (args[0] === "kapat") {
+    if (args[0] === "sıfırla") {
       db.delete(`otorol_${message.guild.id}`);
       db.delete(`logkanal_${message.guild.id}`);
-      message.channel.send("Başarıyla kapatıldı.");
+      message.channel.send("**Başarıyla sıfırla.**");
     }
   }
 };
