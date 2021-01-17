@@ -2,12 +2,11 @@ const Discord = require('discord.js');
 exports.run = async (client, message, args) => { 
 let prefix = 'y!'
 let yardım = new Discord.MessageEmbed()  
-.setAuthor(`${client.user.username}`, client.user.avatarURL())
 .setColor('RANDOM')
-.addField('<a:yrnex_vumpus:798264436761559051> Yrnex Yardım Menüsü',`
+.addField('<:yrnex_selam:794269899308531773> Yrnex Yardım Menüsü',`
 <:emoji_1:793928339261227020> **y!moderasyon** : Moderasyon Komutları.
 <:emoji_1:793928364133056513> **y!abone-yardım** : Abone Rol Komutları.
-<:emoji_3:793928384932610099> **y!kullanıcı** : Kullanıcı Komutları (YAKINDA).
+<:emoji_3:793928384932610099> **y!kullanıcı** : Kullanıcı Komutları.
 <:emoji_4:793928482463154186> **y!eğlence** : Eğlence Komutları (YAKINDA).`)
 .addField("**» Davet Linki**", " [Botu Davet Et](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)", )
     .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")

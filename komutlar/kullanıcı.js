@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 exports.run = async (client, message, args) => { 
 let prefix = 'y!'
 let yardım = new Discord.MessageEmbed()  
-.setAuthor(`${client.user.username}`, client.user.avatarURL())
 .setColor('RANDOM')
 .addField('<:coffeee:794115205176885298> Yrnex Kullanıcı Menüsü',`
 <:emoji_3:793928384932610099> **y!profil** : Kullanıcı Bilginizi Görürsünüz.
