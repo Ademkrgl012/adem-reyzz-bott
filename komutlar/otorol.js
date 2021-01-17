@@ -4,7 +4,7 @@ const db = require("quick.db");
 exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_ROLES"))
     return message.channel.send(
-      "**Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin** `Rolleri Yönet`"
+      "**Bu komutu kullanabilmek için __gerekli yetkiye sahip değilsin__** `Rolleri Yönet`"
     );
 
   if (!args[0])
@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
       new Discord.MessageEmbed()
         .setColor("0x36393E")
         .setDescription(
-          "> **Otorol sistemini ne yapmak istediğini belirtmedin** <a:yrnex_tiks:798275047047168041> \n> `y!otorol ayarla @üye #kanal` **Otorol sistemini ayarlar.** \n> `y!otorol sıfırla` **Otorol sistemini sıfırlar.**"
+          "> <a:yrnex_uyar:800419824538091610> **Otorol sistemini ne yapmak istediğini belirtmedin**  \n> `y!otorol ayarla @üye #kanal` **Otorol sistemini ayarlar.** \n> `y!otorol sıfırla` **Otorol sistemini sıfırlar.**"
         )
     );
 
