@@ -1283,7 +1283,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   discord-giveaways: ^4.4.3
-  discord.js: ^12.5.0
+  discord.js: ^12.5.1
   express: ^4.17.1
   fs: ^0.0.2
   moment: ^2.29.1
