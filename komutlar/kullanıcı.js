@@ -6,6 +6,7 @@ let yardım = new Discord.MessageEmbed()
 .addField('<:coffeee:794115205176885298> Yrnex Kullanıcı Menüsü',`
 <:emoji_3:793928384932610099> **y!profil** : Kullanıcı Bilginizi Görürsünüz.
 <:emoji_3:793928384932610099> **y!avatar** : Avatarınıza Bakarsınız.
+<:emoji_3:793928384932610099> **y!say** : Sunucudaki Üye Sayısını Gösterir.
 <:emoji_3:793928384932610099> **y!afk** : AFK Olma Komutudur.
 <:emoji_3:793928384932610099> **y!yetkilerim** : Sunucudaki Yetkinize Bakarsınız.
 <:emoji_3:793928384932610099> **y!ping** : Botun Pingine Bakarsınız.
