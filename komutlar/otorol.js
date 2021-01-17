@@ -17,9 +17,9 @@ exports.run = async (client, message, args) => {
     );
 
   if (args[0] === "ayarla") {
-    var rol = message.mentions.roles.first();
-    var rolkanal = message.mentions.channels.first();
-    if (!rol)
+    var otorol = message.mentions.roles.first();
+    var logkanal = message.mentions.channels.first();
+    if (!otorol)
       return message.channel.send(
         new Discord.MessageEmbed()
           .setColor("0x36393E")
@@ -27,7 +27,7 @@ exports.run = async (client, message, args) => {
             "**Bir rol etiketlemelisin** `y!otorol ayarla @rol #kanal` **(Eğer rolü bulamıyorsan etiketleme izninin açık olduğundan veya komutun kullanıldığı kanalı görebildiğinden emin ol)**"
           )
       );
-    if (!rolkanal)
+    if (!logkanal)
       return message.channel.send(
         new Discord.MessageEmbed()
           .setColor("0x36393E")
@@ -36,17 +36,17 @@ exports.run = async (client, message, args) => {
           )
       );
 
-    db.set(`logkanal_{message.guild.id}`, rolkanal.id);
-    db.set(`otorol_${message.guild.id}`, rol.id);
+    db.set(`logkanal_{message.guild.id}`, logkanal.id);
+    db.set(`otorol_${message.guild.id}`, otorol.id);
 
     return message.channel.send(
       new Discord.MessageEmbed()
         .setColor("0x36393E")
         .setDescription(
           "> **Otorol Sistemi Aktif edildi** <a:yrnex_tiks:798275047047168041> \n> **Sunucuya giren kişilere verilecek rol** <@&" +
-            rol +
+            otorol +
             "> \n> **Otorol mesajının gideceği kanal** <#" +
-            rolkanal.id +
+            logkanal.id +
             "> **Olarak ayarlandı.**"
         )
     );
