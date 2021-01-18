@@ -738,36 +738,23 @@ message.react("<:yr_hayr:793837203478020127>")
 
 //////////////////////////////OTOROL
 
-client.on("guildMemberAdd", async member => {
-  if (db.has(`otorol_${member.guild.id}`)) {
-    var rol = db.fetch(`otorol_${member.guild.id}`);
+client.on("guildMemberAdd", member => {
+  let rol = db.fetch(`autoRole_${member.guild.id}`);
+if (!rol) return;
+  let kanal = db.fetch(`autoRoleChannel_${member.guild.id}`);
+  if (!kanal) return;
 
-    member.roles.add(rol);
-  } else {
-    return;
-  }
-
-  if (db.has(`logkanal_${member.guild.id}`)) {
-    var kanal = client.channels.cache.get(
-      db.fetch(`logkanal_${member.guild.id}`)
-    );
-    let kisi = `${member.user.username}`;
-    let roll = `<@&${rol}>`;
-    const embed = new Discord.MessageEmbed()
-      .setTitle("<:yr_evet:793837194175447090> Başarıyla Rol Verildi")
-      .addField(
-        "<a:yr_guvenli:775291238109675542> Rol Verilen Kişi: ",
-        member.user.tag
-      )
-      .addField("<a:yr_guvenli:775291238109675542> Verilen Rol: ", roll)
-      .setColor("RANDOM")
-      .setTimestamp();
-    //.setFooter(`Octopus Bot | 2020`);
-
-    kanal.send(embed);
-  } else {
-    return;
-  }
+  member.roles.add(member.guild.roles.cache.get(rol));
+  let embed = new Discord.MessageEmbed()
+    .setDescription(
+      "> :moneyGF: **Sunucuya yeni katılan** **" +
+        member.user.username +
+        "** **Kullanıcısına** <@&" +
+        rol +
+"> **Rolü verildi** :TikkGF:"
+    )
+    .setColor("RANDOM"); //.setFooter(`<@member.id>`)
+  member.guild.channels.cache.get(kanal).send(embed);
 });
 
 client.on("ready", async () => {
