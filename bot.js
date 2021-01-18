@@ -747,11 +747,11 @@ if (!rol) return;
   member.roles.add(member.guild.roles.cache.get(rol));
   let embed = new Discord.MessageEmbed()
     .setDescription(
-      "> :moneyGF: **Sunucuya yeni katılan** **" +
+      "> <a:yrnex_hypes:794222389584068618> **Sunucuya yeni katılan** **" +
         member.user.username +
         "** **Kullanıcısına** <@&" +
         rol +
-"> **Rolü verildi** :TikkGF:"
+"> **Rolü verildi** <a:yrnex_tiks:798275047047168041>"
     )
     .setColor("RANDOM"); //.setFooter(`<@member.id>`)
   member.guild.channels.cache.get(kanal).send(embed);

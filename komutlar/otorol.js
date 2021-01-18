@@ -4,7 +4,7 @@ const db = require("quick.db");
 exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("MANAGE_ROLES"))
     return message.channel.send(
-      "**Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin** `Rolleri Yönet`"
+      "<a:yrnex_uyar:800419824538091610>  **Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin** `Rolleri Yönet`"
     );
 
   if (!args[0])
@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
       new Discord.MessageEmbed()
         .setColor("0x36393E")
         .setDescription(
-          "> **Otorol sistemini ne yapmak istediğini belirtmedin** <a:YanpSnennleGif:727895115112251392> \n> `a!otorol ayarla @üye #kanal` **Otorol sistemini ayarlar.** \n> `a!otorol sıfırla` **Otorol sistemini sıfırlar.**"
+          "> **Otorol sistemini ne yapmak istediğini belirtmedin** <a:yrnex_uyar:800419824538091610>  \n> `y!otorol ayarla @üye #kanal` **Otorol sistemini ayarlar.** \n> `y!otorol sıfırla` **Otorol sistemini sıfırlar.**"
         )
     );
 
@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
         new Discord.MessageEmbed()
           .setColor("0x36393E")
           .setDescription(
-            "**Bir rol etiketlemelisin** `a!otorol ayarla @rol #kanal` **(Eğer rolü bulamıyorsan etiketleme izninin açık olduğundan veya komutun kullanıldığı kanalı görebildiğinden emin ol)**"
+            "**Bir rol etiketlemelisin** `y!otorol ayarla @rol #kanal` **(Eğer rolü bulamıyorsan etiketleme izninin açık olduğundan veya komutun kullanıldığı kanalı görebildiğinden emin ol)**"
           )
       );
     if (!rolkanal)
@@ -32,7 +32,7 @@ exports.run = async (client, message, args) => {
         new Discord.MessageEmbed()
           .setColor("0x36393E")
           .setDescription(
-            "Bir kanal etiketlemelisin eğer kanalı etiketleyemiyorsan botun o kanalı gördüğünden emin ol."
+            "**Bir kanal etiketlemelisin eğer kanalı etiketleyemiyorsan botun o kanalı gördüğünden emin ol.**"
           )
       );
 
@@ -43,7 +43,7 @@ exports.run = async (client, message, args) => {
       new Discord.MessageEmbed()
         .setColor("0x36393E")
         .setDescription(
-          "> **Otorol Sistemi Aktif edildi** <a:TikkGF:727895189259157565> \n> **Sunucuya giren kişilere verilecek rol** <@&" +
+          "> **Otorol Sistemi Aktif edildi** <a:yrnex_tiks:798275047047168041> \n> **Sunucuya giren kişilere verilecek rol** <@&" +
             rol +
             "> \n> **Otorol mesajının gideceği kanal** <#" +
             rolkanal.id +

@@ -4,17 +4,17 @@ const Discord = require('discord.js')
 exports.run = async (bot, message, args) => {
   if (!args[0]) return message.channel.send('Hey Bu Ayarı Kullanabilmek için `aç` yada `kapat` yazmalısın.')
   if(!ayarlar.includes(args[0])) return message.channel.send(`Geçerli parametreleri kullanmalısın.\nParametreler: ${ayarlar.join(' - ')}`)
-  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('`SUNUCUYU_YÖNET` yetkisine sahip olmalısın!')
+  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('<a:yrnex_uyar:800419824538091610> `SUNUCUYU_YÖNET` **yetkisine sahip olmalısın!**')
  
   if (args[0] == 'aç') {
     if(db.has(`reklam_${message.guild.id}`)) return message.channel.send(`Sistem zaten açık.`)
     db.set(`reklam_${message.guild.id}`, 'acik')
-      message.channel.send('<:yr_evet:793837194175447090> Reklam Engel başarıyla açıldı! `Üyeleri Yasakla` yetkisine sahip olanların reklamı engellenmicektir.')
+      message.channel.send('<:yr_evet:793837194175447090> **Reklam Engel başarıyla açıldı! `Üyeleri Yasakla` yetkisine sahip olanların reklamı engellenmicektir.**')
   }
   if (args[0] == 'kapat') {
         if(!db.has(`reklam_${message.guild.id}`)) return message.channel.send(`Sistem zaten kapalı.`)
     db.delete(`reklam_${message.guild.id}`)
-      message.channel.send('<:yr_hayr:793837203478020127> Reklam Engel başarıyla kapatıldı! Artık herkes reklam yapabilir.')
+      message.channel.send('<:yr_hayr:793837203478020127> **Reklam Engel başarıyla kapatıldı! Artık herkes reklam yapabilir.**')
   }
  
 };
