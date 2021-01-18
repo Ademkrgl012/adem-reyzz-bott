@@ -1,7 +1,7 @@
 
 
 
-//CODEWORK SUNUCUSUNA AİTTİR! discord.gg/codework
+//Yrnex Creative'ye AİTTİR! discord.gg/codework
 
 TOKEN .ENV KISMINA GİRİLECEK!
 
