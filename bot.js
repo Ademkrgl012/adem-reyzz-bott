@@ -766,12 +766,14 @@ client.on("ready", async () => {
       .catch(err => console.error("Bot ses kanalına bağlanamadı!"));
 });
 
-client.on('message', msg => {
-  if (msg.content === '<@!787328444954050570>') {
-    msg.channel.send(`> <@!${msg.author.id}> **Prefixim burada ---> "${ayarlar.prefix}" <---  Yakında Ayarlanabilir Gelecektir!**`)
-  }
-})
-
-
+client.on("guildCreate", guild => {
+  // Birisi botu sunucuya attıgında bot özel mesaj atar.
+  const tesekkurler = new Discord.MessageEmbed()
+    .setTitle("Yrnex")
+    .setTimestamp()
+    .setColor("BLACK")
+    .setDescription("Beni Sunucuna Eklediğin İçin Teşekkür Ederim \n Sana En İyi Şekilde Hizmet Edeceğim.\n Eğer Bir Sorunla Karşılaşırsan Destek Sunucuma Gel [Sunucumuza Katıl](https://discord.gg/RZheu3F2bM) \n Komutlarımız için **y!yardım** komutunu kullanınız.");
+  guild.owner.send(tesekkurler);
+});
 
 client.login(ayarlar.token);
