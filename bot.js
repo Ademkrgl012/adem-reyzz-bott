@@ -131,7 +131,7 @@ client.on("guildMemberRemove", async member => {
   member.guild.channels.cache
     .get(channel)
     .send(
-      `📤 **${member.user.tag}** Sunucudan ayrıldı! \`${db.fetch(
+      `📤 **${member.user.tag} Sunucudan ayrıldı! \`${db.fetch(
         `sayacsayı_${member.guild.id}`
       )}\` üye olmamıza son \`${db.fetch(`sayacsayı_${member.guild.id}`) -
         member.guild.memberCount}\` üye kaldı!`
