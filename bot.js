@@ -766,6 +766,7 @@ client.on("ready", async () => {
       .catch(err => console.error("Bot ses kanalına bağlanamadı!"));
 });
 
+///////////////////////////////
 client.on("guildCreate", guild => {
   // Birisi botu sunucuya attıgında bot özel mesaj atar.
   const tesekkurler = new Discord.MessageEmbed()

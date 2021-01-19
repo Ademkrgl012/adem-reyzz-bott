@@ -1,27 +1,27 @@
-const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js')
 
-exports.run = function(client, message, args) {
-  
-const codework = message.mentions.users.first()
-let user;
-if (message.mentions.users.first())  {user = message.mentions.users.first();}
-  
-else {user = message.author;}
-  //lrowsxrd
-return message.channel.send(new Discord.MessageEmbed()
-                            
-.setDescription(`<@${user.id}> **Avatarın ;**`)
-.setImage(user.avatarURL()))
-};
+exports.run = async (client, message, args) => {
+  let avatar = `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.png?size=2048`//avatar komutu nasıl bulamadım bende böyle bişey yaptım v12 için yanlız bu :d
+let Embed = new MessageEmbed()
+
+            Embed.setTitle(`Avatarın!`)
+            Embed.setThumbnail(avatar)
+            Embed.setColor(`RANDOM`)
+            Embed.setDescription(`**İşte Avatar'ın**`)
+            return message.channel.send(Embed)
+        
+    }
+
 
 exports.conf = {
-enabled: false,
-guildOnly: false,
-aliases: ["pp"],
-permLevel: 0
-  
-};
-  
+    enabled:false,
+    guildOnly: false,
+    aliases: [],
+    permLevel: 0,
+}
+
 exports.help = {
-name: 'avatar'
-};
+    name: 'avatar',
+    description: 'avatarınızı mesaj olarak atar',
+    usage: '(prefix)avatar '
+}
