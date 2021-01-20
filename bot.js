@@ -131,7 +131,7 @@ client.on("guildMemberRemove", async member => {
   member.guild.channels.cache
     .get(channel)
     .send(
-      `📤 **${member.user.tag} Sunucudan ayrıldı! \`${db.fetch(
+      `📤 **${member.user.tag}** Sunucudan ayrıldı! \`${db.fetch(
         `sayacsayı_${member.guild.id}`
       )}\` üye olmamıza son \`${db.fetch(`sayacsayı_${member.guild.id}`) -
         member.guild.memberCount}\` üye kaldı!`
@@ -219,34 +219,29 @@ client.on("message", async message => {
 
 /////////////////////////////////
 
-client.on('guildDelete', guild => {
+client.on("guildDelete", guild => {
+  let Crewembed = new Discord.MessageEmbed()
 
-    let Crewembed = new Discord.MessageEmbed()
-    
     .setColor("RED")
     .setTitle(" ATILDIM !")
     .addField("Sunucu Adı:", guild.name)
     .addField("Sunucu sahibi", guild.owner)
-    .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
-    
-       client.channels.cache.get('798573177348423720').send(Crewembed);
-      
-    });
-    
-    
-    client.on('guildCreate', guild => {
-    
-    let Crewembed = new Discord.MessageEmbed()
-    
+    .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
+
+  client.channels.cache.get("798573177348423720").send(Crewembed);
+});
+
+client.on("guildCreate", guild => {
+  let Crewembed = new Discord.MessageEmbed()
+
     .setColor("GREEN")
     .setTitle("EKLENDİM !")
     .addField("Sunucu Adı:", guild.name)
     .addField("Sunucu sahibi", guild.owner)
-    .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
-    
-       client.channels.cache.get('798573177348423720').send(Crewembed);
-      
-    });
+    .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
+
+  client.channels.cache.get("798573177348423720").send(Crewembed);
+});
 
 ///////////////////////////////////REKLAMENLGEL
 
@@ -730,17 +725,17 @@ client.on("guildBanRemove", async (guild, user) => {
 //////////////////////////////MODLOG///////////////////////////
 
 client.on("message", message => {
-if(message.channel.id !== "797822239126192148") return;
+  if (message.channel.id !== "797822239126192148") return;
 
-message.react("<:yr_evet:793837194175447090>")
-message.react("<:yr_hayr:793837203478020127>")
+  message.react("<:yr_evet:793837194175447090>");
+  message.react("<:yr_hayr:793837203478020127>");
 });
 
 //////////////////////////////OTOROL
 
 client.on("guildMemberAdd", member => {
   let rol = db.fetch(`autoRole_${member.guild.id}`);
-if (!rol) return;
+  if (!rol) return;
   let kanal = db.fetch(`autoRoleChannel_${member.guild.id}`);
   if (!kanal) return;
 
@@ -751,7 +746,7 @@ if (!rol) return;
         member.user.username +
         "** **Kullanıcısına** <@&" +
         rol +
-"> **Rolü verildi** <a:yrnex_tiks:798275047047168041>"
+        "> **Rolü verildi** <a:yrnex_tiks:798275047047168041>"
     )
     .setColor("RANDOM"); //.setFooter(`<@member.id>`)
   member.guild.channels.cache.get(kanal).send(embed);
@@ -773,7 +768,9 @@ client.on("guildCreate", guild => {
     .setTitle("Yrnex")
     .setTimestamp()
     .setColor("BLACK")
-    .setDescription("Beni Sunucuna Eklediğin İçin Teşekkür Ederim \n Sana En İyi Şekilde Hizmet Edeceğim.\n Eğer Bir Sorunla Karşılaşırsan Destek Sunucuma Gel [Sunucumuza Katıl](https://discord.gg/RZheu3F2bM) \n Komutlarımız için **y!yardım** komutunu kullanınız.");
+    .setDescription(
+      "Beni Sunucuna Eklediğin İçin Teşekkür Ederim \n Sana En İyi Şekilde Hizmet Edeceğim.\n Eğer Bir Sorunla Karşılaşırsan Destek Sunucuma Gel [Sunucumuza Katıl](https://discord.gg/RZheu3F2bM) \n Komutlarımız için **y!yardım** komutunu kullanınız."
+    );
   guild.owner.send(tesekkurler);
 });
 
