@@ -17,10 +17,10 @@ if(!sistem || sistem == null || sistem == undefined || sistem == 'kapat') return
 
   let verrt = message.guild.roles.cache.get(verr)
 
-  if(!isim) return message.channel.send('Seni Kayıt Etmem İçin Bir İsim Girmelisin : `-kayıtol Mustafa 17`')
-if(!yas) return message.channel.send('Yaş İçin En Az 1 Basamak Belirtebilirsin. Örnek: `-kayıtol Mustafa 17`')
-  if(yas.length >= 3) return message.channel.send('Yaş İçin En Fazla 2 Basamak Belirtebilirsin. Örnek: `-kayıtol Mustafa 17`')
-  if(isNaN(yas)) return message.channel.send('Yaş İçin Sayı Girmelisin. Örnek: `-kayıtol Mustafa 17`')
+  if(!isim) return message.channel.send('**Seni Kayıt Etmem İçin Bir İsim Girmelisin : `y!kayıt-ol Yasin 16**`')
+if(!yas) return message.channel.send('**Yaş İçin En Az 1 Basamak Belirtebilirsin. Örnek: `y!kayıt-ol Yasin 16`**')
+  if(yas.length >= 3) return message.channel.send('**Yaş İçin En Fazla 2 Basamak Belirtebilirsin. Örnek: `y!kayıt-ol Yasin 16`**')
+  if(isNaN(yas)) return message.channel.send('**Yaş İçin Sayı Girmelisin. Örnek: `y!kayıt-ol Yasin 16`**')
   
   
   message.member.setNickname(`${isim} | ${yas}`)
