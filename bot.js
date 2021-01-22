@@ -828,11 +828,11 @@ let günay = `${günü} ${ayı} ${yılı} ${saati}`
      let created = ` ${netyıl} yıl  ${ay} ay ${hafta} hafta ${gün} gün önce`
 
      let kontrol;
-     if(süre < 1296000000) kontrol = '<a:r_hayir:785437821435117608> Bu hesap şüpheli!'
-     if(süre > 1296000000) kontrol = '<a:r_evet:785437821926113290> Bu hesap güvenli!'
+     if(süre < 1296000000) kontrol = '<a:yr_uyar:775360587650564127> **Bu hesap şüpheli!**'
+     if(süre > 1296000000) kontrol = '<a:yrnex_tiks:798275047047168041> **Bu hesap güvenli!**'
 
      let codare = new Discord.MessageEmbed()
-     .setColor('GREEN')
+     .setColor('BALACK')
      .setTitle(`${member.user.username} Sunucuya Katıldı`)
      .setDescription('<@'+member.id+'> Bilgileri : \n  Hesap oluşturulma tarihi (`' + günay + '`) \n Hesap durumu : **' + kontrol + '**')//codare
      .setTimestamp()

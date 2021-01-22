@@ -10,6 +10,7 @@ exports.run = async (client, message, args) => {
 <:emoji_1:793928339261227020> **y!sayaç** : Sayaç Rakamını Seçersiniz.
 <:emoji_1:793928339261227020> **y!sayaç-kanal-ayarla** : Sayaç Kanalını Seçer.
 <:emoji_1:793928339261227020> **y!mod-log** : Mod-Log Kanalı Seçersiniz.
+<:emoji_1:793928339261227020> **y!güvenlik** : Güvenlik Sistemini Açar.
 <:emoji_1:793928339261227020> **y!yavaş-mod** : Yavaş Mod Ayarlarsınız.
 <:emoji_1:793928339261227020> **y!sa-as** : Sa-As Mesajını Açar..
 <:emoji_1:793928339261227020> **y!sil** : Belli Miktarda Mesaj Siler.
