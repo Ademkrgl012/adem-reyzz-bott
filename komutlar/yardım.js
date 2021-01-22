@@ -1,37 +1,20 @@
-const Discord = require("discord.js");
-const ayarlar = require("../ayarlar.json");
-const db = require("quick.db");
-const prefix = ayarlar;
-exports.run = (client, message, args) => {
-  
-    exports.run = async(client, message, args) => {
-
-    let p = args[0];
-     let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || ayarlar.prefix
-  let pythonic = args.slice(0).join(' ');
-      
-
-const exampleEmbed = new Discord.MessageEmbed()
-	.setColor('#27167A')
-    .setTitle("Go to Yrnex's website")
-    .setURL("http://")
-	.setAuthor('Yrnex', 'https://cdn.discordapp.com/attachments/781872196654071819/802273053341777970/560c982e1dbebadfa7ede412a8bc21d5.png')
-	.setDescription('İşinize Yarıyabilicek Efsane Komutların Hepsi Bu Botda !')
-	.addFields(
-		{ name: 'Eğlence komutları <:radios:753901880278515782>', value: `${prefix}eğlence`, inline: true },
-		{ name: 'Kayıt komutları <:4925_blurpednewsletter:753904910814412819>', value: `${prefix}kayıt-yardım`, inline: true },
-		{ name: 'Abone komutları <:VectorBox:736227127665360996>', value: `${prefix}abone-yardım`, inline: true },
-		{ name: 'Mod komutları <:botcommands:754445971127140475>', value: `${prefix}moderasyon`, inline: true },
-    { name: 'Kullanıcı Komutları <:moderation:754452673692041248>', value: `${prefix}kullanıcı`, inline: true },
-
-	)
-	.setImage('https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif')
-	.setTimestamp()
-	.setFooter('Yrnex 2021', 'https://cdn.discordapp.com/attachments/781872196654071819/802273053341777970/560c982e1dbebadfa7ede412a8bc21d5.png');
-
-message.channel.send(exampleEmbed);
-};
-};
+const Discord = require('discord.js');
+exports.run = async (client, message, args) => { 
+let prefix = 'y!'
+let yardım = new Discord.MessageEmbed()  
+.setColor('BLACK')
+.addField('<:sss:794115250450202624> Yrnex Yardım Menüsü',`
+<:emoji_1:793928339261227020> **y!moderasyon** : Moderasyon Komutları.
+<:emoji_1:793928364133056513> **y!abone-yardım** : Abone Rol Komutları.
+<:emoji_3:793928384932610099> **y!kullanıcı** : Kullanıcı Komutları.
+<:emoji_4:793928482463154186> **y!eğlence** : Eğlence Komutları.
+<:emoji_4:793928460661555240> **y!kayıt-yardım** : Kayıt Komutları.`)
+.addField("**» Davet Linki**", " [Botu Davet Et](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)", )
+    .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
+.setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL())
+.setThumbnail(client.user.avatarURL())
+ message.channel.send(yardım) 
+  };
 
 exports.conf = {
   enabled: true,
@@ -43,5 +26,5 @@ exports.conf = {
 exports.help = {
   name: "yardım",
   category: "yardım",
-  description: "yardım"
+    description: "Eğlence Komutları Gösterir."
 };
