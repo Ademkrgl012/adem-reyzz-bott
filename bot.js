@@ -834,10 +834,12 @@ let günay = `${günü} ${ayı} ${yılı} ${saati}`
      let codare = new Discord.MessageEmbed()
      .setColor('GREEN')
      .setTitle(`${member.user.username} Sunucuya Katıldı`)
-     .setDescription('<@'+member.id+'> Bilgileri : \n  Hesap oluşturulma tarihi **[' + created + ']** (`' + günay + '`) \n Hesap durumu : **' + kontrol + '**')//codare
+     .setDescription('<@'+member.id+'> Bilgileri : \n  Hesap oluşturulma tarihi (`' + günay + '`) \n Hesap durumu : **' + kontrol + '**')//codare
      .setTimestamp()
      client.channels.cache.get(kanal).send(codare)
 })
 //---------------------------------|Güvenlik Sistemi Son|---------------------------------\\
+
+
 
 client.login(ayarlar.token);
