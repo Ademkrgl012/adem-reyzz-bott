@@ -24,7 +24,7 @@ if(!yas) return message.channel.send('**Yaş İçin En Az 1 Basamak Belirtebilir
   
   
   message.member.setNickname(`${isim} | ${yas}`)
-  message.channel.send(`:scroll: <@${message.author.id}> Kaydınız Oluşturuldu.`)
+  message.channel.send(`:scroll: <@${message.author.id}> **Kaydınız Oluşturuldu.**`)
   setTimeout(() => {
    message.member.roles.add(verrt)
 }, 3000); 
