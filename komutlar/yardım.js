@@ -13,6 +13,7 @@ const NARCOSEMBED = new Discord.MessageEmbed()
 .setColor("BLACK")
 .setTitle("**  » Yrnex**")
 .setThumbnail("https://media.discordapp.net/attachments/798541512606482433/803622188686901289/560c982e1dbebadfa7ede412a8bc21d5.webp")
+.setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
 .setDescription(`
 **» Bağlantılar** 
 **[Destek Sunucusu](https://discord.gg/qzHTkhjQgT)** **•** **[Botun Davet Linki](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)** **•**

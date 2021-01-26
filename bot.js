@@ -34,17 +34,54 @@ client.on("ready", () => {
   });
 });
 
+const bot = new Discord.Client();
+
+var oyun = [
+`✨ Yardım almak için | y!yardım`,
+`🚀 Yeni Özellikler İçin | y!yardım`,
+`🔔 Abone Rol için | y!abone-sistemi`,
+`🌟 Kayıt Sistemi için | y!kayıt-yardım`,
+`⚡️ Botu eklemek için | y!davet`
+]
+  
 client.on("ready", () => {
-  console.log(`Bütün komutlar başarıyla yüklendi!`);
-  client.user.setActivity();
-  var oyun = ["Youtube : Yrnex Creative", "y!yardım | y!davet", "Prefix : y!"];
+setInterval(function() {
 
-  setInterval(function() {
-    var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
+         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
+         client.user.setActivity(oyun[random], {"type": "WATCHING"});
 
-    client.user.setActivity(oyun[random], "");
-  }, 2 * 2500);
+        }, 2 * 5000);
 });
+
+//-------------Bot Eklenince Bir Kanala Mesaj Gönderme Komutu ---------------\\
+
+const emmmmbed = new Discord.MessageEmbed()
+.setThumbnail()
+.addField(`Yrnex | Teşekkürler`, `**Selamlar, Ben Lord Creative (Yrnex'nin Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`)
+.addField(`Yrnex | Prefix`, `**Yrnex Botun Prefixi(ön eki) = \`y!\`\n\n Değiştirebilmek için \`y!prefix\` Yazabilirsiniz.**`)
+.addField(`Yrnex | Nasıl Kullanılır?`, `**Yrnex botun tüm özelliklerinden yararlanabilmek için sadece \`y!yardım\` yazmanız yeterlidir.**`)
+.addField(`Yrnex | Linkler`, `**Sohbet Kanalına -davet Yazmanız Yeterlidir**`)
+.setFooter(`Yrnex | Gelişmiş Türkçe Bot | 2021`)
+.setTimestamp();
+
+
+client.on("guildCreate", guild => {
+
+let defaultChannel = "";
+guild.channels.cache.forEach((channel) => {
+if(channel.type == "text" && defaultChannel == "") {
+if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
+defaultChannel = channel;
+}
+}
+})
+
+defaultChannel.send(emmmmbed)
+
+});
+
+//----------------------------------------------------------------\\
+
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
