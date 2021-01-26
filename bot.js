@@ -57,7 +57,7 @@ setInterval(function() {
 
 const emmmmbed = new Discord.MessageEmbed()
 .setThumbnail()
-.addField(`Yrnex | Teşekkürler`, `**Selamlar, Ben Lord Creative (Yrnex'nin Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`)
+.addField(`Yrnex | Teşekkürler`, `**Selamlar, Ben Yrnex (Yrnex'nin Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`)
 .addField(`Yrnex | Prefix`, `**Yrnex Botun Prefixi(ön eki) = \`y!\`\n\n Değiştirebilmek için \`y!prefix\` Yazabilirsiniz.**`)
 .addField(`Yrnex | Nasıl Kullanılır?`, `**Yrnex botun tüm özelliklerinden yararlanabilmek için sadece \`y!yardım\` yazmanız yeterlidir.**`)
 .addField(`Yrnex | Linkler`, `**Sohbet Kanalına -davet Yazmanız Yeterlidir**`)
