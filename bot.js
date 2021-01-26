@@ -430,7 +430,10 @@ client.on("messageUpdate", async (oldMessage, newMessage) => {
 
     .addField("**Eylem**", "Mesaj Düzenleme")
 
-    .addField("**Mesajın sahibi**",`<@${oldMessage.author.id}> === **${oldMessage.author.id}**`)
+    .addField(
+      "**Mesajın sahibi**",
+      `<@${oldMessage.author.id}> === **${oldMessage.author.id}**`
+    )
 
     .addField("**Eski Mesajı**", `${oldMessage.content}`)
 

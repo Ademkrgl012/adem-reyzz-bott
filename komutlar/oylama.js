@@ -1,51 +1,48 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 
-exports.run = (client, message, args) => {
-  if (message.channel.type == "dm") return;
-  if (message.channel.type !== "text") return;
+ exports.run = (client, message, args) => {
+   message.delete();
 
-  if (!message.member.hasPermission("MANAGE_MESSAGES"))
-    return message
-      .reply(
-        `Bu Komutu Kullanabilmek İçin **Mesajları Yönet** İznine Sahip Olmalısın Ama Senin Yok Kullanamazsın`
-      )
-      .then(m => m.delete({ timeout: 10000 }));
+   let question = args.join(' ');
 
-  message.delete();
+   let user = message.author.username
 
-  let question = args.join(" ");
+   if (!question) return message.channel.send(
 
-  let user = message.author.username;
+     new Discord.MessageEmbed()
 
-  if (!question)
-    return message.channel
-      .send(new Discord.MessageEmbed().setTitle(`Yazı Yazmayı Unuttun Yaw`))
-      .then(m => m.delete({ timeout: 5000 }));
+     .addField(`:x: **Yazı Yazman Gerek** :x:`)).then(m => m.delete(5000));
 
-  message.channel
-    .send(
-      new Discord.MessageEmbed()
-        .setColor("007bff")
-        .setThumbnail(client.user.avatarURL())
-        .setTimestamp()
-        .setFooter("YRNEX", client.user.avatarURL())
-        .addField(`**__OYLAMA__**`, `**${question}**`)
-    )
-    .then(function(message) {
-      message.react("✅");
-      message.react("❌");
-    });
-};
+     console.log("oylama komutu " + message.author.username + '#' + message.author.discriminator + " tarafından kullanıldı.")
+     message.channel.send(
 
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["oylama", "voting"],
-  permLevel: 0
+       new Discord.MessageEmbed()
+
+       .setColor("RED")
+       .setThumbnail(client.user.avatarURL())
+       .setTimestamp()
+       .setFooter('Oylama Sistemi', client.user.avatarURL())
+
+       .addField(`**Oylama**`, `**${question}**`)).then(function(message) {
+
+         message.react('✅');
+
+         message.react('❌');
+
+       });
+
+     };
+
+     exports.conf = {
+       enabled: true,
+       guildOnly: false,
+       aliases: ['oylama'],
+
+  permLevel: 2
 };
 
 exports.help = {
-  name: "oylama",
-  description: "Oylama yapmanızı sağlamaktadır.",
-  usage: "!oylama <oylamaismi>"
+  name: 'oylama',
+  description: 'Oylama yapmanızı sağlar.',
+  usage: 'oylama <oylamaismi>'
 };
