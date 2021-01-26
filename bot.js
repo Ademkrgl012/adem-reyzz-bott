@@ -57,10 +57,11 @@ setInterval(function() {
 
 const emmmmbed = new Discord.MessageEmbed()
 .setThumbnail()
-.addField(`Yrnex | Teşekkürler`, `**Selamlar, Ben Yrnex (Yrnex'nin Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`)
+.setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
+.addField(`Yrnex | Teşekkürler`, `**Selamlar, Ben Yrnex (Yrnex Bot'un Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`)
 .addField(`Yrnex | Prefix`, `**Yrnex Botun Prefixi(ön eki) = \`y!\`\n\n Değiştirebilmek için \`y!prefix\` Yazabilirsiniz.**`)
 .addField(`Yrnex | Nasıl Kullanılır?`, `**Yrnex botun tüm özelliklerinden yararlanabilmek için sadece \`y!yardım\` yazmanız yeterlidir.**`)
-.addField(`Yrnex | Linkler`, `**Sohbet Kanalına -davet Yazmanız Yeterlidir**`)
+.addField(`Yrnex | Linkler`, `**Sohbet Kanalına y!davet Yazmanız Yeterlidir**`)
 .setFooter(`Yrnex | Gelişmiş Türkçe Bot | 2021`)
 .setTimestamp();
 
@@ -809,22 +810,6 @@ client.on("guildMemberAdd", member => {
     member.roles.add(kayıtsızrolü);
   }
 });
-
-/////////////////////
-
-client.on("guildCreate", guild => {
-  // Birisi botu sunucuya attıgında bot özel mesaj atar.
-  const tesekkurler = new Discord.MessageEmbed()
-    .setTitle("Yrnex")
-    .setTimestamp()
-    .setColor("GREEN")
-    .setDescription(
-      "Beni Sunucuna Eklediğin İçin Teşekkür Ederim \n Sana En İyi Şekilde Hizmet Edeceğim.\n Eğer Bir Sorunla Karşılaşırsan Destek Sunucuma Gel https://discord.gg/RZheu3F2bM \n Komutlarımız için **y!yardım** komutunu kullanınız."
-    );
-  guild.owner.send(tesekkurler);
-});
-
-/////////////////////
 
 //---------------------------------|Güvenlik Sistemi Başlangıç|---------------------------------\\
 client.on("guildMemberAdd", member => {
