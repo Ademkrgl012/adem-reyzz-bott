@@ -1,29 +1,33 @@
-const Discord = require('discord.js')
-const db = require('quick.db')//dawn
-
-exports.run = async (client ,message, args) =>{
-    if(!message.member.hasPermission('BAN_MEMBERS')) return //Burayı düzenleyebilirsiniz! İstediğiniz perme göre!
-if(args[0] === 'aktif' || args[0] === "açık" || args[0] === "aç") {
-    db.set(`${message.guild.id}.kufur`, true)
-    message.channel.send('<:yr_evet:793837194175447090> **Başarılı Şekilde** `Aktif` **Edildi.**')
-  return
+const Discord = require('discord.js');
+const db = require('quick.db');
+exports.run = async (client, message, args) => {
+ if (!message.guild) {
+    const ozelmesajuyari = new Discord.MessageEmbed()
+    .setColor(0xFF0000)
+    .setTimestamp()
+    .setAuthor(message.author.username, message.author.avatarURL)
+    .addField('**Komutları Özel Mesajlarda Kullanılamaz!**')
+    return message.author.send(ozelmesajuyari); }
+  if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply('Yetkiniz Bulunmamaktadır!');
+let reklam = db.fetch(`kufurengel.${message.guild.id}`)
+if(!reklam) {
+message.channel.send(`Küfür filtresi başarıyla açıldı.`)
+db.set(`kufurengel.${message.guild.id}`, true)
+} else {
+message.channel.send(`Küfür filtresi başarıyla kapatıldı.`)
+db.delete(`kufurengel.${message.guild.id}`)
 }
-if (args[0] === 'deaktif' || args[0] === "kapat" || args[0] === "kapalı") {
-  db.delete(`${message.guild.id}.kufur`)
-message.channel.send('<:yr_hayr:793837203478020127> **Başarılı Şekilde** `Deaktif` **Edildi**')
-return
-}
-  message.channel.send('<a:yrnex_uyar:800419824538091610> **Lüten** `Aktif` **yada **`Deaktif` **Yazın!**')
 };
+
 exports.conf = {
- enabled: true,
- guildOnly: false,
- aliases: ['küfür' , 'küfürfiltresi', 'küfürengel'],
- permLevel: 0
+  enabled: true,
+  guildOnly: false,
+  aliases: ['küfür'],
+  permLevel: 0
 };
 
 exports.help = {
- name: 'küfür-ayarla',//CCD
- description: 'Küfür Filtresini açar/kapar',
- usage: '!küfürfiltresi  '
+  name: 'küfür-engel',
+  description: 'Manyak* Code ait ağacı kökten çalanı g*tten',
+  usage: 'reklam-filtre'
 };

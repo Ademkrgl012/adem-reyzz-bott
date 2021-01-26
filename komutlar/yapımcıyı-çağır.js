@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
     let xfalcon = new Discord.MessageEmbed()
     .setColor('RANDOM')
     .setAuthor(`${message.author.tag} (${message.author.id})`, `${message.author.avatarURL()}`)
-    .setTitle('Biri Seni Yardın İçin Çağırdı')
+    .setTitle('Biri Seni Yardım İçin Çağırdı')
     .addField('Sebep:', `${devtr}`)
     .addField(`Sunucunun Davet Linki:`, `${invite}`)
     .setThumbnail(message.guild.iconURL())
