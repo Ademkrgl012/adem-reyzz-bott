@@ -37,52 +37,60 @@ client.on("ready", () => {
 const bot = new Discord.Client();
 
 var oyun = [
-`✨ Yardım almak için | y!yardım`,
-`🚀 Yeni Özellikler İçin | y!yardım`,
-`🔔 Abone Rol için | y!abone-sistemi`,
-`🌟 Kayıt Sistemi için | y!kayıt-yardım`,
-`⚡️ Botu eklemek için | y!davet`
-]
-  
+  `✨ Yardım almak için | y!yardım`,
+  `🚀 Yeni Özellikler İçin | y!yardım`,
+  `🔔 Abone Rol için | y!abone-yardım `,
+  `🌟 Kayıt Sistemi için | y!kayıt-yardım`,
+  `⚡️ Botu eklemek için | y!davet`
+];
+
 client.on("ready", () => {
-setInterval(function() {
-
-         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
-         client.user.setActivity(oyun[random], {"type": "WATCHING"});
-
-        }, 2 * 5000);
+  setInterval(function() {
+    var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
+    client.user.setActivity(oyun[random], { type: "WATCHING" });
+  }, 2 * 5000);
 });
 
 //-------------Bot Eklenince Bir Kanala Mesaj Gönderme Komutu ---------------\\
 
 const emmmmbed = new Discord.MessageEmbed()
-.setThumbnail()
-.setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
-.addField(`Yrnex | Teşekkürler`, `**Selamlar, Ben Yrnex (Yrnex Bot'un Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`)
-.addField(`Yrnex | Prefix`, `**Yrnex Botun Prefixi(ön eki) = \`y!\`\n\n Değiştirebilmek için \`y!prefix\` Yazabilirsiniz.**`)
-.addField(`Yrnex | Nasıl Kullanılır?`, `**Yrnex botun tüm özelliklerinden yararlanabilmek için sadece \`y!yardım\` yazmanız yeterlidir.**`)
-.addField(`Yrnex | Linkler`, `**Sohbet Kanalına y!davet Yazmanız Yeterlidir**`)
-.setFooter(`Yrnex | Gelişmiş Türkçe Bot | 2021`)
-.setTimestamp();
-
+  .setThumbnail()
+  .setImage(
+    "https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif"
+  )
+  .addField(
+    `Yrnex | Teşekkürler`,
+    `**Selamlar, Ben Yrnex (Yrnex Bot'un Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`
+  )
+  .addField(
+    `Yrnex | Prefix`,
+    `**Yrnex Botun Prefixi(ön eki) = \`y!\`\n\n Değiştirebilmek için \`y!prefix\` Yazabilirsiniz.**`
+  )
+  .addField(
+    `Yrnex | Nasıl Kullanılır?`,
+    `**Yrnex botun tüm özelliklerinden yararlanabilmek için sadece \`y!yardım\` yazmanız yeterlidir.**`
+  )
+  .addField(
+    `Yrnex | Linkler`,
+    `**Sohbet Kanalına y!davet Yazmanız Yeterlidir**`
+  )
+  .setFooter(`Yrnex | Gelişmiş Türkçe Bot | 2021`)
+  .setTimestamp();
 
 client.on("guildCreate", guild => {
+  let defaultChannel = "";
+  guild.channels.cache.forEach(channel => {
+    if (channel.type == "text" && defaultChannel == "") {
+      if (channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
+        defaultChannel = channel;
+      }
+    }
+  });
 
-let defaultChannel = "";
-guild.channels.cache.forEach((channel) => {
-if(channel.type == "text" && defaultChannel == "") {
-if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
-defaultChannel = channel;
-}
-}
-})
-
-defaultChannel.send(emmmmbed)
-
+  defaultChannel.send(emmmmbed);
 });
 
 //----------------------------------------------------------------\\
-
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
