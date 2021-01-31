@@ -777,6 +777,25 @@ client.on("message", message => {
   message.react("<:yr_hayr:793837203478020127>");
 });
 
+///////////////////////
+
+
+client.on("guildMemberAdd", async member => {
+  let kanal = await db.fetch(`kanalkayit_${member.guild.id}`);
+    let mesaj = db.fetch(`kayitGM_${member.guild.id}`);
+  if (!kanal) return;
+
+  if (!mesaj) {
+    client.channels.cache.get(kanal).send("<a:hypesquad1:750076071721828452> **Selam!** `" + member.user.username + "`**!kayıtol yazarak kayıt olabilirsin!**");
+    
+  }
+
+  if (mesaj) {
+    var mesajs = mesaj.replace("-uye-", `${member.user.username}`).replace("-uyetag-", `${member.user.tag}`);
+    return client.channels.cache.get(kanal).send(mesajs);
+     }
+});
+
 //////////////////////////////OTOROL
 
 client.on("guildMemberAdd", member => {
