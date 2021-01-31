@@ -807,21 +807,7 @@ client.on("ready", async () => {
       .catch(err => console.error("Bot ses kanalına bağlanamadı!"));
 });
 
-const googleTTS = require('google-tts-api')
-client.on('voiceStateUpdate', async (oldState, newState) => {
-  let kanalID = "BURAYA SES KANALI IDSİ";
-  if (newState.id !== client.user.id && newState.voice.channel && newState.voice.channel.id === kanalID) {
-    googleTTS("Spectrum Hoş Geldin!", "tr", 1).then(soylenecek => {
-      newState.voice.channel.join().then(kanal => {
-        kanal.play(soylenecek).on("end", () => {
-          setTimeout(() => {
-            newState.voice.channel.leave();
-          }, 2000)
-        });
-      });
-    });
-  };
-});
+
 ///////////////////////////////
 
 client.on("guildMemberAdd", member => {
