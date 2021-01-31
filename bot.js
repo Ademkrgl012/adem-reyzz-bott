@@ -274,7 +274,7 @@ client.on("guildDelete", guild => {
     .addField("Sunucu sahibi", guild.owner)
     .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
 
-  client.channels.cache.get("798573177348423720").send(Crewembed);
+  client.channels.cache.get("805475073690959882").send(Crewembed);
 });
 
 client.on("guildCreate", guild => {
@@ -286,7 +286,7 @@ client.on("guildCreate", guild => {
     .addField("Sunucu sahibi", guild.owner)
     .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
 
-  client.channels.cache.get("798573177348423720").send(Crewembed);
+  client.channels.cache.get("805475073690959882").send(Crewembed);
 });
 
 ///////////////////////////////////REKLAMENLGEL
