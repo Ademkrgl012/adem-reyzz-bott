@@ -13,15 +13,15 @@ exports.run = async (client, message, args) => {
   );
   if (!abonerol)
     return message.channel.send(
-      `<a:vumpushype:789105762714255361> **__Abone rolü ayarlanmamış!__**`
+      `<a:vumpushypee:805848458883760179> **__Abone rolü ayarlanmamış!__**`
     );
   if (!abonelog)
     return message.channel.send(
-      `<a:vumpushype:789105762714255361> **__Abone log kanalı ayarlanmamış!__**`
+      `<a:vumpushypee:805848458883760179> **__Abone log kanalı ayarlanmamış!__**`
     );
   if (!aboneyetkilisi)
     return message.channel.send(
-      `<a:vumpushype:789105762714255361> **__Abone yetkili rolü ayarlanmamış!__**`
+      `<a:vumpushypee:805848458883760179> **__Abone yetkili rolü ayarlanmamış!__**`
     );
   let user = message.mentions.users.first();
   if (!message.member.roles.cache.has(aboneyetkilisi))
@@ -36,17 +36,17 @@ exports.run = async (client, message, args) => {
   const embed = new Discord.MessageEmbed()
     .setTitle(`<a:sarionay:779734488896503868> Abone Rolü Verildi!`)
     .addField(
-      `<a:vumpushype:789105762714255361> Abone Rolünü Veren Kişi:`,
+      `<a:vumpushypee:805848458883760179> Abone Rolünü Veren Kişi:`,
       `<@${message.author.id}>`,
       true
     )
     .addField(
-      `<a:vumpushype:789105762714255361> Abone Rolü Verilen Kişi:`,
+      `<a:vumpushypee:805848458883760179> Abone Rolü Verilen Kişi:`,
       `${user}`,
       true
     )
    .addField(
-     `<a:vumpushype:789105762714255361> Mesaj linki`,`[Tıkla](https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id})`,
+     `<a:vumpushypee:805848458883760179> Mesaj linki`,`[Tıkla](https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id})`,
      true
    )
     .setColor(`RANDOM`)
