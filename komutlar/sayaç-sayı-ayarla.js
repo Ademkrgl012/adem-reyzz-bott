@@ -1,64 +1,34 @@
-const Discord = require("discord.js");
-const fs = require("fs");
-const ayarlar = require("../ayarlar.json");
+const Discord = require('discord.js');
+const db = require('quick.db')
+exports.run = async (client, message, args) => { 
+const fynx = require("../ayarlar/bot.json");
+let prefix = await db.fetch(`prefix.${message.guild.id}`) || fynx.prefix   
+let kanal = message.mentions.channels.first() 
+let sayı = args[1]
+let kalan = args[1] - message.guild.memberCount
+if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`<a:hypesquad1:750076071721828452> **Bu komutu kullanabilmek için** "\`Yönetici\`" **yetkisine sahip olmalısın.**`);
  
-exports.run = async (client, message, args) => {
-  const db = require("quick.db");
+ if(!kanal) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Lütfen Bir Kanal Belirt!** \n**__Örnek Kullanım__** : \`${prefix}sayaç-ayarla #kanal <Sayı>\``)
+  
+ if(isNaN(args[1])) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Belirttiğin Sayı Çok Küçük Veya O Sayıya Zaten Ulaşmışsın!**\n**__Örnek Kullanım__** : \`${prefix}sayaç-ayarla #kanal <Sayı>\``)
  
-  let prefix = ayarlar.prefix;
-  if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu komutu kullanabilmek için **Yönetici** iznine sahip olmalısın!`);
+ if(message.guild.memberCount > args[1]) return message.channel.send(`<a:hypesquad1:750076071721828452>  **Belirttiğin Sayı Çok Küçük Veya O Sayıya Zaten Ulaşmışsın!**\n**__Örnek Kullanım__** : \`${prefix}sayaç-ayarla #kanal <Sayı>\``)
+
  
-  if (!args[0]) {
-    return message.reply("Lütfen ayarlamak istediğiniz sayıyı yazınız");
-  }
- 
-  if (args[0] === "kapat") {
-    if (db.has(`sayacsayı_${message.guild.id}`) === true) {
-      db.delete(`sayacsayı_${message.guild.id}`);
- 
-      if (db.has(`sayaçKanal_${message.guild.id}`) === true) {
-        db.delete(`sayaçKanal_${message.guild.id}`);
-        message.channel.send("Sayaç kanalı ve sayaç başarıyla kaldırıldı");
-        return;
-      }
- 
-      message.channel.send("Sayaç kaldırıldı.");
-      return;
-    }
-    message.channel.send(`Sayaç ayarlanmamış.`);
-    return;
-  }
- 
-  if (isNaN(args[0])) {
-    return message.reply("Lütfen Sadece sayı belirt!");
-  }
- 
-  if (args[0] <= message.guild.memberCount) {
-    const embed = new Discord.MessageEmbed();
-    return message.reply("Lütfen sunucu sayısından daha yüksek bir değer girin!" );
-  }
- 
-  db.set(`sayacsayı_${message.guild.id}`, args[0]);
- 
-  const embed = new Discord.MessageEmbed()
-    .setTimestamp()
-    .setDescription(`
-Sayaç başarıyla ayarlandı : **${args[0]}**
-Sayaç kapatmak isterseniz **${prefix}sayaç kapat** yazmanız yeterlidir.
-Sayaç kanalı için y!sayaç-kanal-ayarla #kanal
-`);
-  message.channel.send(embed);
+  message.channel.send(`╔▬▬▬▬▬▬▬▬Pirate Sayaç▬▬▬▬▬▬▬▬▬
+║► <a:hypesquad1:750076071721828452> Sayaç Aktif Edildi.
+║► <a:hypesquad1:750076071721828452> **${args[1]}** Olarak Güncelledim! 
+║► <a:hypesquad1:750076071721828452> Kayıt Kanalını **${kanal}** Olarak Güncelledim! 
+║► <a:hypesquad1:750076071721828452> ${args[1]} Kişi Olmaya Son :fire: **${kalan}** :fire: Kişi Kaldı!
+╚▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`)
+
+  
+  db.set(`sayacK_${message.guild.id}`, kanal.id)  
+  db.set(`sayacS_${message.guild.id}`, sayı) 
 };
- 
-exports.conf = {
-  enabled: true,
-  guildOnly: true,
-  aliases: ["sayacayarla", "sayac", "sayaç"],
-  permLevel: 0
+
+exports.config = {
+  name: 'sayaç-ayarla',
+  aliases: ["sayaçayarla"]
 };
- 
-exports.help = {
-  name: "sayaç-ayarla",
-  description: "Sayacı ayarlar.",
-  usage: "sayaç-çayarla <sayı>"
-};
+

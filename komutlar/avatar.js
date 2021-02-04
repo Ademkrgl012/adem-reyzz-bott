@@ -5,9 +5,8 @@ exports.run = async (client, message, args) => {
   let Embed = new MessageEmbed();
 
   Embed.setTitle(`Senin avatarın!`);
-  Embed.setThumbnail(avatar);
+  Embed.setImage(avatar);
   Embed.setColor(`RANDOM`);
-  Embed.setDescription(`Arrow Bot`);
   return message.channel.send(Embed);
 };
 
