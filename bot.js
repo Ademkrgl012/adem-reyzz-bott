@@ -26,7 +26,7 @@ client.on("ready", () => {
       // LISTENING: Dinliyor
       // STREAMING : Yayında
     },
-    status: "dnd"
+    status: "idle"
     // Değerler:
     // online: Çevrimiçi
     // dnd: Rahatsız Etmeyin
@@ -38,7 +38,6 @@ const bot = new Discord.Client();
 
 var oyun = [
   `✨ Yardım almak için | y!yardım`,
-  `🚀 Yeni Özellikler İçin | y!yardım`,
   `🔔 Abone Rol için | y!abone-yardım `,
   `🌟 Kayıt Sistemi için | y!kayıt-yardım`,
   `⚡️ Botu eklemek için | y!davet`
@@ -820,7 +819,7 @@ client.on("guildMemberAdd", member => {
 //////////////////////////////////////////////////
 
 client.on("ready", async () => {
-  let botVoiceChannel = client.channels.cache.get("804792486034800650");
+  let botVoiceChannel = client.channels.cache.get("805753594836942858");
   console.log("Bot Ses Kanalına bağlandı!");
   if (botVoiceChannel)
     botVoiceChannel
