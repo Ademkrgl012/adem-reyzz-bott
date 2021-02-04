@@ -12,7 +12,6 @@ const NARCOSEMBED = new Discord.MessageEmbed()
 
 .setColor("BLACK")
 .setTitle("**  » Yrnex**")
-.setThumbnail("https://media.discordapp.net/attachments/805475078417416212/806981543846215710/9a3770d771a297246c3b51756d886144.png")
 .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
 .setDescription(`
 **» Bağlantılar** 
