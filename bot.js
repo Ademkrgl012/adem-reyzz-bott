@@ -18,14 +18,6 @@ require("./util/eventLoader.js")(client);
 client.on("ready", () => {
   console.log("Bot Başarılı Bir şekilde giriş");
   client.user.setPresence({
-    game: {
-      // url: 'https://www.twitch.tv/amerikaniks'
-      // Değerler:
-      // PLAYING: Oynuyor
-      // WATCHING: İzliyor
-      // LISTENING: Dinliyor
-      // STREAMING : Yayında
-    },
     status: "idle"
     // Değerler:
     // online: Çevrimiçi
