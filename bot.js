@@ -822,14 +822,4 @@ client.on("ready", async () => {
 
 ///////////////////////////////
 
-client.on("guildMemberAdd", member => {
-  let botrolü = "787328444954050570";
-  let kayıtsızrolü = "";
-  if (member.user.bot) {
-    member.roles.add(botrolü);
-  } else {
-    member.roles.add(kayıtsızrolü);
-  }
-});
-
 client.login(ayarlar.token);
