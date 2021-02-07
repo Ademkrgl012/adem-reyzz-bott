@@ -29,10 +29,11 @@ client.on("ready", () => {
 const bot = new Discord.Client();
 
 var oyun = [
-  `✨ Yardım almak için | y!yardım`,
-  `🔔 Abone Rol için | y!abone-yardım `,
-  `🌟 Kayıt Sistemi için | y!kayıt-yardım`,
-  `⚡️ Botu eklemek için | y!davet`
+  `✨ Yardım almak için | -yardım`,
+   `🟢 DATA Base Sıfırlandı!`,
+  `🔔 Abone Rol için | -abone-yardım `,
+  `🌟 Kayıt Sistemi için | -kayıt-yardım`,
+  `⚡️ Botu eklemek için | -davet`
 ];
 
 client.on("ready", () => {
