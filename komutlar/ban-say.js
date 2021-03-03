@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
  let guild = message.guild;
 
     guild.fetchBans()
-        .then(bans => message.channel.send(` > <a:yr_ban:779007761655660605>  **Sunucunuzda ${bans.size} banlanmış üye bulunmaktadır!**   `))
+        .then(bans => message.channel.send(` > <a:BanHammer:816607111898857482>  **Sunucunuzda ${bans.size} banlanmış üye bulunmaktadır!**   `))
         .catch(console.error);
 
 }
