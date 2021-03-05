@@ -17,7 +17,7 @@ let motion = new Discord.MessageEmbed()
     ) 
     .addField(
       "Bot Geliştiricisi",
-      `> <a:yrnex_cevelop:800735697060888646> Bot geliştiricisi : <@768080464984014918> | **YV Yrnex#5101**`
+      `> <a:yrnex_cevelop:800735697060888646> Bot geliştiricisi : <@768080464984014918>**`
     ) 
     .addField(
       "Sürümler",

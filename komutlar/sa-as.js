@@ -9,14 +9,14 @@ exports.run = async (bot, message, args) => {
   if (args[0] === 'aç') {
     
     db.set(`ssaass_${message.guild.id}`, 'acik')
-    message.channel.send(`<:yr_evet:793837194175447090> **Artık bot Sa diyince As diyecek. Kapatmak için "\`y!sa-as kapat\`" yazmalısın.**`)
+    message.channel.send(`✅ **Artık bot Sa diyince As diyecek. Kapatmak için "\`y!sa-as kapat\`" yazmalısın.**`)
  
   }
   
   if (args[0] === 'kapat') {
     
     db.set(`ssaass_${message.guild.id}`, 'kapali')
-    message.channel.send(`<:yr_hayr:793837203478020127> **Artık biri sa diyince cevap vermeyecek.**`)
+    message.channel.send(`❌ **Artık biri sa diyince cevap vermeyecek.**`)
 
   }
  

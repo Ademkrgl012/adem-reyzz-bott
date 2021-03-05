@@ -5,17 +5,17 @@ exports.run = async (app, message, client) => {
   
   const plasmic = new Discord.MessageEmbed()
   .setColor("RANDOM")
-  .setDescription('<a:yrnex_loading:794118093814104064> **Ping Hesaplanıyor...**')
+  .setDescription('📊 **Ping Hesaplanıyor...**')
   
    let plasmicc = Date.now(); 
    let plasmiccode = await message.channel.send(plasmic)
    let plasmiccodee = (Date.now() - plasmicc); 
    let plasmicAPI = (app.ws.ping).toFixed(2)
     setInterval(() => {
-   const plasmiccc = new Discord.MessageEmbed()
-   .setDescription(`\n<a:yrnex_discord:794118212693917718> Mesaj Gecikme Süresi ; **${plasmiccodee}Ms** \n\n<a:yrnex_bulut:794118277705629696> Bot Gecikme Süresi ; **${plasmicAPI}Ms**`)
+   const yrnexembed = new Discord.MessageEmbed()
+   .setDescription(`\n🚀 Mesaj Gecikme Süresi ; **${plasmiccodee}Ms** \n\n🤖 Bot Gecikme Süresi ; **${plasmicAPI}Ms**`)
    .setColor('RANDOM')
-    plasmiccode.edit(plasmiccc);
+    plasmiccode.edit(yrnexembed);
     }, 5000)
 };
 exports.conf = {

@@ -9,12 +9,12 @@ exports.run = async (bot, message, args) => {
   if (args[0] == 'aç') {
     if(db.has(`reklam_${message.guild.id}`)) return message.channel.send(`Sistem zaten açık.`)
     db.set(`reklam_${message.guild.id}`, 'acik')
-      message.channel.send('<:yr_evet:793837194175447090> **Reklam Engel başarıyla açıldı! `Üyeleri Yasakla` yetkisine sahip olanların reklamı engellenmicektir.**')
+      message.channel.send('✅ **Reklam Engel başarıyla açıldı! `Üyeleri Yasakla` yetkisine sahip olanların reklamı engellenmicektir.**')
   }
   if (args[0] == 'kapat') {
         if(!db.has(`reklam_${message.guild.id}`)) return message.channel.send(`Sistem zaten kapalı.`)
     db.delete(`reklam_${message.guild.id}`)
-      message.channel.send('<:yr_hayr:793837203478020127> **Reklam Engel başarıyla kapatıldı! Artık herkes reklam yapabilir.**')
+      message.channel.send('❌ **Reklam Engel başarıyla kapatıldı! Artık herkes reklam yapabilir.**')
   }
  
 };

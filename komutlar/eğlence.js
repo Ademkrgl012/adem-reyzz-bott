@@ -6,11 +6,11 @@ exports.run = async (client, message, args) => {
     .addField(
       "<:tatli:794115253436809236> Yrnex Eğlence Menüsü",
       `
-<:emoji_4:793928482463154186> **y!fbi** : FBİ Gelir.
-<:emoji_4:793928482463154186> **y!tersyazı** : Yazınızı Tersten Yazar.
-<:emoji_4:793928482463154186> **y!token** : Botun Tokenini Görürsünüz.
-<:emoji_4:793928482463154186> **y!atam** : Dene ve Gör Reis.
-<:emoji_4:793928482463154186> **y!vine** : Komik Paylaşımlar.`
+✨ **y!fbi** : FBİ Gelir.
+✨ **y!tersyazı** : Yazınızı Tersten Yazar.
+✨ **y!token** : Botun Tokenini Görürsünüz.
+✨ **y!atam** : Dene ve Gör Reis.
+✨ **y!vine** : Komik Paylaşımlar.`
     )
     .addField(
       "**» Davet Linki**",

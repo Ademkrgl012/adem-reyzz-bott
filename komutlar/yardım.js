@@ -22,7 +22,6 @@ Bir komut hakkında detaylı __yardım için__: **y!yardım**`)
 .addField('> y!kullanıcı ',' 👥 Kullanıcı komutları')
 .addField('> y!abone-yardım ',' 🔔 Ayarlamalı Abone Rol Sistemi')
 .addField('> y!eğlence','  ✨ Eğlence Komutları')
-.addField('> y!kayıt-yardım ',' 📖 Ayarlamalı Kayıt Sistemi')
 return message.channel.send(YRNEXEMBED)
 .then; 
 

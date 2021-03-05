@@ -4,10 +4,10 @@ let prefix = 'y!'
 let yardım = new Discord.MessageEmbed()  
 .setColor('RANDOM')
 .addField('<:yrnex_youtube:794170019034038314> Abone Rol Menüsü',`
-<:emoji_1:793928364133056513> **y!abone-yetkili-rol** : Abone Yetkilisini Seçer.
-<:emoji_1:793928364133056513> **y!abone-rol** : Vericeğiniz Rolü ayarlarsınız.
-<:emoji_1:793928364133056513> **y!abone-log** : Log mesajınn gitceği yer seçilir.
-<:emoji_1:793928364133056513> **y!abone** : Abone Rolü verme komutudur.`)
+🔔 **y!abone-yetkili-rol** : Abone Yetkilisini Seçer.
+🔔 **y!abone-rol** : Vericeğiniz Rolü ayarlarsınız.
+🔔 **y!abone-log** : Log mesajınn gitceği yer seçilir.
+🔔 **y!abone** : Abone Rolü verme komutudur.`)
   .addField("**» Davet Linki**", " [Botu Davet Et](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)", )
     .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL())
