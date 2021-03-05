@@ -14,7 +14,7 @@ const YRNEXEMBED = new Discord.MessageEmbed()
 .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
 .setDescription(`
 **» Bağlantılar** 
-**[Destek Sunucusu](https://discord.gg/qzHTkhjQgT)** **•** **[Botun Davet Linki](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)** **•**
+**[Destek Sunucusu](https://discord.gg/xksdUskx8q)** **•** **[Botun Davet Linki](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)** **•**
 Bir komut hakkında detaylı __yardım için__: **y!yardım**`)
 
 .addField('**• Komutlar**',' Botun Tüm Komutları Aşağıda Bulunmaktadır.')

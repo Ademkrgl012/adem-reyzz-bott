@@ -7,7 +7,6 @@ exports.run = async (client, message, args) => {
       "<:tatli:794115253436809236> Yrnex Eğlence Menüsü",
       `
 ✨ **y!fbi** : FBİ Gelir.
-✨ **y!tersyazı** : Yazınızı Tersten Yazar.
 ✨ **y!token** : Botun Tokenini Görürsünüz.
 ✨ **y!atam** : Dene ve Gör Reis.
 ✨ **y!vine** : Komik Paylaşımlar.`

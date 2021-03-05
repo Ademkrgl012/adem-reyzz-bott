@@ -4,14 +4,14 @@ let ayarlar = require("../ayarlar.json")
 
 
 exports.run = async(client, message) => {
-  if(!message.member.hasPermission(`ADMINISTRATOR`)) return message.channel.send(`Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin.`)
+  if(!message.member.hasPermission(`ADMINISTRATOR`)) return message.channel.send(`❌ Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin.`)
   
   let log = message.mentions.channels.first()
-  if(!log) return message.channel.send(`**Bir kanal etiketlemen gerekmekte örnek: __${ayarlar.prefix}abonelog #kanal__**`)
+  if(!log) return message.channel.send(`❌ **Bir kanal etiketlemen gerekmekte örnek: __${ayarlar.prefix}abonelog #kanal__**`)
   
   
   database.set(`abonelog.${message.guild.id}`, log.id)
-  message.channel.send(`<:yr_evet:793837194175447090> **Abone kanalı başarıyla "${log}" olarak ayarlandı.**`)
+  message.channel.send(`✅ **Abone kanalı başarıyla "${log}" olarak ayarlandı.**`)
 }
 
 exports.conf = {

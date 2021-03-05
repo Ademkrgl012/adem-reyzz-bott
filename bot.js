@@ -18,11 +18,7 @@ require("./util/eventLoader.js")(client);
 client.on("ready", () => {
   console.log("Bot Başarılı Bir şekilde giriş");
   client.user.setPresence({
-    status: "idle"
-    // Değerler:
-    // online: Çevrimiçi
-    // dnd: Rahatsız Etmeyin
-    // idle: Boşta
+    status: "dnd"
   });
 });
 

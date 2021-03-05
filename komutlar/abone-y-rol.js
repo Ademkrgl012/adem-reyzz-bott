@@ -10,12 +10,12 @@ exports.run = async (client, message) => {
   let rol = message.mentions.roles.first();
   if (!rol)
     return message.channel.send(
-      `**Bir rol etiketlemen gerekmekte örnek: __${ayarlar.prefix}abone-yetkili-rol @rol__**`
+      `❌ **Bir rol etiketlemen gerekmekte örnek: __${ayarlar.prefix}abone-yetkili-rol @rol__**`
     );
 
   database.set(`aboneyetkilisi.${message.guild.id}`, rol.id);
   message.channel.send(
-    `<:yr_evet:793837194175447090> **Abone yetkilisi başarıyla "${rol}" olarak ayarlandı.**`
+    `✅ **Abone yetkilisi başarıyla "${rol}" olarak ayarlandı.**`
   );
 };
 
