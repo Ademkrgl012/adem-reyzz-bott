@@ -28,6 +28,6 @@ exports.conf = {
 
 exports.help = {
   name: 'küfür-engel',
-  description: 'Manyak* Code ait ağacı kökten çalanı g*tten',
+  description: 'YRNEX',
   usage: 'reklam-filtre'
 };

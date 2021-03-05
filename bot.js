@@ -29,19 +29,8 @@ client.on("ready", () => {
 const bot = new Discord.Client();
 
 var oyun = [
-  `✨ Yardım almak için | -yardım`,
-   `🟢 DATA Base Sıfırlandı!`,
-  `🔔 Abone Rol için | -abone-yardım `,
-  `🌟 Kayıt Sistemi için | -kayıt-yardım`,
-  `⚡️ Botu eklemek için | -davet`
+  `YouTube: Yrnex | Onaylı Bot Altyapısı`,
 ];
-
-client.on("ready", () => {
-  setInterval(function() {
-    var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
-    client.user.setActivity(oyun[random], { type: "WATCHING" });
-  }, 2 * 5000);
-});
 
 //-------------Bot Eklenince Bir Kanala Mesaj Gönderme Komutu ---------------\\
 
@@ -204,7 +193,7 @@ client.on("message", async msg => {
     ) {
       try {
         return msg.reply(
-          "**Aleyküm Selam Hoşgeldin** <:tatli:794115253436809236>"
+          "**Aleyküm Selam Hoşgeldin** 👻"
         );
       } catch (err) {
         console.log(err);
@@ -266,7 +255,7 @@ client.on("guildDelete", guild => {
     .addField("Sunucu sahibi", guild.owner)
     .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
 
-  client.channels.cache.get("805475073690959882").send(Crewembed);
+  client.channels.cache.get("LOGKANALİD").send(Crewembed);
 });
 
 client.on("guildCreate", guild => {
@@ -278,7 +267,7 @@ client.on("guildCreate", guild => {
     .addField("Sunucu sahibi", guild.owner)
     .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
 
-  client.channels.cache.get("805475073690959882").send(Crewembed);
+  client.channels.cache.get("LOGKANALİD").send(Crewembed);
 });
 
 ///////////////////////////////////REKLAMENLGEL
@@ -762,31 +751,6 @@ client.on("guildBanRemove", async (guild, user) => {
 
 //////////////////////////////MODLOG///////////////////////////
 
-client.on("message", message => {
-  if (message.channel.id !== "797822239126192148") return;
-
-  message.react("<:yr_evet:793837194175447090>");
-  message.react("<:yr_hayr:793837203478020127>");
-});
-
-///////////////////////
-
-
-client.on("guildMemberAdd", async member => {
-  let kanal = await db.fetch(`kanalkayit_${member.guild.id}`);
-    let mesaj = db.fetch(`kayitGM_${member.guild.id}`);
-  if (!kanal) return;
-
-  if (!mesaj) {
-    client.channels.cache.get(kanal).send("<a:hypesquad1:750076071721828452> **Selam!** `" + member.user.username + "`**!kayıtol yazarak kayıt olabilirsin!**");
-    
-  }
-
-  if (mesaj) {
-    var mesajs = mesaj.replace("-uye-", `${member.user.username}`).replace("-uyetag-", `${member.user.tag}`);
-    return client.channels.cache.get(kanal).send(mesajs);
-     }
-});
 
 //////////////////////////////OTOROL
 
@@ -812,7 +776,7 @@ client.on("guildMemberAdd", member => {
 //////////////////////////////////////////////////
 
 client.on("ready", async () => {
-  let botVoiceChannel = client.channels.cache.get("805753594836942858");
+  let botVoiceChannel = client.channels.cache.get("SES KANAL İD");
   console.log("Bot Ses Kanalına bağlandı!");
   if (botVoiceChannel)
     botVoiceChannel
