@@ -1,8 +1,0 @@
-
-
-
-//Yrnex Creative'ye AİTTİR! discord.gg/codework
-
-TOKEN .ENV KISMINA GİRİLECEK!
-
-SAHİP İD VE PREFİX = AYARLAR.JSONA GİRİLECEK!
