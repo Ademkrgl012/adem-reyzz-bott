@@ -5,10 +5,9 @@ exports.run = (client, message) => {
     const ozelmesajuyari = new Discord.MessageEmbed()
     .setColor(0xFF0000)
     .setTimestamp()
-    .setAuthor(message.author.username, message.author.avatarURL)
     .addField('**Komutları Özel Mesajlarda Kullanılamaz!**')
     return message.author.send(ozelmesajuyari); }
-const NARCOSEMBED = new Discord.MessageEmbed()
+const YRNEXEMBED = new Discord.MessageEmbed()
 
 .setColor("BLACK")
 .setTitle("**  » Yrnex**")
@@ -19,12 +18,12 @@ const NARCOSEMBED = new Discord.MessageEmbed()
 Bir komut hakkında detaylı __yardım için__: **y!yardım**`)
 
 .addField('**• Komutlar**',' Botun Tüm Komutları Aşağıda Bulunmaktadır.')
-.addField('> y!moderasyon ',' <:emoji_1:793928339261227020> Moderasyon komutları')
-.addField('> y!kullanıcı ',' <:emoji_3:793928384932610099> Kullanıcı komutları')
-.addField('> y!abone-yardım ',' <:emoji_1:793928364133056513> Ayarlamalı Abone Rol Sistemi')
-.addField('> y!eğlence','  <:emoji_4:793928482463154186> Eğlence Komutları')
-.addField('> y!kayıt-yardım ',' <:emoji_4:793928460661555240> Ayarlamalı Kayıt Sistemi')
-return message.channel.send(NARCOSEMBED)
+.addField('> y!moderasyon ',' 🔰 Moderasyon komutları')
+.addField('> y!kullanıcı ',' 👥 Kullanıcı komutları')
+.addField('> y!abone-yardım ',' 🔔 Ayarlamalı Abone Rol Sistemi')
+.addField('> y!eğlence','  ✨ Eğlence Komutları')
+.addField('> y!kayıt-yardım ',' 📖 Ayarlamalı Kayıt Sistemi')
+return message.channel.send(YRNEXEMBED)
 .then; 
 
 };

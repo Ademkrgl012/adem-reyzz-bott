@@ -6,7 +6,7 @@
 [**Discord Sunucum**](https://discord.gg/xksdUskx8q)•[**YouTube Kanalım**](https://www.youtube.com/channel/UC9XxbjsFzIK1MxaTetiuaFg)
 
 
-ALTTAKİ RESME TIKLAYARKTA ONAYLI BOTUMU EKLİYEBİLİRSİNİZ 
+ALTTAKİ RESME TIKLAYARKTA ONAYLI BOTUMU EKLİYEBİLİRSİNİZ ✅
 
 
 <a href="https://top.gg/bot/787328444954050570">
