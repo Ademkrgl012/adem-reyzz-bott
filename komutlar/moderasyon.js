@@ -3,14 +3,13 @@ exports.run = async (client, message, args) => {
   let prefix = "y!";
   let yardım = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .addField("<:yrnex_pols:794269931432181830> Moderasyon Menüsü",`
+    .addField("Yrnex Moderasyon Menüsü",`
 🔰 **y!reklam** : Reklam Engeli Açarsınız.
 🔰 **y!küfür** : Küfür Engeli Açarsınız.
 🔰 **y!otorol** : Otorol Ayarlarsınız.
 🔰 **y!sayaç** : Sayaç Rakamını Seçersiniz.
 🔰 **y!sayaç-kanal-ayarla** : Sayaç Kanalını Seçer.
 🔰 **y!mod-log** : Mod-Log Kanalı Seçersiniz.
-🔰 **y!güvenlik** : Güvenlik Sistemini Açar.
 🔰 **y!yavaş-mod** : Yavaş Mod Ayarlarsınız.
 🔰 **y!sa-as** : Sa-As Mesajını Açar..
 🔰 **y!sil** : Belli Miktarda Mesaj Siler.

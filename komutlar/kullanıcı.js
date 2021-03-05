@@ -3,7 +3,7 @@ exports.run = async (client, message, args) => {
 let prefix = 'y!'
 let yardım = new Discord.MessageEmbed()  
 .setColor('RANDOM')
-.addField('<:coffeee:794115205176885298> Yrnex Kullanıcı Menüsü',`
+.addField('Yrnex Kullanıcı Menüsü',`
 👥 **y!profil** : Kullanıcı Bilginizi Görürsünüz.
 👥 **y!avatar** : Avatarınıza Bakarsınız.
 👥 **y!say** : Sunucudaki Üye Sayısını Gösterir.

@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
   let yardım = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .addField(
-      "<:tatli:794115253436809236> Yrnex Eğlence Menüsü",
+      "Yrnex Eğlence Menüsü",
       `
 ✨ **y!fbi** : FBİ Gelir.
 ✨ **y!token** : Botun Tokenini Görürsünüz.

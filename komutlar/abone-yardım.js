@@ -3,7 +3,7 @@ exports.run = async (client, message, args) => {
 let prefix = 'y!'
 let yardım = new Discord.MessageEmbed()  
 .setColor('RANDOM')
-.addField('<:yrnex_youtube:794170019034038314> Abone Rol Menüsü',`
+.addField('Yrnex Abone Rol Menüsü',`
 🔔 **y!abone-yetkili-rol** : Abone Yetkilisini Seçer.
 🔔 **y!abone-rol** : Vericeğiniz Rolü ayarlarsınız.
 🔔 **y!abone-log** : Log mesajınn gitceği yer seçilir.

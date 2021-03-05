@@ -15,18 +15,12 @@ const log = message => {
   console.log(` ${message}`);
 };
 require("./util/eventLoader.js")(client);
-client.on("ready", () => {
-  console.log("Bot Başarılı Bir şekilde giriş");
-  client.user.setPresence({
-    status: "dnd"
-  });
+
+client.on("ready",()=>{
+  client.user.setActivity(`Yrnex Onaylı Bot Altyapısı`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username}`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Şu an ` + client.channels.cache.size + ` adet kanala, ` + client.guilds.cache.size + ` adet sunucuya ve ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 });
-
-const bot = new Discord.Client();
-
-var oyun = [
-  `YouTube: Yrnex | Onaylı Bot Altyapısı`,
-];
 
 //-------------Bot Eklenince Bir Kanala Mesaj Gönderme Komutu ---------------\\
 

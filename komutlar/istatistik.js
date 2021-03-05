@@ -7,21 +7,21 @@ let motion = new Discord.MessageEmbed()
 
     .addField(
       "Veriler", 
-      `> <a:squad:775385865492234260> Toplam sunucu: **${
+      `>  Toplam sunucu: **${
         client.guilds.cache.size
-      }** \n> <a:squad:775385865492234260> Toplam kullanıcı: **${client.guilds.cache
+      }** \n>  Toplam kullanıcı: **${client.guilds.cache
         .reduce((a, b) => a + b.memberCount, 0)
-        .toLocaleString()}** \n> <a:squad:775385865492234260> Toplam kanal: **${
+        .toLocaleString()}** \n>  Toplam kanal: **${
         client.channels.cache.size
       }**`
     ) 
     .addField(
       "Bot Geliştiricisi",
-      `> <a:yrnex_cevelop:800735697060888646> Bot geliştiricisi : <@768080464984014918>**`
+      `> Bot geliştiricisi : <@768080464984014918>`
     ) 
     .addField(
       "Sürümler",
-      `> <a:squad:775385865492234260> Discord.js sürümü: **v${Discord.version}** \n> <a:squad:775385865492234260> Node.js sürümü: **${process.version}**`
+      `>  Discord.js sürümü: **v${Discord.version}** \n>  Node.js sürümü: **${process.version}**`
     ) 
     
     .setTimestamp()
