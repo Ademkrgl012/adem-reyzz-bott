@@ -19,9 +19,9 @@ const limit = args[0];
   
 if (isNaN(limit)) {
   var s = new Discord.MessageEmbed()
-  .setDescription("Doğru kullanım: `!yavaş-mod [0-∞]`")
+  .setDescription("Doğru kullanım: `a!yavaş-mod [0-∞]`")
   .setColor("RANDOM")
-       .setFooter('Yrnex',client.user.avatarURL())
+       .setFooter('Adem Reyzz',client.user.avatarURL())
 .setTimestamp()
   msg.channel.send({embed: s});
     return
@@ -33,7 +33,7 @@ if (limit > 300) {
     var es = new Discord.MessageEmbed()
     .setDescription(`Yazma süre limiti **${limit}** Saniye olarak ayarlanmıştır!`)
     .setColor("RANDOM")
-     .setFooter('Yrnex',client.user.avatarURL())
+     .setFooter('Adem Reyzz',client.user.avatarURL())
 .setTimestamp()
     msg.channel.send({embed: es})
   
@@ -52,7 +52,7 @@ request({
 }
     var e = new Discord.MessageEmbed()
     .setDescription(`Yazma süre limiti **${limit}** Saniye olarak ayarlanmıştır!`)
-     .setFooter('Yrnex',client.user.avatarURL())
+     .setFooter('Adem Reyzz',client.user.avatarURL())
 .setTimestamp()
     .setColor("RANDOM")
     msg.channel.send({embed: e});

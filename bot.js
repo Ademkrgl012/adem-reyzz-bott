@@ -17,7 +17,7 @@ const log = message => {
 require("./util/eventLoader.js")(client);
 
 client.on("ready",()=>{
-  client.user.setActivity(`Yrnex Onaylı Bot Altyapısı`);
+  client.user.setActivity(`Türkiyenin En İyilerinden Biri|Adem Reyzz Onaylı Botu`);
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username}`);
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Şu an ` + client.channels.cache.size + ` adet kanala, ` + client.guilds.cache.size + ` adet sunucuya ve ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 });
@@ -27,25 +27,25 @@ client.on("ready",()=>{
 const emmmmbed = new Discord.MessageEmbed()
   .setThumbnail()
   .setImage(
-    "https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif"
+    "https://cdn.discordapp.com/attachments/813881349004984370/826793395677691924/350kb_1.gif"
   )
   .addField(
-    `Yrnex | Teşekkürler`,
-    `**Selamlar, Ben Yrnex (Yrnex Bot'un Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`
+    `Adem Reyzz | Teşekkürler`,
+    `**Selamlar, Ben Adem Reyzz (Adem Reyzz Bot'un Geliştiricisi) Öncelikle Botumuzu Eklediğiniz ve Bize Destek Olduğunuz İçin Sizlere Teşekkürlerimi Sunarım**`
   )
   .addField(
-    `Yrnex | Prefix`,
-    `**Yrnex Botun Prefixi(ön eki) = \`y!\`\n\n Değiştirebilmek için \`y!prefix\` Yazabilirsiniz.**`
+    `Adem Reyzz | Prefix`,
+    `**Adem Reyzz Botun Prefixi(ön eki) = \`a!\`\n\n Değiştirebilmek için \`a!prefix\` Yazabilirsiniz.**`
   )
   .addField(
-    `Yrnex | Nasıl Kullanılır?`,
-    `**Yrnex botun tüm özelliklerinden yararlanabilmek için sadece \`y!yardım\` yazmanız yeterlidir.**`
+    `Adem Reyzz | Nasıl Kullanılır?`,
+    `**Adem Reyzz botun tüm özelliklerinden yararlanabilmek için sadece \`a!yardım\` yazmanız yeterlidir.**`
   )
   .addField(
-    `Yrnex | Linkler`,
+    `Adem Reyzz | Linkler`,
     `**Sohbet Kanalına y!davet Yazmanız Yeterlidir**`
   )
-  .setFooter(`Yrnex | Gelişmiş Türkçe Bot | 2021`)
+  .setFooter(`Adem Reyzz | Gelişmiş Türkçe Bot | 2021`)
   .setTimestamp();
 
 client.on("guildCreate", guild => {
