@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
     .addField('Sebep:', `${devtr}`)
     .addField(`Sunucunun Davet Linki:`, `${invite}`)
     .setThumbnail(message.guild.iconURL())
-    .setFooter('Yrnex Yapımcıyı Çağırma Sistemi');
+    .setFooter('Adem Reyzz Yapımcıyı Çağırma Sistemi');
     client.users.cache.get(ayarlar.sahip).send(xfalcon);
   });
 }

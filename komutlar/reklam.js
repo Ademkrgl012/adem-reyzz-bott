@@ -4,7 +4,7 @@ const Discord = require('discord.js')
 exports.run = async (bot, message, args) => {
   if (!args[0]) return message.channel.send('Hey Bu Ayarı Kullanabilmek için `aç` yada `kapat` yazmalısın.')
   if(!ayarlar.includes(args[0])) return message.channel.send(`Geçerli parametreleri kullanmalısın.\nParametreler: ${ayarlar.join(' - ')}`)
-  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('<a:yrnex_uyar:800419824538091610> `SUNUCUYU_YÖNET` **yetkisine sahip olmalısın!**')
+  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('<a:ademreyzz_uyar:800419824538091610> `SUNUCUYU_YÖNET` **yetkisine sahip olmalısın!**')
  
   if (args[0] == 'aç') {
     if(db.has(`reklam_${message.guild.id}`)) return message.channel.send(`Sistem zaten açık.`)

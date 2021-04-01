@@ -1,20 +1,20 @@
 const Discord = require('discord.js');
 exports.run = async (client, message, args) => { 
-let prefix = 'y!'
+let prefix = 'a!'
 let yardım = new Discord.MessageEmbed()  
 .setColor('RANDOM')
-.addField('Yrnex Kullanıcı Menüsü',`
-👥 **y!profil** : Kullanıcı Bilginizi Görürsünüz.
-👥 **y!avatar** : Avatarınıza Bakarsınız.
-👥 **y!say** : Sunucudaki Üye Sayısını Gösterir.
-👥 **y!afk** : AFK Olma Komutudur.
-👥 **y!yetkilerim** : Sunucudaki Yetkinize Bakarsınız.
-👥 **y!ping** : Botun Pingine Bakarsınız.
-👥 **y!i** : Botun İstatistiklerine Bakarsınız.
-👥 **y!bug-bildir** : Botun Bugunu Bildirirsiniz.
-👥 **y!davet** : Botu Davet Edersiniz.`)
-.addField("**» Davet Linki**", " [Botu Davet Et](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)", )
-    .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
+.addField('Adem Reyzz Kullanıcı Menüsü',`
+👥 **a!profil** : Kullanıcı Bilginizi Görürsünüz.
+👥 **a!avatar** : Avatarınıza Bakarsınız.
+👥 **a!say** : Sunucudaki Üye Sayısını Gösterir.
+👥 **a!afk** : AFK Olma Komutudur.
+👥 **a!yetkilerim** : Sunucudaki Yetkinize Bakarsınız.
+👥 **a!ping** : Botun Pingine Bakarsınız.
+👥 **a!i** : Botun İstatistiklerine Bakarsınız.
+👥 **a!bug-bildir** : Botun Bugunu Bildirirsiniz.
+👥 **a!davet** : Botu Davet Edersiniz.`)
+.addField("**» Davet Linki**", " [Botu Davet](https://discord.com/oauth2/authorize?client_id=826508857463275542&scope=bot&permissions=2147483647)", )
+    .setImage("https://cdn.discordapp.com/attachments/813881349004984370/827103972581048340/standard_1.gif")
 .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL())
 .setThumbnail(client.user.avatarURL())
  message.channel.send(yardım) 

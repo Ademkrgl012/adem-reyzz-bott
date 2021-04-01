@@ -7,9 +7,9 @@ exports.run = (client, message) => {
   .setTitle("Davet Linkleri Altta Belirtilmiştir")
   .setColor("GOLD")
     .addField("» **Botun Sahibi**", "<@!768080464984014918>")
-    .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/xksdUskx8q)", )
-    .addField("**» Davet Linki**", " [Botu Davet Et](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)", )
-    .setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
+    .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/uruvQjX47v)", )
+    .addField("**» Davet Linki**", " [Botu Davet](https://discord.com/oauth2/authorize?client_id=826508857463275542&scope=bot&permissions=2147483647)",)
+    .setImage("https://cdn.discordapp.com/attachments/813881349004984370/826793395677691924/350kb_1.gif")
   .setFooter(`${message.author.tag} Tarafından İstendi.`, message.author.avatarURL())
   message.channel.send(chrome);   //DevTR
 };

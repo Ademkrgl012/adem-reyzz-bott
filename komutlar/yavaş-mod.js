@@ -9,9 +9,9 @@ const limit = args[0];
   
   if(!limit) {
               var embed = new Discord.MessageEmbed()
-                .setDescription("Doğru kullanım: `!yavaş-mod [0-∞]`")
+                .setDescription("Doğru kullanım: `a!yavaş-mod [0-∞]`")
               .setColor("RANDOM")
-     .setFooter('Yrnex',client.user.avatarURL())
+     .setFooter('Adem Reyzz',client.user.avatarURL())
 .setTimestamp()
               msg.channel.send({embed: embed})
             return

@@ -30,7 +30,7 @@ exports.help = {
 };
 
 exports.play = {
-  kullanım: "y!abone-y-rol @rol",
+  kullanım: "a!abone-y-rol @rol",
   açıklama: "Abone Yetkili Rolünü Ayarlarsınız",
   kategori: "Abone"
 };

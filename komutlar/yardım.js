@@ -7,22 +7,22 @@ exports.run = (client, message) => {
     .setTimestamp()
     .addField('**Komutları Özel Mesajlarda Kullanılamaz!**')
     return message.author.send(ozelmesajuyari); }
-const YRNEXEMBED = new Discord.MessageEmbed()
+const ADEMREYZZEMBED = new Discord.MessageEmbed()
 
 .setColor("BLACK")
-.setTitle("**  » Yrnex**")
-.setImage("https://cdn.discordapp.com/attachments/797899158807117867/798281669961842806/standard_22.gif")
+.setTitle("**  » Adem Reyzz**")
+.setImage("https://cdn.discordapp.com/attachments/813881349004984370/826793395677691924/350kb_1.gif")
 .setDescription(`
 **» Bağlantılar** 
-**[Destek Sunucusu](https://discord.gg/xksdUskx8q)** **•** **[Botun Davet Linki](https://discord.com/api/oauth2/authorize?client_id=787328444954050570&permissions=8&scope=bot)** **•**
+**[Destek Sunucusu](https://discord.gg/uruvQjX47v)** **•** **[Botun Davet Linki](https://discord.com/oauth2/authorize?client_id=826508857463275542&scope=bot&permissions=2147483647)** **•**
 Bir komut hakkında detaylı __yardım için__: **y!yardım**`)
 
 .addField('**• Komutlar**',' Botun Tüm Komutları Aşağıda Bulunmaktadır.')
-.addField('> y!moderasyon ',' 🔰 Moderasyon komutları')
-.addField('> y!kullanıcı ',' 👥 Kullanıcı komutları')
-.addField('> y!abone-yardım ',' 🔔 Ayarlamalı Abone Rol Sistemi')
-.addField('> y!eğlence','  ✨ Eğlence Komutları')
-return message.channel.send(YRNEXEMBED)
+.addField('> a!moderasyon ',' 🔰 Moderasyon komutları')
+.addField('> a!kullanıcı ',' 👥 Kullanıcı komutları')
+.addField('> a!abone-yardım ',' 🔔 Ayarlamalı Abone Rol Sistemi')
+.addField('> a!eğlence','  ✨ Eğlence Komutları')
+return message.channel.send(ADEMREYZZEMBED)
 .then; 
 
 };
@@ -36,5 +36,5 @@ exports.conf = {
   exports.help = {
     name: 'yardım', 
     description: 'Botun Komut Listesini Gösterir!',
-    usage: '-eğlence'
+    usage: 'a!eğlence'
 };

@@ -25,7 +25,7 @@ exports.help = {
 }
 
 exports.play = {
-  kullanım: 'y!abonelog #kanal',
+  kullanım: 'a!abonelog #kanal',
   açıklama: 'Abone Logunu Ayarlarsınız',
   kategori: 'Abone'
 }

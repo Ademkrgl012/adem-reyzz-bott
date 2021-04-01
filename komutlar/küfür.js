@@ -28,6 +28,6 @@ exports.conf = {
 
 exports.help = {
   name: 'küfür-engel',
-  description: 'YRNEX',
+  description: 'Adem Reyzz',
   usage: 'reklam-filtre'
 };
