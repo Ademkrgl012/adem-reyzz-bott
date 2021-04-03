@@ -11,6 +11,7 @@ const ADEMREYZZEMBED = new Discord.MessageEmbed()
 
 .setColor("BLACK")
 .setTitle("**  » Adem Reyzz**")
+.setThumbnail("https://cdn.discordapp.com/attachments/813881660717793331/828047155981320232/standard.gif")
 .setImage("https://cdn.discordapp.com/attachments/813881349004984370/826793395677691924/350kb_1.gif")
 .setDescription(`
 **» Bağlantılar** 
