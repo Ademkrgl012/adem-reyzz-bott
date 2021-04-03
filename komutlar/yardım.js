@@ -15,7 +15,8 @@ const ADEMREYZZEMBED = new Discord.MessageEmbed()
 .setDescription(`
 **» Bağlantılar** 
 **[Destek Sunucusu](https://discord.gg/uruvQjX47v)** **•** **[Botun Davet Linki](https://discord.com/oauth2/authorize?client_id=826508857463275542&scope=bot&permissions=2147483647)** **•**
-Bir komut hakkında detaylı __yardım için__: **y!yardım**`)
+Bir komut hakkında detaylı __yardım için__: 
+**a!yardım**`)
 
 .addField('**• Komutlar**',' Botun Tüm Komutları Aşağıda Bulunmaktadır.')
 .addField('> a!moderasyon ',' 🔰 Moderasyon komutları')
