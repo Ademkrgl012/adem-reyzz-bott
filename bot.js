@@ -826,10 +826,17 @@ client.on('guildMemberAdd', async (member) => {
   })
 ////////////////////////////////Fake Katıl
 client.on('message', async message => {
-if (message.content === 'a!fakekatıl') { // Buraya ne yazarsanız yazdığınız şeye göre çalışır
+if (message.content === 'fakekatıl') { // Buraya ne yazarsanız yazdığınız şeye göre çalışır
   client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
     }
 });
+/////////////////////////////////Fake Ayrıl
+client.on('message', async message => {
+if (message.content === 'fakeayrıl') { // Buraya ne yazarsanız yazdığınız şeye göre çalışır
+  client.emit('guildMemberRemove', message.member || await message.guild.fetchMember(message.author));
+    }
+});
+
 /////////////////////////////////
 client.login(process.env.Token).then(a => {
   console.log(`✅ Tokene Bağlanıldı | Bot "${client.user.tag}" İsmi İle Giriş Yaptı. || Zego Share`)}).catch(a => {
