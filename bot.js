@@ -852,54 +852,8 @@ client.on("message", async message => {
     }
 }
 })
-///////////////////////////////Bosluklu Küfür Engel//////////////
-client.on('message', msg => {
-    const filtre = await db.fetch(`${msg.guild.id}.küfür`)
-       if (filtre) {
-           const kufurler = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "sik", "yarrak", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "amq",];
-           let kelimeler = msg.content.split(' ');
-           kelimeler.forEach(kelime=> {
-            if(küfürler.some(küfür => küfür === kelime))  {
-             try {   
-               if (!msg.member.hasPermission("BAN_MEMBERS")) {
-                     msg.delete();
-                             
-                         return msg.reply('Bu Sunucuda Küfür Filtresi Aktiftir.').then(msg => msg.delete(3000));
-             }              
-             } catch(err) {
-               console.log(err);
-             }
-           }
-       })
-      }
-       if (!i) return;
-   });
-   client.on("messageUpdate", (oldMessage, newMessage) => {
-     
-     
-    const filtre = db.fetch(`${newMessage.guild.id}.küfür`)
-       if (filtre) {//dawn
-           const küfürler = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "sik", "yarrak", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "amq",];
-           let kelimeler = newMessage.content.split(' ');
-           kelimeler.forEach(kelime=> {
-            if(küfürler.some(küfür => küfür === kelime))  {
-             try {   
-               if (!msg.member.hasPermission("BAN_MEMBERS")) { //buradaki izni editleyebilirsiniz
-                     msg.delete();
-                             
-                         return msg.reply('Bu Sunucuda Küfür Filtresi Aktiftir.').then(msg => msg.delete(3000));
-             }              
-             } catch(err) {
-               console.log(err);
-             }
-           }
-       })
-      }
-       if (!i) return;
-   });
+///////////////////////////////
 
-
-//////////////////////////////
 
 client.login(process.env.Token).then(a => {
   console.log(`✅ Tokene Bağlanıldı | Bot "${client.user.tag}" İsmi İle Giriş Yaptı. || Zego Share`)}).catch(a => {
