@@ -14,7 +14,8 @@ exports.run = async (client, message, args) => {
 🔰 **a!sa-as** : Sa-As Mesajını Açar..
 🔰 **a!sil** : Belli Miktarda Mesaj Siler.
 🔰 **a!oylama** : Oylama Yaparsınız.
-🔰 **a!ban** : Etiketlediğin Kişiye Ban Atar.`)
+🔰 **a!ban** : Etiketlediğin Kişiye Ban Atar.
+🔰 **a!unban** : Banlanan Kişinin Banını Açar`)
   .addField("**» Davet Linki**", " [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=826508857463275542&scope=bot&permissions=2147483647)", )
     .setImage("https://cdn.discordapp.com/attachments/813881349004984370/827103972581048340/standard_1.gif")
     .setFooter(`${message.author.tag} Tarafından İstendi.`,message.author.avatarURL())
