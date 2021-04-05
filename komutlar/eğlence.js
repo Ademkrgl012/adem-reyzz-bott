@@ -10,8 +10,10 @@ exports.run = async (client, message, args) => {
 ✨ **a!token** : Botun Tokenini Görürsünüz.
 ✨ **a!atam** : Dene ve Gör Reis.
 ✨ **a!vine** : Komik Paylaşımlar.
-✨ **a!kasaaç**: Csgo Kasası Açar.`
-
+✨ **a!kasaaç**: Csgo Kasası Açar.
+✨ **a!sor**: Bota Soru Sorduğunuzda Cevap Verir.
+✨ **a!yaş-hesapla**: Yaşınızı Hesaplar.
+✨ **a!zar-at**: Zar Atarsınız.`
     )
     .addField(
       "**» Davet Linki**",
