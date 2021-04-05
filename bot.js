@@ -853,6 +853,8 @@ client.on("message", async message => {
 }
 })
 ///////////////////////////////
+
+
 client.login(process.env.Token).then(a => {
   console.log(`✅ Tokene Bağlanıldı | Bot "${client.user.tag}" İsmi İle Giriş Yaptı. || Zego Share`)}).catch(a => {
   return log(':no_entry: Bot Başlatılamadı Hatalı Token ! || Zego Share')
