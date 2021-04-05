@@ -13,7 +13,10 @@ exports.run = async (client, message, args) => {
 ✨ **a!kasaaç**: Csgo Kasası Açar.
 ✨ **a!sor**: Bota Soru Sorduğunuzda Cevap Verir.
 ✨ **a!yaş-hesapla**: Yaşınızı Hesaplar.
-✨ **a!zar-at**: Zar Atarsınız.`
+✨ **a!zar-at**: Zar Atarsınız.
+✨ **a!kutuaç**: Brawl Starsda Kutu Açarsınız(Uyarı Bu Oyun Amacçlı Yapılmıştır.)
+✨ **a!cihaz**: Etiket Attığınız Kişilerin Discorda Hangi Cihazla Giriş Yaptıklarını Gösterir.
+✨ **a!güzelsözler**: Size Karşı Güzel Sözler Söyler.`
     )
     .addField(
       "**» Davet Linki**",
