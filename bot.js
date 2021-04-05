@@ -193,26 +193,8 @@ client.on("message", async msg => {
   }
   if (!i) return;
 });
-////////////////////////Adem Reyzz///////////////
-client.on("message"), async msg => {
-  const i = await db.fetch(`ssaass_$}msg.guild.id}`);
-  if (i == "acik") {
-    if (
-      msg.connect.toLowerCase() == "**@₪ Adem Clas⁶⁶⁶#7586 "
-    ) {
-      try {
-        return msg.reply(
-          "**https://youtube.com/channel/UC3OkdRxCVZeKEf70mVN_bFg**,**https://youtube.com/channel/UCG0rB3i5lyRMThN0tT_YB8g**"
-        );
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  } else if (i == "kapali") {
-  }
-  if (!i) return;
-});
-  //////////////afk/////////////////////_////
+
+//////////////afk
 
 const { DiscordAPIError } = require("discord.js");
 
