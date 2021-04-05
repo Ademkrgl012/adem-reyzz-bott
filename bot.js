@@ -853,13 +853,13 @@ client.on("message", async message => {
 }
 })
 ///////////////////////////////Bosluklu Küfür Engel//////////////
-client.on('message', msg => {//dawn
-    const filtre = await db.fetch(`${msg.guild.id}.kufur`)
+client.on('message', msg => {
+    const filtre = await db.fetch(`${msg.guild.id}.küfür`)
        if (filtre) {
            const kufurler = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "sik", "yarrak", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "amq",];
            let kelimeler = msg.content.split(' ');
            kelimeler.forEach(kelime=> {
-            if(kufurler.some(küfür => küfür === kelime))  {
+            if(küfürler.some(küfür => küfür === kelime))  {
              try {   
                if (!msg.member.hasPermission("BAN_MEMBERS")) {
                      msg.delete();
@@ -877,12 +877,12 @@ client.on('message', msg => {//dawn
    client.on("messageUpdate", (oldMessage, newMessage) => {
      
      
-    const filtre = db.fetch(`${newMessage.guild.id}.kufur`)
+    const filtre = db.fetch(`${newMessage.guild.id}.küfür`)
        if (filtre) {//dawn
-           const kufurler = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "sik", "yarrak", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "amq",];
+           const küfürler = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "sik", "yarrak", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "amq",];
            let kelimeler = newMessage.content.split(' ');
            kelimeler.forEach(kelime=> {
-            if(kufurler.some(küfür => küfür === kelime))  {
+            if(küfürler.some(küfür => küfür === kelime))  {
              try {   
                if (!msg.member.hasPermission("BAN_MEMBERS")) { //buradaki izni editleyebilirsiniz
                      msg.delete();
