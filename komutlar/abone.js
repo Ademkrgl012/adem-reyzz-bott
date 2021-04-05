@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
     );
   if (!aboneyetkilisi)
     return message.channel.send(
-      `<a:vumpushypee:805848458883760179 **__Abone yetkili rolü ayarlanmamış!__**`
+      `<a805848458883760179 **__Abone yetkili rolü ayarlanmamış!__**`
     );
   let user = message.mentions.users.first();
   if (!message.member.roles.cache.has(aboneyetkilisi))
@@ -70,5 +70,3 @@ exports.play = {
   açıklama: "Abone Yetkili Rolünü Ayarlarsınız",
   kategori: "Abone"
 };
-
-//CodeWorld Yunus Emre

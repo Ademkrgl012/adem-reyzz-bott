@@ -27,7 +27,7 @@ module.exports = message => {
       cmd = client.commands.get(client.aliases.get(command));
     } else {
       if(command == '') return;
-    message.reply("**Botda** `" +command + '` **adında bir komut bulunamadı <a:yr_uyar:775360587650564127>**')
+    message.reply("**Botda** `" +command + '` **adında bir komut bulunamadı <a775360587650564127>**')
   }
   }
   if (cmd) {
