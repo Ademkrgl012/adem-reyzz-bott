@@ -193,8 +193,19 @@ client.on("message", async msg => {
   }
   if (!i) return;
 });
+////////////////////////Adem Reyzz///////////////
+client.on("message"), async msg => {
+  const i = await db.fetch(`ademreyzz_$}msg.guild.id}`);
+  if (i == "acik") {
+    if (
+      msg.connect.toLowerCase() == "@₪ Adem Clas⁶⁶⁶#7586 "
+    ) {
+      try {
+        return msg.reply(
+          "****"
 
-//////////////afk
+69$**",
+  //////////////afk/////////////////////_////
 
 const { DiscordAPIError } = require("discord.js");
 
