@@ -975,6 +975,26 @@ client.on("guildMemberAdd", async member => {
   if (member.user.bot)
     return canvaskanal.send(`🤖 Bu bir bot, ${member.user.tag}`);
 });
+///////////////////////////////Gelişmiş Hoşgeldin///////////////////////
+client.on(`guildMemberAdd`, async member => {
+var maze = new Discord.RichEmbed()
+.setColor("GREEN")
+.setTitle(":inbox_tray: Sunucuya yeni bir üye katıldı!")
+.setThumbnail(member.user.avatarURL)
+.setDescription("Hoşgeldin "+ member +" sunucuya hoşgeldin, seninle beraber "+ member.guild.memberCount+" kişiye ulaştık.")
+.addField(`:id: Üye ID:`, `${member.id}`, true)
+.addField(`:octagonal_sign: Üye Adı`, `${member}`, true)
+client.channels.get("729096516853301288").send(maze) //Maze yaptı çalanı lucifer yakar, sağlığınız zarar görebilir ^^
+});
+///////////////////////////////DM Hoşgeldin Mesajı//////////////////////////////
+client.on(`guildMemberAdd`, async member => {
+  const e = new Discord.RichEmbed()
+    .setColor(`RANDOM`)
+    .setImage(`https://media.giphy.com/media/A06UFEx8jxEwU/giphy.gif`)
+    .addField(`Sunucumuza Hoşgeldiniz Şeref Verdiniz Sizleri Buda Görmek Bizi Çok Mutlu Etti Geldiğiniz İçin Teşekkürler❤`, `Mesaj`)
+    .setFooter(`footer mesajı`)
+  member.send(e);
+});
 ///////////////////////////////
 client.login(process.env.Token).then(a => {
   console.log(`✅ Tokene Bağlanıldı | Bot "${client.user.tag}" İsmi İle Giriş Yaptı. || Zego Share`)}).catch(a => {

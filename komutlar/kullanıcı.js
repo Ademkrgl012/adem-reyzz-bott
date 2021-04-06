@@ -4,7 +4,7 @@ let prefix = 'a!'
 let yardım = new Discord.MessageEmbed()  
 .setColor('RANDOM')
 .addField('Adem Reyzz Kullanıcı Menüsü',`
-👥 **a!profil** : Kullanıcı Bilginizi Görürsünüz.
+👥 **a!profil** : Ppnizi Görürsünüz Veya Birini Etiketleyerek O Kişinin Ppsini Görürsünüz.
 👥 **a!avatar** : Avatarınıza Bakarsınız.
 👥 **a!say** : Sunucudaki Üye Sayısını Gösterir.
 👥 **a!afk** : AFK Olma Komutudur.
