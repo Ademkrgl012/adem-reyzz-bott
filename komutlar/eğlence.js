@@ -16,8 +16,9 @@ exports.run = async (client, message, args) => {
 ✨ **a!zar-at**: Zar Atarsınız.
 ✨ **a!kutuaç**: Brawl Starsda Kutu Açarsınız(Uyarı Bu Oyun Amacçlı Yapılmıştır.)
 ✨ **a!cihaz**: Etiket Attığınız Kişilerin Discorda Hangi Cihazla Giriş Yaptıklarını Gösterir.
-✨ **a!güzelsözler**: Size Karşı Güzel Sözler Söyler.`
-    )
+✨ **a!güzelsözler**: Size Karşı Güzel Sözler Söyler.
+✨ **a!sayı-tahmin**: Ragele Bir Sayı Tutar Ve Sizde Bulmaya Çalışırsınız.
+✨ **a!söyle**: Yazdığınız Şeyi 
     .addField(
       "**» Davet Linki**",
       " [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=826508857463275542&scope=bot&permissions=2147483647)"
