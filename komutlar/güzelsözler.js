@@ -13,7 +13,7 @@ exports.run = function (client, message, args) {
 
 exports.conf = {
   enabled: true,
-  guildOnly: false,
+  guildOnly: true,
   aliases: ['güzelsözler'],
   permLevel: 0
 };
