@@ -102,7 +102,6 @@ Eğer ${prefix}${message.content.split(" ")[0].slice(client.ayarlar.prefix.lengt
 **${sil.join(", ")}** yazarsan bir otocevabı siler.
 **${list.join(", ")}** yazarsan sunucudaki otocevapları listeler.
 **${edit.join(", ")}** yazarsan bir otocevabı editlersin.
-
 Ek Bilgiler:
 Bir otocevap eklerken veya editlerken **cevap** verilecek kısımda
 
