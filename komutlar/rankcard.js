@@ -35,7 +35,7 @@ exports.conf = {
 };
 
 module.exports.help = {
-  name: "rankcard",
+  name: "rank",
   usage: "@user",
   description: "Etiketlediğiniz kişinin veya sizin levelinizi gösterir"
 };
