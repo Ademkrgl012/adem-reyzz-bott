@@ -3,7 +3,7 @@ exports.run = async (client, message, args) => {
   let prefix = "a!";
   let yardım = new Discord.MessageEmbed()
     .setColor("RANDOM")
-    .addField("Yrnex Moderasyon Menüsü",`
+    .addField("Adem Reyzz Moderasyon Menüsü",`
 🔰 **a!reklam** : Reklam Engeli Açarsınız.
 🔰 **a!küfür** : Küfür Engeli Açarsınız.
 🔰 **a!otorol** : Otorol Ayarlarsınız.
@@ -16,8 +16,9 @@ exports.run = async (client, message, args) => {
 🔰 **a!oylama** : Oylama Yaparsınız.
 🔰 **a!ban** : Etiketlediğin Kişiye Ban Atar.
 🔰 **a!unban** : Banlanan Kişinin Banını Açar
-🔰 **a!sunucukur**: Basit Bir Sunucu Kurar.`)
-🔰 **a!gç-ayarla <g-ç kanalı>**: 
+🔰 **a!sunucukur**: Basit Bir Sunucu Kurar.
+🔰 **a!gç-ayarla <gç kanalı>**: Giriş Çıkış Kanalını Ayarlar
+🔰 **a!giriş-çıkış-kapat**: Giriş Çıkış'ı Kapatır.`)
   .addField("**» Davet Linki**", " [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=826508857463275542&scope=bot&permissions=2147483647)", )
     .setImage("https://cdn.discordapp.com/attachments/813881349004984370/827103972581048340/standard_1.gif")
     .setFooter(`${message.author.tag} Tarafından İstendi.`,message.author.avatarURL())
