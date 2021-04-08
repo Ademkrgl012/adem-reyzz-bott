@@ -1037,6 +1037,35 @@ function exp(message) {
     }
 }
 });
+//////////////////////////////giriş-çıkış
+client.login('guildMemberAdd', member => {
+  let guild = member.guild;
+  let joinRole = guild.roles.find('name', 'Üye');// 'Üye' yazılan yeri otomatik rol vereceği rolü yapabilirsiniz.//Otorol Komudu :)
+  member.sendMessage("Sunucuya Hoşgeldin Kardeşim.")//Sunucuya Yeni Biri Geldiğinde Mesaj Atar istediğini yaz.
+  member.addRole(joinRole);
+
+  const channel = member.guild.channels.find('name', 'giriş-çıkış');// 'gelen-giden' log ismidir. değiştirebilirsiniz. belirttiğiniz isme giriş çıkış gösterecektir.
+  if (!channel) return;
+  const embed = new Discord.RichEmbed()
+  .setColor('0x00cc44')
+  .setAuthor(client.user.username, client.user.avatarURL)
+  .setThumbnail(member.user.avatarURL)
+  .setTitle(`:inbox_tray: ${member.user.username} Sunucuya katıldı.`)
+  .setTimestamp()
+  channel.sendEmbed(embed);
+});
+
+client.login('guildMemberRemove', member => {
+  const channel = member.guild.channels.find('name', 'giriş-çıkış');// 'gelen-giden' log ismidir. değiştirebilirsiniz. belirttiğiniz isme giriş çıkış gösterecektir.
+  if (!channel) return;
+  const embed = new Discord.RichEmbed()
+  .setColor('0xff1a1a')
+  .setAuthor(client.user.username, client.user.avatarURL)
+  .setThumbnail(member.user.avatarURL)
+  .setTitle(`:outbox_tray: ${member.user.username} Sunucudan ayrıldı buna üzüldüm :(`)
+  .setTimestamp()
+  channel.sendEmbed(embed);
+});
 //////////////////////////////
 client.login(process.env.Token).then(a => {
   console.log(`✅ Tokene Bağlanıldı | Bot "${client.user.tag}" İsmi İle Giriş Yaptı. || Zego Share`)}).catch(a => {
