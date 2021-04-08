@@ -20,7 +20,8 @@ exports.run = async (client, message, args) => {
 ✨ **a!sayı-tahmin**: Ragele Bir Sayı Tutar Ve Sizde Bulmaya Çalışırsınız.
 ✨ **a!söyle**: Yazdığınız Şeyi Sesli Olarak Söyler.
 ✨ **a!g-çeviri**: Yazdığınız Kelimeyi Çeviri.
-✨ **a!balıktut**: Balık Köpeğisi Tutarsınız.`)
+✨ **a!balıktut**: Balık Köpeğisi Tutarsınız.
+✨ **a!öp [etiket]**: Etiketlediğiniz Kişiyi Öpersiniz.`)
     .addField(
       "**» Davet Linki**",
       " [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=826508857463275542&scope=bot&permissions=2147483647)"
