@@ -1044,7 +1044,7 @@ client.on("guildMemberAdd", async member => {
     if (!member.guild.channels.get(memberChannel)) return console.log('memberChannel')
         let username = member.user.username;
         if (member.guild.channels.get(memberChannel).type === "text") {
-            const await Jimp.read("https://cdn.discordapp.com/attachments/511154564616028172/511247240208056320/guildAdd.png";);
+            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/511154564616028172/511247240208056320/guildAdd.png";);
             const userimg = await Jimp.read(anan);
             var font;
             if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);

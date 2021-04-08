@@ -7,7 +7,6 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "bg": "^1.0.0",
     "canvacord": "^5.1.0",
     "common-tags": "^1.8.0",
     "discord-giveaways": "^4.4.3",
@@ -21,7 +20,9 @@
     "quick.db": "^7.1.2",
     "request": "^2.88.2",
     "superagent": "^6.1.0",
-    "weather.js": "^0.1.0"
+    "weather.js": "^0.1.0",
+    "bg": "^1.0.0",
+    "Jimp.read":"^0.0.0"
   },
   "engines": {
     "node": "12.x"
