@@ -20,9 +20,7 @@
     "quick.db": "^7.1.2",
     "request": "^2.88.2",
     "superagent": "^6.1.0",
-    "weather.js": "^0.1.0",
-    "if": "^2.0.0",
-    "return": "^1.0.0"
+    "weather.js": "^0.1.0"
   },
   "engines": {
     "node": "12.x"

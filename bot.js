@@ -1038,18 +1038,17 @@ function exp(message) {
 }
 });
 //////////////////////////////giriş-çıkış
-const channel = member.guild.channels.find('name', 'giriş-çıkış');// 'gelen-giden' log ismidir. değiştirebilirsiniz. belirttiğiniz isme giriş çıkış gösterecektir.
- const (!channel) return;
+const channel = member.guild.channels.find('name', 'gelen-giden');// 'gelen-giden' log ismidir. değiştirebilirsiniz. belirttiğiniz isme giriş çıkış gösterecektir.if (!channel) return;
   const embed = new Discord.RichEmbed()
   .setColor('0x00cc44')
-  .setAuthor(client.user.username, bot.user.avatarURL)
+  .setAuthor(bot.user.username, bot.user.avatarURL)
   .setThumbnail(member.user.avatarURL)
   .setTitle(`:inbox_tray: ${member.user.username} Sunucuya katıldı.`)
   .setTimestamp()
   channel.sendEmbed(embed);
 });
 
-client.login('guildMemberRemove', member => {
+bot.on('guildMemberRemove', member => {
   const channel = member.guild.channels.find('name', 'gelen-giden');// 'gelen-giden' log ismidir. değiştirebilirsiniz. belirttiğiniz isme giriş çıkış gösterecektir.
   if (!channel) return;
   const embed = new Discord.RichEmbed()
