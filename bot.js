@@ -17,7 +17,7 @@ const log = message => {
 require("./util/eventLoader.js")(client);
 
 client.on("ready",()=>{
-  client.user.setActivity(`Türkiyenin En İyilerinden Biri|Adem Reyzz Onaylı Botu`);
+  client.user.setActivity(`Adem Reyzz Bot | a!yardım`);
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username}`);
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Şu an ` + client.channels.cache.size + ` adet kanala, ` + client.guilds.cache.size + ` adet sunucuya ve ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 });
