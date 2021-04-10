@@ -1565,18 +1565,8 @@ client.on("message", msg => {
 		  if (msg.author.id === client.user.id) return;
 		  const botdm = new Discord.MessageEmbed()
 			.setTitle(`${client.user.username} Dm`)
-			.setTimestamp()
-			.setColor("BLUE")
-			.setThumbnail(`${msg.author.avatarURL()}`)
-			.addField(":boy: Gönderen ", msg.author.tag)
-			.addField(":id:  Gönderen ID :", msg.author.id)
-			.addField(":globe_with_meridians: Gönderilen Mesaj", msg.content);
-	  
-		  dm.send(botdm);
-		}
-		if (msg.channel.bot) return;
-	  
-	});
+		
+t
 /////////////////
 client.login(process.env.Token).then(a => {
     console.log(
