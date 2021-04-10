@@ -11,7 +11,7 @@ exports.run = async (bot, message, args) => {
     let gifembed = new Discord.RichEmbed()
         .setDescription(`${message.author} Tarafından ${member}'a Yumruk Atıldı!`)
         .setColor("#FF69B4")
-        .setFooter(`De`, message.author.avatarURL)
+        .setFooter(`Adem Reyzz`, message.author.avatarURL)
         .setImage(replies[result]);
 
     message.channel.send(gifembed);
