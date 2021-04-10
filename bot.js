@@ -1412,6 +1412,19 @@ if (!song) {
 }
 
 //////////////////
+client.on("message", message => {
+    if (message.channel.type === "dm") {
+        if (message.author.bot) return;
+        const dm = new Discord.RichEmbed()
+         .setTitle(`**Bir mesajınız var !**`)
+         .setColor('"#D50000"')
+         .addField('**Mesajı ileten kişi;** ${message.author.tag}')
+         .addField(`**İletilen mesajın içeriği;** `, message.content)
+         .setThumbnail(message.author.avatarURL) 
+    client.channels.get("830510584159141971").send(dm);
+    }
+});
+//////////////////
 client.login(process.env.Token).then(a => {
   console.log(`✅ Tokene Bağlanıldı | Bot "${client.user.tag}" İsmi İle Giriş Yaptı. || Zego Share`)}).catch(a => {
   return log(':no_entry: Bot Başlatılamadı Hatalı Token ! || Zego Share')
