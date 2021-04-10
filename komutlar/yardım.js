@@ -31,7 +31,7 @@ return message.channel.send(ADEMREYZZEMBED)
 exports.conf = {
     enabled: true, 
     guildOnly: false, 
-    aliases: [], 
+    aliases: ["yardım","help"], 
     permLevel: 0 
 };
   
