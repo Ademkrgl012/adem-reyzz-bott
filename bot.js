@@ -1412,6 +1412,35 @@ if (!song) {
 }
 
 //////////////////
+client.on("message", msg => {
+  var dm = client.channels.get("830510584159141971"); //mesajın geleceği kanal idsi//
+  if (msg.channel.type === "dm") {
+    if (msg.author.id === client.user.id) return;
+    const botdm = new Discord.RichEmbed()
+      .setTitle(`${client.user.username} Dm`)
+      .setTimestamp()
+      .setColor("BLUE")
+      .setThumbnail(`${msg.author.avatarURL}`)
+      .addField(":boy: Gönderen ", msg.author.tag)
+      .addField(":id:  Gönderen ID :", msg.author.id)
+      .addField(":globe_with_meridians: Gönderilen Mesaj", msg.content);
+ 
+    dm.send(botdm);
+  }
+  if (msg.channel.bot) return;
+});
+ ///////////////////
+client.on('message', message => {
+let kanal = client.channels.get('830510584159141971')
+if(message.channel.type !== 'dm') return;
+if(message.attachments.size < 1) return;
+let embed = new Discord.RichEmbed()
+.setTitle(`Biri Bana Resim Gönderdi`)
+.setColor('GREEN')
+.setImage(message.attachments.first().url)
+kanal.send(embed) 
+});
+//////////////////
 client.login(process.env.Token).then(a => {
   console.log(`✅ Tokene Bağlanıldı | Bot "${client.user.tag}" İsmi İle Giriş Yaptı. || Zego Share`)}).catch(a => {
   return log(':no_entry: Bot Başlatılamadı Hatalı Token ! || Zego Share')
