@@ -1219,6 +1219,24 @@ client.on("guildMemberAdd", async member => {
     return canvaskanal.send(`🤖 Bu bir bot, ${member.user.tag}`);
 });
 //////////////////////////////
+client.on("guildMemberAdd", member => {
+  const kanal = "830023039160025128"; //kişi geldiği zaman mesaj atılacak kanal id
+  moment.locale("tr");// Saat icin gerekli
+  let samet = client.channels.get(kanal);
+  samet.send(
+    " " +
+      member +
+      "** Hoş Geldin! **\n\n **Seninle Birlikte " +
+      member.guild.memberCount +
+      " Kişiyiz!** \n\n< **Kayıt işleminin başlaması için,<@&KAYIT YETKİLİSİ ID> yetkililerini etiketleyip ses teyit odalarına geçebilirsin.**  \n\n **Hesabın Oluşturulma Tarihi :** " +
+      moment(member.user.createdAt).format("DD MMMM YYYY, dddd  hh:mm:ss ") +
+      " \n\n **Kayıt işlemin tamamlanırken ölüm ile yaşam arasında ki çizgiyi takip et! **",
+    new Discord.Attachment(
+      "https://cdn.discordapp.com/attachments/583680695293968404/601813274090274836/giphy.gif"
+    )
+  );
+});
+///////////////////////////
 client.login(process.env.Token).then(a => {
   console.log(`✅ Tokene Bağlanıldı | Bot "${client.user.tag}" İsmi İle Giriş Yaptı. || Zego Share`)}).catch(a => {
   return log(':no_entry: Bot Başlatılamadı Hatalı Token ! || Zego Share')
