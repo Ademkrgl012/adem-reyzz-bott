@@ -1560,14 +1560,23 @@ function play(guild, song) {
 
 //////////////////
 client.on("message", msg => {
-		var dm = client.channels.cache.get("830510584159141971"); //mesajın geleceği kanal idsi//
-		if (msg.channel.type === "dm") {
-		  if (msg.author.id === client.user.id) return;
-		  const botdm = new Discord.MessageEmbed()
-			.setTitle(`${client.user.username} Dm`)
-		
-t
-/////////////////
+  var dm = client.channels.cache.get("830510584159141971"); //mesajın geleceği kanal idsi//
+  if (msg.channel.type === "dm") {
+    if (msg.author.id === client.user.id) return;
+    const botdm = new Discord.MessageEmbed()
+      .setTitle(`${client.user.username} Dm`)
+      .setTimestamp()
+      .setColor("BLUE")
+      .setThumbnail(`${msg.author.avatarURL()}`)
+      .addField(":boy: Gönderen ", msg.author.tag)
+      .addField(":id:  Gönderen ID :", msg.author.id)
+      .addField(":globe_with_meridians: Gönderilen Mesaj", msg.content);
+ 
+    dm.send(botdm);
+  }
+  if (msg.channel.bot) return;
+});
+///////////////
 client.login(process.env.Token).then(a => {
     console.log(
       `✅ Tokene Bağlanıldı | Bot "${client.user.tag}" İsmi İle Giriş Yaptı. || Zego Share`
