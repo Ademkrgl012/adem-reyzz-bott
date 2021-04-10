@@ -22,7 +22,8 @@ exports.run = async (client, message, args) => {
 ✨ **a!g-çeviri**: Yazdığınız Kelimeyi Çeviri.
 ✨ **a!balıktut**: Balık Köpeğisi Tutarsınız.
 ✨ **a!öp [etiket]**: Etiketlediğiniz Kişiyi Öpersiniz.
-✨ **a!trump**: Trumpa Mesaj Gönderirsiniz.`)
+✨ **a!trump**: Trumpa Mesaj Gönderirsiniz.
+✨ **a!espri**: Size Espri Söyler`)
     .addField(
       "**» Davet Linki**",
       " [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=826508857463275542&scope=bot&permissions=2147483647)"
