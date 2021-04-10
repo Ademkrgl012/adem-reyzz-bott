@@ -21,7 +21,8 @@ exports.run = async (client, message, args) => {
 🔰 **a!giriş-çıkış-kapat**: Giriş Çıkış'ı Kapatır.
 🔰 **a!komutlar**: Bottaki Komut Sayısını Gösterir.
 🔰 **a!otocevap**: Yazdığınız Cümleyi Cevaplamayı Açarsanız O Cümleye Cevap Verir.
-🔰 **a!mesajat**: Etiketlediğiniz Kişiye Mesaj Atar.`)
+🔰 **a!mesajat**: Etiketlediğiniz Kişiye Mesaj Atar.
+🔰 **a!panel**: Sunucu panelini gösterir.`)
   .addField("**» Davet Linki**", " [Botu Davet Et](https://discord.com/oauth2/authorize?client_id=826508857463275542&scope=bot&permissions=2147483647)", )
     .setImage("https://cdn.discordapp.com/attachments/813881349004984370/827103972581048340/standard_1.gif")
     .setFooter(`${message.author.tag} Tarafından İstendi.`,message.author.avatarURL())
