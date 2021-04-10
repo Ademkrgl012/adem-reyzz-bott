@@ -15,6 +15,7 @@ const log = message => {
   console.log(` ${message}`);
 };
 require("./util/eventLoader.js")(client);
+require("moment-duration-format");
 
 client.on("ready",()=>{
   client.user.setActivity(`Adem Reyzz Bot | a!yardım`);
