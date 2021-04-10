@@ -1703,7 +1703,7 @@ client.on('guildCreate', guild => {
 let ademreyzz_sayi = "100"//Sayılmasını istediğiniz sunucu sayacı.
 let ademreyzz = "830023039160025128" //Kanal ID
 var ademreyzz1 = `${ademreyzz_sayi - client.guilds.size}`//Elleme skerim
-client.channels.get(ademreyzz).send(`${guild.name} adlı sunucuya eklendim! \`${ademreyzz_sayi}\` sunucu olmamıza \`${ademeyzz1}\` sunucu kaldı!`)
+client.channels.get(ademreyzz).send(`${guild.name} adlı sunucuya eklendim! \`${ademreyzz_sayi}\` sunucu olmamıza \`${ademreyzz1}\` sunucu kaldı!`)
 }
 )
 
