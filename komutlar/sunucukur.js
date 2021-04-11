@@ -58,13 +58,17 @@ client.on('message', async message => {
                               .then(channel => 
                               channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
                             message.guild.createChannel(`「👥」pre-arama-odası`, 'text') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
+                              .then(channel => 
+                              channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
                             message.guild.createChannel(`「📷」görsel-içerik`, 'text') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
+                              .then(channel => 
+                              channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
                             message.guild.createChannel(`「🤖」bot-komutları`, 'text') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
+                              .then(channel => 
+                              channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
                             message.guild.createChannel(`「💬」sohbet`, 'text') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
+                              .then(channel => 
+                              channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
                             message.guild.createChannel(`🏆》Kurucu Odası`, "voice") .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|SES KANALLARI|▬▬|"))) 
                               .then(c => { let role = message.guild.roles.find("name", "@everyone"); 
                                           let role2 = message.guild.roles.find("name", "Kurucu"); 
@@ -73,33 +77,58 @@ client.on('message', async message => {
                             message.guild.createChannel('|▬▬|SES KANALLARI|▬▬|', 'category', [{ id: message.guild.id, }]); 
                             message.guild.createChannel(`🏆》Yönetici Odası`, "voice") 
                               .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|SES KANALLARI|▬▬|"))) 
-                              .then(c => { let role = message.guild.roles.find("name", "@everyone"); 
-                                          let role2 = message.guild.roles.find("name", "Kurucu"); 
-                                          let role3 = message.guild.roles.find("name", "Yönetici"); 
-                                          c.overwritePermissions(role, { CONNECT: false, }); 
-                                          c.overwritePermissions(role2, { CONNECT: true, }); 
-                                          c.overwritePermissions(role3, { CONNECT: true, }); }) 
+                              .then(c => { 
+                              let role = message.guild.roles.find("name", "@everyone"); 
+                              let role2 = message.guild.roles.find("name", "Kurucu"); 
+                              let role3 = message.guild.roles.find("name", "Yönetici"); 
+                                          c.overwritePermissions(role, { 
+                                            CONNECT: false, 
+                                          }); 
+                                          c.overwritePermissions(role2, { 
+                                            CONNECT: true, 
+                                          }); 
+                                          c.overwritePermissions(role3, { 
+                                            CONNECT: true, 
+                                          }); 
+                                       }) 
                             message.guild.createChannel(`💬》Sohbet Odası`, "voice") 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|SES KANALLARI|▬▬|"))) 
-                              .then(c => { let role = message.guild.roles.find("name", "@everyone"); 
-                                          c.overwritePermissions(role, { CONNECT: true, }); }) 
-                            message.guild.createChannel('|▬▬|OYUN ODALARI|▬▬|', 'category', [{ id: message.guild.id, }]); 
+                              .then(channel => 
+                                channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|SES KANALLARI|▬▬|"))) 
+                              .then(c => { 
+                              let role = message.guild.roles.find("name", "@everyone"); 
+                                          c.overwritePermissions(role, { 
+                                            CONNECT: true, 
+                                          }); 
+                                       }) 
+                            
+                            message.guild.createChannel('|▬▬|OYUN ODALARI|▬▬|', 'category', [{ 
+                              id: message.guild.id, 
+                            }]); 
+                            
                             message.guild.createChannel(`🎮》LOL`, 'voice') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
+                              .then(channel => 
+                                    channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
                             message.guild.createChannel(`🎮》ZULA`, 'voice') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
+                              .then(channel => 
+                                    channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
                             message.guild.createChannel(`🎮》COUNTER STRİKE`, 'voice') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
+                              .then(channel => 
+                                    channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
                             message.guild.createChannel(`🎮》PUBG`, 'voice') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
+                              .then(channel => 
+                                    channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
                             message.guild.createChannel(`🎮》FORTNİTE`, 'voice') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
+                              .then(channel => 
+                                    channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
                             message.guild.createChannel(`🎮》MİNECRAFT`, 'voice') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
+                              .then(channel => 
+                                    channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
                             message.guild.createChannel(`🎮》ROBLOX`, 'voice') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
+                              .then(channel => 
+                                    channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
                             message.guild.createChannel(`🎮》WOLFTEAM`, 'voice') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
+                              .then(channel => 
+                                    channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|OYUN ODALARI|▬▬|"))) 
                             message.guild.createRole({ name: 'Kurucu', color: 'RED', permissions: [ "ADMINISTRATOR", ] }) 
                             message.guild.createRole({ name: 'Yönetici', color: 'BLUE', permissions: [ "MANAGE_GUILD", "MANAGE_ROLES", "MUTE_MEMBERS", "DEAFEN_MEMBERS", "MANAGE_MESSAGES", "MANAGE_NICKNAMES", "KICK_MEMBERS" ] }) 
                             message.guild.createRole({ name: 'Moderatör', color: 'GREEN', permissions: [ "MANAGE_GUILD", "MANAGE_ROLES", "MUTE_MEMBERS", "DEAFEN_MEMBERS", "MANAGE_MESSAGES", "MANAGE_NICKNAMES" ] }) 
