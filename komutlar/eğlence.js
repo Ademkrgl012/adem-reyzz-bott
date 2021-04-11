@@ -25,7 +25,8 @@ exports.run = async (client, message, args) => {
 ✨ **a!trump**: Trumpa Mesaj Gönderirsiniz.
 ✨ **a!espri**: Size Espri Söyler.
 ✨ **a!yumruk-at**: Etiketlediğiniz Kişiye Yumruk Atar.
-✨ **a!hava-durumu**: Yazdığınız şehirin hava durumunu atar.`)
+✨ **a!hava-durumu**: Yazdığınız şehirin hava durumunu atar.
+✨ **a!tokat-at**: Etiketlediğiniz Kişiye Tokat Atar.`)
 
     .addField(
       "**» Davet Linki**",
