@@ -1891,48 +1891,5 @@ message.guild.createChannel(`:video_game:》LOL`, 'voice')
         color: 'BLUE',
         permissions: [
             "MANAGE_GUILD",
-            "MANAGE_ROLES",
-            "MUTE_MEMBERS",
-            "DEAFEN_MEMBERS",
-            "MANAGE_MESSAGES",
-            "MANAGE_NICKNAMES",
-            "KICK_MEMBERS"
-    ]
-      })
-
-      message.guild.createRole({
-        name: 'Moderatör',
-        color: 'GREEN',
-        permissions: [
-            "MANAGE_GUILD",
-            "MANAGE_ROLES",
-            "MUTE_MEMBERS",
-            "DEAFEN_MEMBERS",
-            "MANAGE_MESSAGES",
-            "MANAGE_NICKNAMES"
-    ]
-      })
-
-      message.guild.createRole({
-        name: 'V.I.P',
-        color: '00ffff',
-      })
-
-      message.guild.createRole({
-        name: 'Üye',
-        color: 'WHITE',
-      })
-
-      message.guild.createRole({
-        name: 'Bot',
-        color: 'ORANGE',
-      })
-
-       message.channel.send("Gerekli Odalar Kuruldu!")
-     
-            })   
-    
-}
-});
-//////////////
+    //////////////
 client.login(process.env.Token);
