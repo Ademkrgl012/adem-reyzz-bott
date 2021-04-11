@@ -1975,5 +1975,5 @@ msg.reply(`**Hey Yıkık Çocuk !**, https://cdn.discordapp.com/attachments/6532
    }
 })
 
-///////////////
+//////////////
 client.login(process.env.Token);
