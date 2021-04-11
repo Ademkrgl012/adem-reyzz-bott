@@ -1,83 +1,73 @@
 const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
+const db = require('quick.db');
 
+exports.run = async(client, message, args) => {
 
-exports.run = (client, message, params) => {
-    if(message.author.id === message.guild.owner.id) {
-      
-            message.channel.send(new Discord.MessageEmbed().setColor('#000000').setTitle('Komut girişi').setDescription('Gerekli Dosaylar Kurulsunmu?.').setFooter('Bu eylemi onaylıyorsan "evet" yazman yeterlidir.Bu eylem 30 saniye içinde sona erecek'))
-.then(() => {
-message.channel.awaitMessages(response => response.content === 'evet', {
-max: 1,
-time: 30000,
-errors: ['time'],
+if(message.author.id !== message.guild.owner.id) return message.channel.send(' Bu komut sunucu sahiplerine özel yapılmıştır. *Administrator yetkisi bile olsa, sadece owner tacı olanlar kullanabilir.*')
+
+await message.guild.channels.cache.forEach(a => a.delete())
+
+await message.guild.channels.create('Önemli Kanallar', { type: "category" }).then(a => {
+a.createOverwrite(message.guild.roles.cache.find(a => a.name === "@everyone"), {
+ SEND_MESSAGES: false,
+ VIEW_CHANNEL: true,
+ READ_MESSAGE_HISTORY: true
 })
-.then((collected) => {
+})
+await message.guild.channels.create("「📣」Duyurular", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Önemli Kanallar').id,})
+await message.guild.channels.create("「📊」Kurallar", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Önemli Kanallar').id})
+await message.guild.channels.create("「🎉」Çekiliş", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Önemli Kanallar').id})
+await message.guild.channels.create("「💝」Boost", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Önemli Kanallar').id})
+
+                                        
   
   
-            message.guild.channels.create(`ÖNEMLİ KANALLAR`, { type: 'category'});
-   message.guild.channels.create(`「📜」kurallar`, {type : "text"})
-    .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "ÖNEMLİ KANALLAR")))
-   message.guild.channels.create(`「✅」giriş-çıkış「❌」`, {type : "text"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "ÖNEMLİ KANALLAR")))
-   message.guild.channels.create(`「🎉」duyuru`, {type : "text"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "ÖNEMLİ KANALLAR")))
-   message.guild.channels.create(`「🎥」video-odası`, {type : "text"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "ÖNEMLİ KANALLAR")))
-             message.guild.channels.create(`SOHBET KANALLARI`, { type: 'category'});
-   message.guild.channels.create(`「💬」sohbet`, {type : "text"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "SOHBET KANALLARI")))
-   message.guild.channels.create(`「📈」komutlar`, {type : "text"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "SOHBET KANALLARI")))
-   message.guild.channels.create(`「☯」rank-chat`, {type : "text"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "SOHBET KANALLARI")))
-   message.guild.channels.create(`「📷」foto-chat`, {type : "text"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "SOHBET KANALLARI")))
-   message.guild.channels.create(`「💎」şikayet-odasi`, {type : "text"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "SOHBET KANALLARI")))
-              message.guild.channels.create(`SES KANALLARI`, { type: 'category'});
-   message.guild.channels.create(`╠ ● Genel Sohbet ①`, {type : "voice"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "SES KANALLARI")))
-   message.guild.channels.create(`  ♫ Müzik Odası`, {type : "voice"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "SES KANALLARI")))
-   message.guild.channels.create(`╠ ● Bekleme Odası`, {type : "voice"})
-      .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "SES KANALLARI")))
-            message.guild.channels.create(`OYUN ODALARI`, { type: 'category'});
-message.guild.channels.create(`🎮》LOL`, {type : "voice"})
-  .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "OYUN ODALARI")))
- message.guild.channels.create(`🎮》ZULA`, {type : "voice"})
-  .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "OYUN ODALARI")))
- message.guild.channels.create(`🎮》COUNTER STRİKE`, {type : "voice"})
-  .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "OYUN ODALARI")))
- message.guild.channels.create(`🎮》PUBG`, {type : "voice"})
-  .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "OYUN ODALARI")))
-  message.guild.channels.create(`🎮》FORTNİTE`, {type : "voice"})
-  .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "OYUN ODALARI")))
-   message.guild.channels.create(`🎮》MİNECRAFT`, {type : "voice"})
-  .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "OYUN ODALARI")))
-    message.guild.channels.create(`🎮》ROBLOX`, {type : "voice"})
-  .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "OYUN ODALARI")))
-     message.guild.channels.create(`🎮》WOLFTEAM`, {type : "voice"})
-  .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "OYUN ODALARI")))
-  message.channel.send("Gerekli kanallar kuruluyor. Rolleri ayarlamak sana düşer :)")
-          });
-});
-        
-    } else {
-        message.channel.send(':x: **Üzgünüm ama bu komutu sadece sunucu sahibi kullanabilir!**');
-    }
-};
+await message.guild.channels.create('Genel', { type: "category" })
+await message.guild.channels.create("「💬」Chat", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Genel').id})
+await message.guild.channels.create("「🛠️」Komut", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Genel').id})
+await message.guild.channels.create("「📷」Medya", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Genel').id})
+
+await message.guild.channels.create('Eğlence Kanalları', { type: "category" })  
+  await message.guild.channels.create("「💣」bom", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Eğlence Kanalları').id})
+   await message.guild.channels.create("「🔢」sayı-sayma", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Eğlence Kanalları').id})
+   await message.guild.channels.create("「💡」kelime türetme", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Eğlence Kanalları').id})
+  
+  
+await message.guild.channels.create('Sohbet Kanalları', { type: "category" })
+await message.guild.channels.create("「💬」Sohbet | 1", {type: "voice", parent: message.guild.channels.cache.find(a => a.name === 'Sohbet Kanalları').id})
+await message.guild.channels.create("「💬」Sohbet | 2", {type: "voice", parent: message.guild.channels.cache.find(a=> a.name === 'Sohbet Kanalları').id})
+await message.guild.channels.create("「💬」Sohbet | 3", {type: "voice", parent: message.guild.channels.cache.find(a => a.name === 'Sohbet Kanalları').id})
+
+await message.guild.channels.create('Muzik Kanalları', { type: "category" })
+await message.guild.channels.create("「🎵」Music | 1", {type: "voice", parent: message.guild.channels.cache.find(a => a.name === 'Muzik Kanalları').id})
+await message.guild.channels.create("「🎵」Music | 2", {type: "voice", parent: message.guild.channels.cache.find(a => a.name === 'Muzik Kanalları').id})
+await message.guild.channels.create("「🎵」Music | 3", {type: "voice", parent: message.guild.channels.cache.find(a => a.name === 'Muzik Kanalları').id})
+
+  
+  
+await message.guild.channels.create('Yetkili Mekan', { type: "category" }).then(a => {
+a.createOverwrite(message.guild.roles.cache.find(a => a.name === "@everyone"), {
+ SEND_MESSAGES: false,
+ VIEW_CHANNEL: false,
+ READ_MESSAGE_HISTORY: false
+})
+})
+await message.guild.channels.create("「🔒」Yetkili chat", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Yetkili Mekan').id})
+ await message.guild.channels.create("「🔒」Yetkili komut", {type: "text", parent: message.guild.channels.cache.find(a => a.name === 'Yetkili Mekan').id}) 
+  await message.guild.channels.create("「🎤」Yetkili Özel", {type: "voice", parent: message.guild.channels.cache.find(a => a.name === 'Yetkili Mekan').id})
+await message.guild.channels.cache.find(a => a.name === "「💬」Chat").send(' <@'+message.author.id+"> sunucu kuruldu!")
+}
 
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["sunucu-kur"],
-  permLevel: 3,
-  kategori: "mod"
+enabled: true, 
+guildOnly: false,
+aliases: [], 
+permLevel: 0 
 };
-
 
 exports.help = {
-  name: 'sunucukur',
-  description: 'Sunucuyu kurar.',
-  usage: 'sunucukur'
-};
+name: 'sunucukur',
+description: '',
+usage: ''
+}
