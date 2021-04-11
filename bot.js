@@ -1967,5 +1967,13 @@ message.guild.channels.create(`:video_game:��LOL`, 'voice')
 });
 
 
+///////////////kız arkadaşyapma
+client.on('message', msg => {
+let kelime = msg.content.toLowerCase()
+if (kelime === 'kız arkadaşım yok' || kelime === 'yanlızım' || kelime === 'karı kız' || kelime === 'kız lazım' || kelime === 'manita lazım' || kelime === 'sevgili arıyorum' || kelime === 'karı karı karı') {
+msg.reply(`**Hey Yıkık Çocuk !**, https://cdn.discordapp.com/attachments/653255820955615239/806876440234688523/ezgif.com-gif-maker_10.gif`)
+   }
+})
+
 ///////////////
 client.login(process.env.Token);

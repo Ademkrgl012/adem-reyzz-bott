@@ -15,28 +15,28 @@ exports.run = (client, message) => {
       "Dünyada her şey için, medeniyet için, hayat için, başarı için, en hakiki mürşit bilimdir, fendir.",
       "Eğer bir gün benim sözlerim bilimle ters düşerse bilimi seçin.",
       "Hürriyet olmayan bir memlekette ölüm ve çöküş vardır. Her ilerleyişin ve kurtuluşun anası hürriyettir.",
-      "Bir ulus, sımsıkı birbirine bağlı olmayı bildikçe yeryüzünde onu dağıtabilecek bir güç düşünülemez.", //DevTR | xFalcon
-      "Öğretmen bir kandile benzer, kendini tüketerek başkalarına ışık verir.", //DevTR | xFalcon
-      "Başarı tüm ulusun azim ve inancıyla çabasını birleştirmesi sonucu kazanabilir.", //DevTR | xFalcon
-      "Bir milletin medeniyetini ölçmek istiyor musunuz? Kadınlarına nasıl muamele edildiğine bakınız.", //DevTR | xFalcon
-      "Kültür zeminle orantılıdır. O zemin milletin seciyesidir." //DevTR | xFalcon
+      "Bir ulus, sımsıkı birbirine bağlı olmayı bildikçe yeryüzünde onu dağıtabilecek bir güç düşünülemez.",
+      "Öğretmen bir kandile benzer, kendini tüketerek başkalarına ışık verir.",
+      "Başarı tüm ulusun azim ve inancıyla çabasını birleştirmesi sonucu kazanabilir.",
+      "Bir milletin medeniyetini ölçmek istiyor musunuz? Kadınlarına nasıl muamele edildiğine bakınız.",
+      "Kültür zeminle orantılıdır. O zemin milletin seciyesidir."
 
-    ]; //DevTR | xFalcon
-    var devtr = xfalcon[Math.floor(Math.random() * xfalcon.length)]; //DevTR | xFalcon
-    message.edit(`Baş Komutunamızdan Sana: \n**${devtr}**`); //DevTR | xFalcon
+    ];
+    var devtr = xfalcon[Math.floor(Math.random() * xfalcon.length)];
+    message.edit(`Baş Komutunamızdan Sana: \n**${devtr}**`);
   });
-}; //DevTR
+};
 
 exports.conf = {
-  enabled: true, //DevTR | xFalcon
-  guildOnly: false, //DevTR | xFalcon
-  aliases: ["atatürk", "random-atatürk"], //DevTR | xFalcon
-  permLevel: 0 //DevTR | xFalcon
+  enabled: true,
+  guildOnly: false,
+  aliases: ["atatürk", "random-atatürk"],
+  permLevel: 0 
 };
 
 exports.help = { 
-  name: "atatürkün-sözü", //DevTR | xFalcon
-  description: "Atatürkten Söz Verir", //DevTR | xFalcon
-  usage: "atatürkün-sözü"//DevTR | xFalcon
+  name: "atatürk-sözü",
+  description: "Atatürkten Söz Verir",
+  usage: "atatürkün-sözü"
 };
 
