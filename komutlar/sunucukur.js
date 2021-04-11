@@ -14,20 +14,49 @@ client.on('message', async message => {
       errors: ['time'], 
      }) 
       .then((collected) => { 
-      message.guild.createChannel('|▬▬|ÖNEMLİ KANALLAR|▬▬|', 'category', [{ id: message.guild.id, deny: ['SEND_MESSAGES'] }]) 
-                            message.guild.createChannel('「📃」kurallar', 'text', [{ id: message.guild.id, deny: ['SEND_MESSAGES'] }]) 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|"))); 
-                            message.guild.createChannel('「🚪」gelen-giden', 'text', [{ id: message.guild.id, deny: ['SEND_MESSAGES'] }]) 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|"))); 
-                            message.guild.createChannel('「✅」sayaç', 'text', [{ id: message.guild.id, deny: ['SEND_MESSAGES'] }]) 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|"))); 
-                            message.guild.createChannel('「💾」log-kanalı', 'text', [{ id: message.guild.id, deny: ['SEND_MESSAGES'] }]) 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|"))); 
-                            message.guild.createChannel('「📢」duyuru-odası', 'text', [{ id: message.guild.id, deny: ['SEND_MESSAGES'] }]) 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|"))); }) 
-      .then((collected) => { message.guild.createChannel('|▬▬|GENEL KANALLAR|▬▬|', 'category', [{ id: message.guild.id, }]); 
-                            message.guild.createChannel(`「💡」şikayet-ve-öneri`, 'text') 
-                              .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
+      message.guild.createChannel('|▬▬|ÖNEMLİ KANALLAR|▬▬|', 'category', [{ 
+        id: message.guild.id, 
+        deny: ['SEND_MESSAGES'] 
+      }]) 
+                            message.guild.createChannel('「📃」kurallar', 'text', [{ 
+                              id: message.guild.id, 
+                              deny: ['SEND_MESSAGES'] 
+                            }]) 
+                              .then(channel => 
+                              channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|"))); 
+                              message.guild.createChannel('「🚪」gelen-giden', 'text', [{ 
+                                id: message.guild.id, 
+                                deny: ['SEND_MESSAGES'] 
+                              }]) 
+                              .then(channel => 
+                              channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|"))); 
+                              message.guild.createChannel('「✅」sayaç', 'text', [{ 
+                                id: message.guild.id, 
+                                deny: ['SEND_MESSAGES'] }]) 
+                              .then(channel => 
+                              channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|"))); 
+                              message.guild.createChannel('「💾」log-kanalı', 'text', [{ 
+                                id: message.guild.id, 
+                                deny: ['SEND_MESSAGES'] 
+                              }]) 
+                              .then(channel => 
+                              channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|"))); 
+                              message.guild.createChannel('「📢」duyuru-odası', 'text', [{ 
+                                id: message.guild.id, 
+                                deny: ['SEND_MESSAGES'] 
+                              }]) 
+                              .then(channel => 
+                              channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|"))); 
+    
+                                    }) 
+                              .then((collected) => { 
+                              message.guild.createChannel('|▬▬|GENEL KANALLAR|▬▬|', 'category', [{ 
+                                id: message.guild.id, 
+                              }]); 
+                            
+                              message.guild.createChannel(`「💡」şikayet-ve-öneri`, 'text') 
+                              .then(channel => 
+                              channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
                             message.guild.createChannel(`「👥」pre-arama-odası`, 'text') 
                               .then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|"))); 
                             message.guild.createChannel(`「📷」görsel-içerik`, 'text') 
