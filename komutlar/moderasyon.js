@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
 🔰 **a!oylama** : Oylama Yaparsınız.
 🔰 **a!ban** : Etiketlediğin Kişiye Ban Atar.
 🔰 **a!unban** : Banlanan Kişinin Banını Açar
-🔰 **a!sunucukur**: Basit Bir Sunucu Kurar.
+🔰 **a!sunucu-kur**: Basit Bir Sunucu Kurar.
 🔰 **a!gç-ayarla <gç kanalı>**: Giriş Çıkış Kanalını Ayarlar
 🔰 **a!giriş-çıkış-kapat**: Giriş Çıkış'ı Kapatır.
 🔰 **a!komutlar**: Bottaki Komut Sayısını Gösterir.
