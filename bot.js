@@ -1727,5 +1727,245 @@ dm.send(botdm)
 if(msg.channel.bot) return;
 });
 
-//////////////
+//////////////gelismis sunucu kur
+client.on('message', async message => {
+  const ms = require('ms');
+  const args = message.content.slice(ayarlar.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  let u = message.mentions.users.first() || message.author;
+  if (command === ".sunucu-kur") {
+  if (message.guild.channels.cache.find(channel => channel.name === "Bot Kullanımı")) return message.channel.send(" Bot Paneli Zaten Ayarlanmış.")
+  if (!message.member.hasPermission('ADMINISTRATOR'))
+  return message.channel.send(" Bu Kodu `Yönetici` Yetkisi Olan Kişi Kullanabilir.");
+    message.channel.send(`Bot Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **evet** yazınız.`)
+      message.channel.awaitMessages(response => response.content === 'evet', {
+        max: 1,
+        time: 10000,
+        errors: ['time'],
+      })
+    .then((collected) => {
+   message.guild.channels.create('|▬▬|ÖNEMLİ KANALLAR|▬▬|', 'category', [{
+  id: message.guild.id,
+  deny: ['SEND_MESSAGES']
+}])
+
+
+
+        
+ message.guild.channels.create('「:page_with_curl:」kurallar', 'text', [{
+  id: message.guild.id,
+  deny: ['SEND_MESSAGES']
+}])
+.then(channel =>
+ channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|")));
+ message.guild.channels.create('「:door:」gelen-giden', 'text', [{
+  id: message.guild.id,
+  deny: ['SEND_MESSAGES']
+}])
+.then(channel =>
+       channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|")));
+       message.guild.channels.create('「:white_check_mark:」sayaç', 'text', [{
+        id: message.guild.id,
+        deny: ['SEND_MESSAGES']
+      }])
+.then(channel =>
+             channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|")));
+             message.guild.channels.create('「:floppy_disk:」log-kanalı', 'text', [{
+              id: message.guild.id,
+              deny: ['SEND_MESSAGES']
+            }])
+            .then(channel => channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|")));
+            message.guild.channels.create('「:loudspeaker:」duyuru-odası', 'text', [{
+              id: message.guild.id,
+              deny: ['SEND_MESSAGES']
+            }])
+.then(channel =>
+ channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|ÖNEMLİ KANALLAR|▬▬|")));
+
+       }) 
+       .then((collected) => {
+        message.guild.channels.create('|▬▬|GENEL KANALLAR|▬▬|', 'category', [{
+       id: message.guild.id,
+     }]);
+      message.guild.channels.create(`「:bulb:」şikayet-ve-öneri`, 'text')
+     .then(channel =>
+      channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|")));
+     message.guild.channels.create(`「👥」pre-arama-odası`, 'text')
+     .then(channel =>
+            channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|")));
+     message.guild.channels.create(`「📷」görsel-içerik`, 'text')
+     .then(channel =>
+                  channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|")));
+     message.guild.channels.create(`「🤖」bot-komutları`, 'text')
+     .then(channel =>
+                  channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|")));
+     message.guild.channels.create(`「💬」sohbet`, 'text')
+     .then(channel =>
+      channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|")));
+
+      message.guild.channels.create(`🏆》Kurucu Odası`, "voice")
+      .then(channel =>
+        channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|SES KANALLARI|▬▬|")))
+      .then(c => {
+        let role = message.guild.roles.cache.find("name", "@everyone");
+        let role2 = message.guild.roles.cache.find("name", "Kurucu");
+        
+        c.createOverwrite(role, {
+            CONNECT: false,
+        });
+        c.createOverwrite(role2, {
+            CONNECT: true,
+            
+        });
+    })
+      message.guild.channels.create(`「:bulb:」şikayet-ve-öneri`, 'text')
+     .then(channel =>
+      channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|")));
+     message.guild.channels.create(`「👥」pre-arama-odası`, 'text')
+     .then(channel =>
+            channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|")));
+     message.guild.channels.create(`「📷」görsel-içerik`, 'text')
+     .then(channel =>
+                  channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|")));
+     message.guild.channels.create(`「🤖」bot-komutları`, 'text')
+     .then(channel =>
+                  channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|")));
+     message.guild.channels.create(`「💬」sohbet`, 'text')
+     .then(channel =>
+      channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|GENEL KANALLAR|▬▬|")));
+
+      message.guild.channels.create(`🏆》Kurucu Odası`, "voice")
+      .then(channel =>
+        channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|▬▬|SES KANALLARI|▬▬|")))
+      .then(c => {
+        let role = message.guild.roles.cache.find("name", "@everyone");
+        let role2 = message.guild.roles.cache.find("name", "Kurucu");
+        
+        c.createOverwrite(role, {
+            CONNECT: false,
+        });
+        c.createOverwrite(role2, {
+            CONNECT: true,
+            
+        });
+    })
+  message.guild.channels.create('|鈻柆|SES KANALLARI|鈻柆|', 'category', [{
+      id: message.guild.id,
+    }]);
+
+    message.guild.channels.create(`馃弳銆媃枚netici Odas谋`, "voice")
+    .then(channel =>
+      channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|鈻柆|SES KANALLARI|鈻柆|")))
+    .then(c => {
+      let role = message.guild.roles.cache.find("name", "@everyone");
+      let role2 = message.guild.roles.cache.find("name", "Kurucu");
+      let role3 = message.guild.roles.cache.find("name", "Y枚netici");
+      c.createOverwrite(role, {
+          CONNECT: false,
+      });
+      c.createOverwrite(role2, {
+          CONNECT: true,
+      });
+      c.createOverwrite(role3, {
+          CONNECT: true,
+      });
+  })
+
+  message.guild.channels.create(`馃挰銆婼ohbet Odas谋`, "voice")
+  .then(channel =>
+    channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|鈻柆|SES KANALLARI|鈻柆|")))
+  .then(c => {
+    let role = message.guild.roles.cache.find("name", "@everyone");
+    c.createOverwrite(role, {
+        CONNECT: true,
+    });
+})
+
+message.guild.channels.create('|鈻柆|OYUN ODALARI|鈻柆|', 'category', [{
+  id: message.guild.id,
+}]);
+message.guild.channels.create(`:video_game:��LOL`, 'voice')
+.then(channel =>
+ channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|�7�6�7�6|OYUN ODALARI|�7�6�7�6|")))
+ message.guild.channels.create(`�9�2��ZULA`, 'voice')
+ .then(channel =>
+  channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|�7�6�7�6|OYUN ODALARI|�7�6�7�6|")))
+ message.guild.channels.create(`�9�2��COUNTER STR�0�2KE`, 'voice')
+.then(channel =>
+ channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|�7�6�7�6|OYUN ODALARI|�7�6�7�6|")))
+ message.guild.channels.create(`�9�2��PUBG`, 'voice')
+ .then(channel =>
+  channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|�7�6�7�6|OYUN ODALARI|�7�6�7�6|")))
+  message.guild.channels.create(`�9�2��FORTN�0�2TE`, 'voice')
+  .then(channel =>
+   channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|�7�6�7�6|OYUN ODALARI|�7�6�7�6|")))
+   message.guild.channels.create(`�9�2��M�0�2NECRAFT`, 'voice')
+   .then(channel =>
+    channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|�7�6�7�6|OYUN ODALARI|�7�6�7�6|")))
+    message.guild.channels.create(`�9�2��ROBLOX`, 'voice')
+    .then(channel =>
+     channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|�7�6�7�6|OYUN ODALARI|�7�6�7�6|")))
+     message.guild.channels.create(`�9�2��WOLFTEAM`, 'voice')
+     .then(channel =>
+      channel.setParent(message.guild.channels.cache.find(channel => channel.name === "|�7�6�7�6|OYUN ODALARI|�7�6�7�6|")))
+      message.guild.roles.create({
+        name: 'Kurucu',
+        color: 'RED',
+        permissions: [
+            "ADMINISTRATOR",
+    ]
+      })
+
+      
+      message.guild.roles.create({
+        name: 'Y�0�2netici',
+        color: 'BLUE',
+        permissions: [
+            "MANAGE_GUILD",
+            "MANAGE_ROLES",
+            "MUTE_MEMBERS",
+            "DEAFEN_MEMBERS",
+            "MANAGE_MESSAGES",
+            "MANAGE_NICKNAMES",
+            "KICK_MEMBERS"
+    ]
+      })
+
+      message.guild.roles.create({
+        name: 'Moderat�0�2r',
+        color: 'GREEN',
+        permissions: [
+            "MANAGE_GUILD",
+            "MANAGE_ROLES",
+            "MUTE_MEMBERS",
+            "DEAFEN_MEMBERS",
+            "MANAGE_MESSAGES",
+            "MANAGE_NICKNAMES"
+    ]
+      })
+
+      message.guild.roles.create({
+        name: 'V.I.P',
+        color: '00ffff',
+      })
+
+      message.guild.roles.create({
+        name: '�0�5ye',
+        color: 'WHITE',
+      })
+
+      message.guild.roles.create({
+        name: 'Bot',
+        color: 'ORANGE',
+      })
+
+       message.channel.send("Gerekli Odalar Kuruldu!")
+     
+            })   
+    
+}
+});
+
+
+///////////////
 client.login(process.env.Token);
