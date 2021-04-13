@@ -1975,5 +1975,45 @@ msg.reply(`**Hey Yıkık Çocuk !**, https://cdn.discordapp.com/attachments/6532
    }
 })
 
+///////////////hg mesajı
+client.on('guildMemberAdd', async member => {
+require("moment-duration-format");
+    moment.locale('tr')
+    let user = client.users.cache.get(member.id);
+    let tarih = moment(member.user.createdAt.getTime()).format('LLL')
+    let gün = moment.duration(new Date().getTime() - member.user.createdAt.getTime()).format("D")
+    let resim = new Discord.MessageAttachment('https://cdn.discordapp.com/attachments/713874856143355935/714443923338297364/giphy.gif')
+    let kişi = member.guild.memberCount
+    let kayıtcırol = "8138756785" //Yetkili rolünüz ID'sini girin.
+    let kanal = client.channels.cache.get("83002025128") //Kanalınızın ID'sini girin.
+    const kurulus = new Date().getTime() - user.createdAt.getTime();
+    const gün1 = moment.duration(kurulus).format("D")   
+    var devtr;
+    if (kurulus < 15) devtr = 'Güvenilir Değil!'
+    if (kurulus > 15) devtr = 'Güvenilir!'
+
+    kanal.send(`Merhaba <@${member.user.id}> hanedanımıza **hoşgeldin!**\n\nSeninle beraber **${kişi}** kişiyiz.\n\nTagımızı alarak bize destek olabilirsin\n\nHesap kuruluş tarihi; **${tarih}** [**${gün}** gün önce]\n\n${kayıtcırol} sizinle ilgilenecektir. \n \n Hesabı ${devtr} `, resim)
+})
+
+///////////////görüşürüz mesaj
+client.on('guildMemberRemove', async member => {
+require("moment-duration-format");
+    moment.locale('tr')
+    let user = client.users.cache.get(member.id);
+    let tarih = moment(member.user.createdAt.getTime()).format('LLL')
+    let gün = moment.duration(new Date().getTime() - member.user.createdAt.getTime()).format("D")
+    let resim = new Discord.MessageAttachment('https://cdn.discordapp.com/attachments/713874856143355935/714443923338297364/giphy.gif')
+    let kişi = member.guild.memberCount
+    let kayıtcırol = "yetkili rol id" //Yetkili rolünüz ID'sini girin.
+    let kanal = client.channels.cache.get("") //Kanalınızın ID'sini girin.
+    const kurulus = new Date().getTime() - user.createdAt.getTime();
+    const gün1 = moment.duration(kurulus).format("D")   
+    var devtr;
+    if (kurulus < 15) devtr = 'Güvenilir Değil!'
+    if (kurulus > 15) devtr = 'Güvenilir!'
+
+    kanal.send(`Merhaba <@${member.user.id}> hanedanımıza **hoşgeldin!**\n\nSeninle beraber **${kişi}** kişiyiz.\n\nTagımızı alarak bize destek olabilirsin\n\nHesap kuruluş tarihi; **${tarih}** [**${gün}** gün önce]\n\n${kayıtcırol} sizinle ilgilenecektir. \n \n Hesabı ${devtr} `, resim)
+})
+
 ///////////////
 client.login(process.env.Token);
