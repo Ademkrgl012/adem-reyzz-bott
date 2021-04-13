@@ -6,6 +6,8 @@ const db = require("quick.db");
 const moment = require("moment");
 const express = require("express");
 const ayarlar = require("./ayarlar.json");
+const Canvas = require("canvas");
+const request = require("node-superfetch");
 const app = express();
 app.get("/", (request, response) => {
   response.sendStatus(200);
