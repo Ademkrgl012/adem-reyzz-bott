@@ -1993,7 +1993,6 @@ require("moment-duration-format");
     var devtr;
     if (kurulus < 15) devtr = 'Güvenilir Değil!'
     if (kurulus > 15) devtr = 'Güvenilir!'
-    const background = await Canvas.loadImage("https://i.hizliresim.com/Wrn1XW.jpg");
   
     kanal.send(`Merhaba <@${member.user.id}> hanedanımıza **hoşgeldin!**\n\nSeninle beraber **${kişi}** kişiyiz.\n\nTagımızı alarak bize destek olabilirsin\n\nHesap kuruluş tarihi; **${tarih}** [**${gün}** gün önce]\n\n${kayıtcırol} sizinle ilgilenecektir. \n \n Hesabı ${devtr} `, resim)
 })
@@ -2012,9 +2011,6 @@ require("moment-duration-format");
     const kurulus = new Date().getTime() - user.createdAt.getTime();
     const gün1 = moment.duration(kurulus).format("D")   
     var devtr;
-    if (kurulus < 15) devtr = 'Güvenilir Değil!'
-    if (kurulus > 15) devtr = 'Güvenilir!'
-    const background = await Canvas.loadImage("https://i.hizliresim.com/Wrn1XW.jpg");
    
     kanal.send(` <@${member.user.id}> hanedanımızdan **güle güle!**\n\nSensiz **${kişi}** kişiyiz.\n\nTagımızı alarak bize destek olabilirsin\n\nHesap kuruluş tarihi; **${tarih}** [**${gün}** gün önce]\n\n${kayıtcırol} sizinle ilgilenecektir. \n \n Hesabı ${devtr} `, resim)
 })
