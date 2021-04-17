@@ -764,11 +764,11 @@ client.on("guildMemberAdd", member => {
   member.roles.add(member.guild.roles.cache.get(rol));
   let embed = new Discord.MessageEmbed()
     .setDescription(
-      ">**Sunucuya yeni katılan** **" +
+      "**Sunucuya yeni katılan** **" +
         member.user.username +
         "** **Kullanıcısına** <@&" +
         rol +
-        "> **Rolü verildi** <a798275047047168041>"
+        ">**Rolü verildi**"
     )
     .setColor("RANDOM"); //.setFooter(`<@member.id>`)
   member.guild.channels.cache.get(kanal).send(embed);
