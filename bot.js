@@ -1986,8 +1986,8 @@ require("moment-duration-format");
     let gün = moment.duration(new Date().getTime() - member.user.createdAt.getTime()).format("D")
     let resim = new Discord.MessageAttachment('https://cdn.discordapp.com/attachments/713874856143355935/714443923338297364/giphy.gif')
     let kişi = member.guild.memberCount
-    let kayıtcırol = "813875678100455425" //Yetkili rolünüz ID'sini girin.
-    let kanal = client.channels.cache.get("830023039160025128") //Kanalınızın ID'sini girin.
+    let kayıtcırol = "81387567810045542" //Yetkili rolünüz ID'sini girin.
+    let kanal = client.channels.cache.get("83002303916002512") //Kanalınızın ID'sini girin.
     const kurulus = new Date().getTime() - user.createdAt.getTime();
     const gün1 = moment.duration(kurulus).format("D")   
     var devtr;
@@ -2006,8 +2006,8 @@ require("moment-duration-format");
     let gün = moment.duration(new Date().getTime() - member.user.createdAt.getTime()).format("D")
     let resim = new Discord.MessageAttachment('')
     let kişi = member.guild.memberCount
-    let kayıtcırol = "813875678100455425" //Yetkili rolünüz ID'sini girin.
-    let kanal = client.channels.cache.get("830023039160025128") //Kanalınızın ID'sini girin.
+    let kayıtcırol = "81387567810045542" //Yetkili rolünüz ID'sini girin.
+    let kanal = client.channels.cache.get("83002303916002512") //Kanalınızın ID'sini girin.
     const kurulus = new Date().getTime() - user.createdAt.getTime();
     const gün1 = moment.duration(kurulus).format("D")   
     var devtr;
