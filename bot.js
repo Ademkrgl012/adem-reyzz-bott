@@ -355,13 +355,13 @@ client.on("message", async msg => {
           msg.delete();
           let embed = new Discord.MessageEmbed()
             .setColor(0xffa300)
-            .setFooter("Yrnex Küfür Sistemi", client.user.avatarURL())
+            .setFooter("Adem Reyzz Küfür Sistemi", client.user.avatarURL())
             .setAuthor(
               msg.guild.owner.user.username,
               msg.guild.owner.user.avatarURL()
             )
             .setDescription(
-              "Yrnex, " +
+              "Adem Reyzz, " +
                 `***${msg.guild.name}***` +
                 " adlı sunucunuzda küfür yakaladım."
             )
@@ -764,11 +764,11 @@ client.on("guildMemberAdd", member => {
   member.roles.add(member.guild.roles.cache.get(rol));
   let embed = new Discord.MessageEmbed()
     .setDescription(
-      "> <a:adem_hypes:794222389584068618> **Sunucuya yeni katılan** **" +
+      ">**Sunucuya yeni katılan** **" +
         member.user.username +
         "** **Kullanıcısına** <@&" +
         rol +
-        "> **Rolü verildi** <a:adem_tiks:798275047047168041>"
+        "> **Rolü verildi** <a798275047047168041>"
     )
     .setColor("RANDOM"); //.setFooter(`<@member.id>`)
   member.guild.channels.cache.get(kanal).send(embed);
@@ -2030,7 +2030,7 @@ client.on("guildMemberRemove", async member => {
     Font = Canvas.Font,
     path = require("path");
 
-  var randomMsg = ["Sunucudan Ayrıld."];
+  var randomMsg = ["Sunucudan Ayrıldı."];
   var randomMsg_integer =
     randomMsg[Math.floor(Math.random() * randomMsg.length)];
 
@@ -2090,7 +2090,7 @@ client.on("guildMemberAdd", async member => {
     Font = Canvas.Font,
     path = require("path");
 
-  var randomMsg = ["Sunucuya Katıld."];
+  var randomMsg = ["Sunucuya Katıldı."];
   var randomMsg_integer =
     randomMsg[Math.floor(Math.random() * randomMsg.length)];
 
